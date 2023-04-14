@@ -48,12 +48,12 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-######## Volume CONTROL ##########
+################### Volume CONTROL ######################
 bindsym $mod+bracketleft exec "amixer set Master 1-"
 bindsym $mod+bracketright exec "amixer set Master 1+"
 bindsym $mod+backslash exec "amixer set Front toggle"
-##################################
-
+#########################################################
+#########################################################
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
