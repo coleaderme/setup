@@ -5,3 +5,5 @@ mkdir ~/Pictures
 mv scr.sh ~/Pictures/
 mv mpv ~/.config/
 mv /omb/* ~/
+mv ~/oh-my-bash ~/.oh-my-bash
+mv ~/bashrc ~/.bashrc
