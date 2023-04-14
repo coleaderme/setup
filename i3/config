@@ -47,7 +47,7 @@ floating_modifier $mod
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
-
+exec xfce4-clipman
 ################### Volume CONTROL ######################
 bindsym $mod+bracketleft exec "amixer set Master 1-"
 bindsym $mod+bracketright exec "amixer set Master 1+"
