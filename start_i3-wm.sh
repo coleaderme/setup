@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 sudo timedatectl set-ntp true
 sudo pacman -Syy
-sudo pacman -S i3-wm i3status
+sudo pacman -S i3-wm i3status numlockx
 
 #config file
 mv i3 ~/.config/
