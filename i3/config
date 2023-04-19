@@ -48,7 +48,8 @@ exec --no-startup-id xfce4-clipman
 bindsym $mod+bracketleft exec "amixer set Master 1-"
 bindsym $mod+bracketright exec "amixer set Master 1+"
 bindsym $mod+backslash exec "amixer set Front toggle"
-
+bindsym Print exec gnome-screenshot -f ~/Pictures/ss_$(date "+%Y%m%d%H%M%S").png
+bindsym $mod+v exec yt-dlp --restrict-filenames --downloader aria2c -P ~/Videos $(xclip -o)
 #########################################################
 
 # start a terminal
