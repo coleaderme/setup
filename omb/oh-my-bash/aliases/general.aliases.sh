@@ -74,7 +74,7 @@ alias src='source ~/.bashrc'                # src:          Reload .bashrc file
 
 # Custom alias
 alias cd..='cd ..'
-alias myip='curl ifconfig.me'
+alias myip='curl ifconfig.me && echo -e ""'
 alias ar='aria2c -x 16 -s 16'
 alias arc='aria2c -x 16 -s 16 --load-cookies=/home/dra/.config/chromium/Default/Cookies'
 alias swp='sudo swapoff -a'
