@@ -8,31 +8,27 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
+# Mod1:Alt, Mod2:Numlock, Mod3:NOTSET, Mod4:Win key
 set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
+##---exec --no-startup-id dex --autostart --environment i3
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+##----exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+##--- exec --no-startup-id nm-applet
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -40,16 +36,23 @@ floating_modifier $mod
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
-
+#############################
 exec_always --no-startup-id numlockx on
 exec --no-startup-id xfce4-clipman
 ################### Volume CONTROL ######################
+# mod2(numlock) is required for numpad functioning, without this it won't work.
 
-bindsym $mod+bracketleft exec "amixer set Master 1-"
-bindsym $mod+bracketright exec "amixer set Master 1+"
-bindsym $mod+backslash exec "amixer set Front toggle"
+bindsym Mod1+bracketleft exec "amixer set Master 1-"
+bindsym Mod1+bracketright exec "amixer set Master 1+"
+bindsym Mod1+backslash exec "amixer set Front toggle"
 bindsym Print exec gnome-screenshot -f ~/Pictures/ss_$(date "+%Y%m%d%H%M%S").png
 bindsym $mod+v exec yt-dlp --restrict-filenames --downloader aria2c -P ~/Videos $(xclip -o)
+bindsym ctrl+mod2+KP_1 exec thunar
+bindsym ctrl+mod2+KP_2 exec thunar ~/Downloads
+bindsym ctrl+mod2+KP_3 exec chromium
+bindsym ctrl+mod2+KP_4 exec google-chrome-stable
+bindsym ctrl+mod2+KP_5 exec firefox-esr
+bindsym ctrl+Space exec angrysearch
 #########################################################
 
 # start a terminal
