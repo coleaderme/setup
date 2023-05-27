@@ -13,7 +13,5 @@ mkdir ~/Pictures
 mv scr.sh ~/Pictures/
 mv -rf mpv ~/.config/
 
-# Custom oh-my-bash config
-mv -rf /omb/* ~/
-mv ~/oh-my-bash ~/.oh-my-bash
+# .bashrc
 mv ~/bashrc ~/.bashrc
