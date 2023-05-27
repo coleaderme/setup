@@ -14,4 +14,4 @@ mv scr.sh ~/Pictures/
 mv -rf mpv ~/.config/
 
 # .bashrc
-mv ~/bashrc ~/.bashrc
+mv bashrc ~/.bashrc
