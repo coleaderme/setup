@@ -58,4 +58,4 @@ alias dwgg='sudo wg-quick down wgg'
 alias uwgg='sudo wg-quick up wgg'
 #Mount
 alias mountt='sudo mount -o noatime /dev/sdb1 ~/T'
-alias umountt='sudo umount T'
+alias umountt='sudo umount ~/T'
