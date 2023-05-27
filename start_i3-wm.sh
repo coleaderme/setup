@@ -15,3 +15,4 @@ mv -rf mpv ~/.config/
 
 # .bashrc
 mv bashrc ~/.bashrc
+echo "startx" >> ~/.bash_profile
