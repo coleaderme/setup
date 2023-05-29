@@ -1,0 +1,25 @@
+[[block]]
+block = "cpu"
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+alert_unit = "GB"
+interval = 20
+format = " root: $available.eng(w:2) "
+
+[[block]]
+block = "memory"
+format = " Mem: $mem_total_used_percents.eng(w:2) "
+format_alt = " $swap_used_percents.eng(w:2) "
+
+[[block]]
+block = "sound"
+[[block.click]]
+button = "left"
+
+[[block]]
+block = "time"
+interval = 5
+format = " $timestamp.datetime(f:'%a %d/%m %R') "
