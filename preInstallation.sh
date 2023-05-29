@@ -4,6 +4,7 @@ echo "[:] assuming I properly mounted / /home & swap"
 echo "[:] this is for INTEL CPU."
 
 timedatectl set-timezone Asia/Kolkata
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 echo "[+] Downloading.. base packages"
 pacstrap -i /mnt base base-devel linux linux-headers linux-firmware intel-ucode git nano dhcpcd pulseaudio
 echo "[OK]"
