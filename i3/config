@@ -21,20 +21,19 @@ exec --no-startup-id xfce4-clipman
 ################### Volume CONTROL ######################
 # mod2(numlock) is required for numpad functioning, without this it won't work.
 
-bindsym Mod1+bracketleft exec "amixer set Master 1-"
-bindsym Mod1+bracketright exec "amixer set Master 1+"
-bindsym Mod1+backslash exec "amixer set Front toggle"
-bindsym Print exec gnome-screenshot -f ~/Pictures/ss_$(date "+%Y%m%d%H%M%S").png
-bindsym $mod+v exec yt-dlp --restrict-filenames --downloader aria2c -P ~/Videos $(xclip -o)
-bindsym ctrl+mod2+KP_1 exec thunar
-bindsym ctrl+mod2+KP_2 exec thunar ~/Downloads
-bindsym ctrl+mod2+KP_3 exec chromium --disk-cache-dir="$XDG_RUNTIME_DIR/chromium-cache"
-bindsym ctrl+mod2+KP_4 exec google-chrome-stable
-bindsym ctrl+Space exec angrysearch
+bindsym Mod1+bracketleft exec --no-startup-id "amixer set Master 1-"
+bindsym Mod1+bracketright exec --no-startup-id "amixer set Master 1+"
+bindsym Mod1+backslash exec --no-startup-id "amixer set Front toggle"
+bindsym Print exec --no-startup-id scrot ~/Pictures/ss_$(date "+%Y%m%d%H%M%S").png
+bindsym ctrl+mod2+KP_1 exec --no-startup-id thunar
+bindsym ctrl+mod2+KP_2 exec --no-startup-id thunar ~/Downloads
+bindsym ctrl+mod2+KP_3 exec --no-startup-id chromium --disk-cache-dir="$XDG_RUNTIME_DIR/chromium-cache"
+bindsym ctrl+mod2+KP_4 exec --no-startup-id google-chrome-stable
+bindsym ctrl+Space exec --no-startup-id angrysearch
 #########################################################
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec --no-startup-id xfce4-terminal
 
 # kill focused window
 bindsym $mod+q kill
