@@ -24,7 +24,7 @@ exec --no-startup-id xfce4-clipman
 bindsym Mod1+bracketleft exec --no-startup-id "amixer set Master 1-"
 bindsym Mod1+bracketright exec --no-startup-id "amixer set Master 1+"
 bindsym Mod1+backslash exec --no-startup-id "amixer set Front toggle"
-bindsym Print exec --no-startup-id gnome-screenshot -f ~/Pictures/ss_$(date "+%Y%m%d%H%M%S").png
+bindsym Print exec --no-startup-id scrot ~/Pictures/ss_$(date "+%Y%m%d%H%M%S").png
 bindsym ctrl+mod2+KP_1 exec --no-startup-id thunar
 bindsym ctrl+mod2+KP_2 exec --no-startup-id thunar ~/Downloads
 bindsym ctrl+mod2+KP_3 exec --no-startup-id chromium --disk-cache-dir="$XDG_RUNTIME_DIR/chromium-cache"
