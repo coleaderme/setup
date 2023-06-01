@@ -16,13 +16,14 @@ alias show_options='shopt'                  # Show_options: display bash options
 #Custom alias
 alias 7zx='7z x'
 alias am='mpv "$(fzf -e +x)"'
-alias ar="aria2c --summary-interval 2 -UChrome/113.0.0.0 --enable-http-pipelining=true -c -j 3 -x 3 -s 3 -k 1M"
+alias ar='aria2c --summary-interval 2 --user-agent=Mozilla/5.0 file-allocation=falloc -c -j 3 -x 3 -s 3 -k 1M'
 alias au='audacious "$(fzf -e +x)"'
 alias cd..='cd ..'
+alias fd="fd -H"
 alias chx='chmod +x'
 alias cls='clear'
-alias fz='fzf --algo=v1 -e -m +x'
-alias gc='git clone'
+alias fz='thunar $(fzf --algo=v1 -e -m +x)'
+alias dc='cd $(dirname $(fzf --algo=v1 -e -m +x))'
 alias gm='git commit -m'
 alias la='exa -a'
 alias ll='exa -la'
@@ -39,11 +40,11 @@ alias swp='sudo swapoff -a'
 alias wm='sudo nano /etc/X11/xinit/xinitrc'
 alias neofetch='fastfetch'
 #YT
-alias yt="yt-dlp --restrict-filenames --cookies-from-browser chromium --external-downloader-args '-UChrome/113.0.0.0 -c -j 3 -x 3 -s 3 -k 1M'"
+alias yt="yt-dlp --restrict-filenames --cookies-from-browser chromium --downloader aria2c --external-downloader-args '-UMozilla/5.0 -c -j 3 -x 3 -s 3 -k 1M'"
 alias ytx='yt-dlp -x --restrict-filenames'
 alias ytf='yt-dlp -F'
-alias ytd="yt-dlp --restrict-filenames --external-downloader-args '-UChrome/113.0.0.0 -c -j 3 -x 3 -s 3 -k 1M'"
-alias ytt="yt-dlp -f 'bestvideo[height<=1080]+251' --restrict-filenames --external-downloader-args '-UChrome/113.0.0.0 -c -j 3 -x 3 -s 3 -k 1M'"
+alias ytd="yt-dlp --restrict-filenames --downloader aria2c --external-downloader-args '-UMozilla/5.0 -c -j 3 -x 3 -s 3 -k 1M'"
+alias ytt="yt-dlp -f 'bestvideo[height<=1080]+251' --restrict-filenames --external-downloader-args '--UMozilla/5.0 -c -j 3 -x 3 -s 3 -k 1M'"
 #Installs
 alias syy='sudo pacman -Syy'
 alias syu='sudo pacman -Syu'
