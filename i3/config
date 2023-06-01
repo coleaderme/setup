@@ -27,8 +27,9 @@ bindsym Mod1+backslash exec --no-startup-id "amixer set Front toggle"
 bindsym Print exec --no-startup-id scrot ~/Pictures/ss_$(date "+%Y%m%d%H%M%S").png
 bindsym ctrl+mod2+KP_1 exec --no-startup-id thunar
 bindsym ctrl+mod2+KP_2 exec --no-startup-id thunar ~/Downloads
+bindsym ctrl+mod2+KP_4 exec --no-startup-id thunar ~/Pictures
 bindsym ctrl+mod2+KP_3 exec --no-startup-id chromium --disk-cache-dir="$XDG_RUNTIME_DIR/chromium-cache"
-bindsym ctrl+mod2+KP_4 exec --no-startup-id google-chrome-stable
+bindsym ctrl+mod2+KP_9 exec --no-startup-id google-chrome-stable
 bindsym ctrl+Space exec --no-startup-id angrysearch
 #########################################################
 
@@ -102,27 +103,28 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# background = BG 
+# statusline = Text
+# separator  = Active tab/workspace highlighter
 
 bar {
         status_command i3status-rs ~/.config/i3status-rs/config.toml
         colors {
-                background #282A36
+                background #353535
                 statusline #F8F8F2
-                separator  #44475A
-                focused_workspace  #44475A #44475A #F8F8F2
-                active_workspace   #282A36 #44475A #F8F8F2
-                inactive_workspace #282A36 #282A36 #BFBFBF
+                separator  #616161
+                focused_workspace  #616161 #616161 #F8F8F2
+                active_workspace   #353535 #616161 #F8F8F2
+                inactive_workspace #353535 #353535 #BFBFBF
                 urgent_workspace   #FF5555 #FF5555 #F8F8F2
                 binding_mode       #FF5555 #FF5555 #F8F8F2
         }
 }
 
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.focused          #616161 #616161 #F8F8F2 #616161   #616161
+client.focused_inactive #616161 #616161 #F8F8F2 #616161   #616161
+client.unfocused        #353535 #353535 #BFBFBF #353535   #353535
+client.urgent           #616161 #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #353535 #353535 #F8F8F2 #353535   #353535
 client.background       #F8F8F2
