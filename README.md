@@ -4,7 +4,9 @@ google docs mini-wiki: https://docs.google.com/document/d/1n4g8nYFDroHMy6fbYHAyR
 
 # Theme
 - McOS-MJV-Dark-XFCE-Edition-2.3.tar Created by PAULXFCE (2017)
-```    https://github.com/paullinuxthemer ```
+```    
+    https://github.com/paullinuxthemer 
+```
 
 - WhiteSur_icons.tar.xz
 ```
