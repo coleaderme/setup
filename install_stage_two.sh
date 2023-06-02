@@ -2,13 +2,13 @@
 #
 # RUN in arch-chroot
 #
+#Before running this..
+# ==========================================================="
+# * mount partition with ~100MB size *
+# > mkdir /boot/efi
+# > mount /dev/sdX1 /boot/efi
+# ==========================================================="
 echo "Started---------------------------------------STAGE TWO"
-
-mkdir /boot/efi
-echo "=================================="
-echo "[!] mount partition with ~100MB size"
-echo "> mount /dev/sdX1 /boot/efi"
-echo "=================================="
 
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 echo "[+!+] adding user 'dra' "
