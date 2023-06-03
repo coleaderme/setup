@@ -1,7 +1,6 @@
 #
 # /etc/bash.bashrc
 #
-bind "set completion-ignore-case on"
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 

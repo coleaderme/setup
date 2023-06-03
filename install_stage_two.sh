@@ -2,25 +2,25 @@
 #
 # RUN in arch-chroot
 #
-#Before running this..
+# Before running this..
 # ==========================================================="
 # * mount partition with ~100MB size *
 # > mkdir /boot/efi
 # > mount /dev/sdX1 /boot/efi
 # ==========================================================="
-echo "Started---------------------------------------STAGE TWO"
+
 
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 echo "[+!+] adding user 'dra' "
-useradd -m dra && usermod -aG wheel,storage,power dra
+useradd -m dra
 echo "[-!-] Enter passwd for USER"
 passwd dra
-
+usermod -aG wheel,storage,power dra
 echo "Uncomment wheel allow group wheel something-line...wait 4 seconds"
 sleep 4
 EDITOR=nano visudo
 
-# Locale
+# locale
 echo "en_US.UTF-8" /etc/locale.gen
 locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
@@ -38,8 +38,7 @@ systemctl enable dhcpcd.service
 
 # exit
 echo "======================================================="
-echo "type: exit"
-echo "type: umount -lR /mnt"
-echo "type: reboot"
+echo "> exit"
+echo "> umount -lR /mnt"
+echo "> reboot"
 echo "======================================================="
-echo "Finished-------------------------------END of STAGE TWO"
