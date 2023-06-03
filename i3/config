@@ -30,7 +30,7 @@ bindsym ctrl+mod2+KP_2 exec --no-startup-id thunar ~/Downloads
 bindsym ctrl+mod2+KP_4 exec --no-startup-id thunar ~/Pictures
 bindsym ctrl+mod2+KP_3 exec --no-startup-id chromium --disk-cache-dir="$XDG_RUNTIME_DIR/chromium-cache"
 bindsym ctrl+mod2+KP_9 exec --no-startup-id google-chrome-stable
-bindsym ctrl+Space exec --no-startup-id angrysearch
+bindsym ctrl+space exec --no-startup-id angrysearch
 #########################################################
 
 # start a terminal
