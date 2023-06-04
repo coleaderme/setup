@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 #
-# This file should be in ~/ << home directory of USER.
+# This file should be in HOME directory of USER.
 # to avoid permission hassle, re-clone this in '~/' as USER.
 #
 echo "========================================================"
@@ -8,7 +8,7 @@ echo "run this w/ user account on first login"
 echo "========================================================"
 # Installs
 sudo pacman -Syy
-sudo pacman -S xorg-xorg-xinit ntfs-3g noto-fonts noto-fonts-emoji alsa-utils wireguard-tools wgcf viewnior scrot aria2 yt-dlp python-brotli python-pip mpv htop p7zip tealdeer ripgrep exa profile-sync-daemon
+sudo pacman -S xorg-xorg-xinit ntfs-3g noto-fonts noto-fonts-emoji alsa-utils wireguard-tools openresolv wgcf viewnior scrot aria2 yt-dlp python-brotli python-pip mpv htop p7zip tealdeer ripgrep exa profile-sync-daemon
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -sic
 yay -S ungoogled-chromium-bin
 # config files
