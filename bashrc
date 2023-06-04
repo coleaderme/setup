@@ -15,7 +15,7 @@ alias show_options='shopt'                  # Show_options: display bash options
 #Custom alias
 alias 7zx='7z x'
 alias am='mpv "$(fzf -e +x)"'
-alias ar='aria2c --summary-interval 2 --user-agent=Mozilla/5.0 file-allocation=falloc -c -j 3 -x 3 -s 3 -k 1M'
+alias ar='aria2c --summary-interval 2 --user-agent=Mozilla/5.0 --file-allocation=falloc -c -j 3 -x 3 -s 3 -k 1M'
 alias au='audacious "$(fzf -e +x)"'
 alias cd..='cd ..'
 alias fd="fd -H"
