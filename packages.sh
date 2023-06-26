@@ -15,6 +15,7 @@ yay -S ungoogled-chromium-bin
 mv psd ~/.config/
 mv bashrc ~/.bashrc
 mv mpv ~/.config/
+mv chromium-flags.conf ~/.config
 mkdir ~/Pictures
 
 echo "startx" >> ~/.bash_profile
