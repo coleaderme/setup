@@ -18,7 +18,7 @@ alias rustcc="rustc -O -C prefer-dynamic"   # compact compiled size like C
 alias fz="fzf --algo=v1 -e | xsel -b"
 alias tfz='thunar "$(fzf --algo=v1 -e)"'
 #alias au='audacious "$(fzf -e +x)"'
-alias ar='aria2c --summary-interval 5 --user-agent=Mozilla/5.0 --file-allocation=falloc -c -j 4 -x 4 -s 4 -k 5M'
+alias ar='aria2c --seed-time=0 --summary-interval 5 --user-agent=Mozilla/5.0 --file-allocation=falloc -c -j 4 -x 4 -s 4 -k 5M'
 alias cd..='cd ..'
 alias chx='chmod +x'
 alias cls='clear'
