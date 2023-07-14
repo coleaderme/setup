@@ -13,7 +13,6 @@ alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable 
 alias show_options='shopt'                  # Show_options: display bash options settings
 #Custom alias
 alias 7zx='7z x'
-alias rat=bat
 alias rustcc="rustc -O -C prefer-dynamic"   # compact compiled size like C
 alias fz="fzf --algo=v1 -e | xsel -b"
 alias xsel="xsel -b"
@@ -23,10 +22,6 @@ alias cd..='cd ..'
 alias chx='chmod +x'
 alias cls='clear'
 alias dc='cd "$(dirname "$(fzf --algo=v1 -e)")"'
-alias gad='git add .'
-alias gm='git commit -m'
-alias gll='git pull'
-alias gsh='git push'
 alias ls='exa'
 alias la='exa -a'
 alias ll='exa -la'
@@ -36,6 +31,7 @@ alias myip='curl ifconfig.me && echo -e ""'
 alias off='sudo poweroff'
 alias pack='7z a -m0=copy'
 alias packx='7z a -m0=copy -p0000 -mhe'
+alias rat="bat -p"
 alias rg='rg -i'
 alias so='source ~/.bashrc'
 alias wm='sudo nano /etc/X11/xinit/xinitrc'
@@ -44,18 +40,15 @@ alias yt="yt-dlp --restrict-filenames --cookies-from-browser chromium --download
 alias ytx='yt-dlp -x --restrict-filenames'
 alias ytf='yt-dlp -F'
 alias ytd="yt-dlp --write-auto-subs --restrict-filenames --downloader aria2c --external-downloader-args '-UMozilla/5.0 -c -j 3 -x 3 -s 3 -k 1M'"
-alias ytt="yt-dlp -f 'bestvideo[height<=1080]+251' --restrict-filenames --downloader aria2c --external-downloader-args '-UMozilla/5.0 -c -j 3 -x 3 -s 3 -k 5M'"
+alias ytt="yt-dlp -f 'bestvideo[height<=1080]+251' --restrict-filenames --downloader aria2c"
 #Installs
 alias syy='sudo pacman -Syy'
 alias syu='sudo pacman -Syu'
 alias install='sudo pacman -S'
 alias installed='sudo pacman -Qe'
 alias un='sudo pacman -Rns'
-alias clean='sudo pacman -Scc && sudo pacman -Sc'
+alias clean='sudo pacman -Scc && sudo pacman -Sc && yay -Sc'
 alias py='python'
-alias pi='sudo pip install'
-alias pu='sudo pip uninstall'
-alias pl='sudo pip list'
 alias sopy='source bin/activate'
 alias uwg='sudo wg-quick up wg'
 alias dwg='sudo wg-quick down wg'
