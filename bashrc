@@ -16,7 +16,7 @@ alias 7zx='7z x'
 alias rat=bat
 alias rustcc="rustc -O -C prefer-dynamic"   # compact compiled size like C
 alias fz="fzf --algo=v1 -e | xsel -b"
-alias tfz='thunar "$(fzf --algo=v1 -e)"'
+alias xsel="xsel -b"
 #alias au='audacious "$(fzf -e +x)"'
 alias ar='aria2c --seed-time=0 --summary-interval 5 --user-agent=Mozilla/5.0 --file-allocation=falloc -c -j 4 -x 4 -s 4 -k 5M'
 alias cd..='cd ..'
@@ -49,6 +49,7 @@ alias ytt="yt-dlp -f 'bestvideo[height<=1080]+251' --restrict-filenames --downlo
 alias syy='sudo pacman -Syy'
 alias syu='sudo pacman -Syu'
 alias install='sudo pacman -S'
+alias installed='sudo pacman -Qe'
 alias un='sudo pacman -Rns'
 alias clean='sudo pacman -Scc && sudo pacman -Sc'
 alias py='python'

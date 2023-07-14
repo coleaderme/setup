@@ -19,7 +19,7 @@ mv resolv.conf /etc/
 mv bash.bashrc /etc/
 echo 'set completion-ignore-case On' >> /etc/inputrc
 echo "[+] Downloading.. base packages"
-pacstrap -i /mnt base base-devel linux linux-headers linux-firmware intel-ucode git nano dhcpcd
+pacstrap -i /mnt base base-devel linux-lts linux-lts-headers linux-firmware intel-ucode git nano dhcpcd
 echo "[OK]"
 echo "[+] Generating fstab"
 genfstab -U /mnt >> /mnt/etc/fstab

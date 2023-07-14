@@ -19,6 +19,7 @@ mv htop ~/.config/
 mv angrysearch ~/.config/
 mv sublime-text ~/.config/
 mv chromium-flags.conf ~/.config/
+mv chrome-flags.conf ~/.config/
 mkdir ~/Pictures
 
 echo "startx" >> ~/.bash_profile
