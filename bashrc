@@ -41,6 +41,7 @@ alias ytx='yt-dlp -x --restrict-filenames'
 alias ytf='yt-dlp -F'
 alias ytd="yt-dlp --write-auto-subs --restrict-filenames --downloader aria2c --external-downloader-args '-UMozilla/5.0 -c -j 3 -x 3 -s 3 -k 1M'"
 alias ytt="yt-dlp -f 'bestvideo[height<=1080]+251' --restrict-filenames --downloader aria2c"
+alias yts='yt-dlp --flat-playlist -i --print-to-file url yt_links.txt'
 #Installs
 alias syy='sudo pacman -Syy'
 alias syu='sudo pacman -Syu'
