@@ -137,6 +137,9 @@ bar {
                 urgent_workspace   #FF5555 #FF5555 #F8F8F2
                 binding_mode       #FF5555 #FF5555 #F8F8F2
         }
+        mode hide
+        hidden_state hide
+        modifier $Mod
 }
 
 # class                 border  bground text    indicator child_border
