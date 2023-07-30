@@ -24,6 +24,5 @@ fi
 alias path='echo -e ${PATH//:/\\n}'
 alias cd..='cd ..'
 alias cls='clear'
-alias myip='curl ifconfig.me && echo -e ""'
 alias la='ls -a'
 alias ll='ls -la'

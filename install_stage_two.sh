@@ -11,13 +11,13 @@
 
 
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
-echo "[+!+] adding user 'dra' "
+echo "[+_+] adding user 'dra' "
 useradd -m dra
-echo "[-!-] Enter passwd for USER"
+echo "[*_-] Enter passwd for USER"
 passwd dra
 usermod -aG wheel,storage,power dra
-echo "Uncomment wheel allow group wheel something-line...wait 4 seconds"
-sleep 4
+echo "Uncomment wheel allow group wheel something-line...wait 3 seconds"
+sleep 3
 EDITOR=nano visudo
 
 # locale
