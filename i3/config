@@ -18,7 +18,7 @@ font pango:monospace 8
 #############################
 exec_always --no-startup-id numlockx on
 exec --no-startup-id clipmenud
-##exec --no-startup-id xfce4-clipman
+
 ################### Volume CONTROL ######################
 # mod2(numlock) is required for numpad functioning, without this it won't work.
 
@@ -31,13 +31,17 @@ bindsym Mod1+bracketright exec --no-startup-id "amixer set Master 1+"
 bindsym Mod1+backslash exec --no-startup-id "amixer set Front toggle"
 bindsym Print exec --no-startup-id scrot ~/Pictures/ss_$(date "+%Y%m%d%H%M%S").png
 bindsym $mod+s exec --no-startup-id scrot ~/Pictures/ss_$(date "+%Y%m%d%H%M%S").png
+bindsym $mod+mod2+KP_0 exec --no-startup-id angrysearch
 bindsym ctrl+mod2+KP_1 exec --no-startup-id thunar
 bindsym ctrl+mod2+KP_2 exec --no-startup-id thunar ~/Downloads
+#bindsym ctrl+mod2+KP_3 exec --no-startup-id chromium --disk-cache-dir="$XDG_RUNTIME_DIR/chromium-cache"
+bindsym ctrl+mod2+KP_3 exec --no-startup-id chromium
 bindsym ctrl+mod2+KP_4 exec --no-startup-id thunar ~/Pictures
-bindsym ctrl+mod2+KP_3 exec --no-startup-id chromium --disk-cache-dir="$XDG_RUNTIME_DIR/chromium-cache"
-bindsym ctrl+mod2+KP_9 exec --no-startup-id google-chrome-stable
+bindsym ctrl+mod2+KP_5 exec --no-startup-id thunar ~/Documents
 bindsym ctrl+mod2+KP_6 exec --no-startup-id subl
-bindsym ctrl+space exec --no-startup-id angrysearch
+bindsym ctrl+mod2+KP_8 exec --no-startup-id telegram-desktop
+bindsym ctrl+mod2+KP_9 exec --no-startup-id google-chrome-stable
+
 #########################################################
 
 # start a terminal
