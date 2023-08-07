@@ -24,5 +24,6 @@ fi
 alias path='echo -e ${PATH//:/\\n}'
 alias cd..='cd ..'
 alias cls='clear'
+alias clean='pacman -Qtdq | pacman -Rns -'
 alias la='ls -a'
 alias ll='ls -la'
