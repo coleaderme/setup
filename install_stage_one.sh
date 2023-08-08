@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 #
 # FOR INTEL CPU
-# Assuming properly mounted '/' & '/home' (swap is optional)"
+# Assuming properly mounted '/' & '/home' (SWAP is optional)"
 # This should work flawlessly.
 #
 echo "[+] Setting timezone"
@@ -15,6 +15,7 @@ echo "rankmirrors -n 5 /etc/pacman.d/mirrorlist.bak >> /etc/pacman.d/mirrorlist"
 
 echo "[+] Moving configs to /etc/ ..."
 mv nanorc /etc/
+mv sysctl.conf /etc/
 mv resolv.conf /etc/
 mv bash.bashrc /etc/
 echo 'set completion-ignore-case On' >> /etc/inputrc
