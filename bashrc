@@ -16,23 +16,25 @@ alias 7zx='7z x'
 alias rustcc="rustc -O -C prefer-dynamic"   # compact compiled size like C
 alias fz="fzf --algo=v1 -e | xsel -b"
 alias tfz='thunar "$(fzf --algo=v1 -e)"'
-alias ar='aria2c --seed-time=0 --retry-wait=5 --summary-interval 5 --user-agent=Mozilla/5.0 --file-allocation=falloc -c -j 4 -x 3 -s 3 -k 4M'
+alias ar='aria2c --http-auth-challenge=true --disable-ipv6=true --seed-time=0 --retry-wait=5 --summary-interval 5 --header="User-Agent: Mozilla/5.0" --file-allocation=falloc -c -j 4 -x 3 -s 3 -k 4M'
 alias cd..='cd ..'
 alias chx='chmod +x'
 alias cls='clear'
 alias dc='cd "$(dirname "$(fzf --algo=v1 -e)")"'
-alias fart='sd' # find and replace tool
+alias fart='sd'
 alias ls='exa'
 alias la='exa -a'
 alias ll='exa -la'
 alias mm='subl ~/.bashrc'
-alias mpc="mpv --profile=1080p"
+alias mpc="mpv --profile=720p"
 alias mpv='mpv --no-audio-display'
+alias play='mpv --no-audio-display'
 alias myip='curl ifconfig.me && echo -e ""'
 alias off='sudo poweroff'
 alias pack='7z a -m0=copy'
 alias packx='7z a -m0=copy -p0000 -mhe'
 alias rg='rg -i'
+alias fd='fd -H'
 alias rat="bat -p"
 alias xsel='xsel -b'
 alias so='source ~/.bashrc'
@@ -43,7 +45,8 @@ alias ytx='yt-dlp -x --restrict-filenames'
 alias ytf='yt-dlp -F'
 alias ytd="yt-dlp --write-auto-subs --restrict-filenames --downloader aria2c --external-downloader-args '-UMozilla/5.0 -c -j 3 -x 3 -s 3 -k 5M'"
 alias ytt="yt-dlp -f 'bestvideo[height<=1080]+251' --restrict-filenames --downloader aria2c"
-alias yts='yt-dlp --flat-playlist -i --print-to-file url yt_links.txt'
+alias ytl='yt-dlp --flat-playlist -i --print-to-file url yt_links.txt'
+alias yts='yt-dlp --write-auto-sub --skip-download'
 # Installs
 alias syy='sudo pacman -Syy'
 alias syu='sudo pacman -Syu'
