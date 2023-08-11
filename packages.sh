@@ -19,6 +19,7 @@ mv htop ~/.config/
 mv angrysearch ~/.config/
 mv sublime-text ~/.config/
 mv chromium-flags.conf ~/.config/
+mv code-flags.conf ~/.config/
 mv chrome-flags.conf ~/.config/
 mv Xresources ~/.Xresources
 mkdir ~/Pictures
