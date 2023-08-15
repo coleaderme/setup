@@ -8,7 +8,7 @@ echo "run as USER on first login"
 echo "========================================================"
 # Installs
 sudo pacman -Syy
-sudo pacman -S --needed xorg-server xorg-xinit ntfs-3g noto-fonts noto-fonts-emoji alsa-utils wireguard-tools openresolv wgcf viewnior scrot aria2 yt-dlp python python-brotli mpv clipmenu htop p7zip tealdeer ripgrep exa xterm
+sudo pacman -S --needed xorg-server xorg-xinit ntfs-3g noto-fonts noto-fonts-emoji alsa-utils wireguard-tools openresolv wgcf viewnior scrot aria2 yt-dlp python python-brotli mpv clipmenu htop p7zip tealdeer ripgrep exa
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -sic
 yay -S ungoogled-chromium-bin
 # config files / dot files
