@@ -18,7 +18,8 @@ mv nanorc /etc/
 mv sysctl.conf /etc/
 mv resolv.conf /etc/
 mv bash.bashrc /etc/
-echo 'set completion-ignore-case On' >> /etc/inputrc
+echo 'set completion-ignore-case on' >> /etc/inputrc
+echo "set enable-keypad on" >> /etc/inputrc
 echo "[+] Downloading.. base packages"
 pacstrap -i /mnt base base-devel linux-lts linux-lts-headers linux-firmware intel-ucode git nano dhcpcd
 echo "[OK]"
