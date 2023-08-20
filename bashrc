@@ -65,6 +65,7 @@ alias uwgg='sudo wg-quick up wgg'
 alias ipd='sudo ip link set enp2s0 down'
 alias ipu='sudo ip link set enp2s0 up'
 # Mount
+alias mtp='aft-mtp-mount ~/sp'
 alias mountt='sudo mount /dev/sda7 ~/T -o noatime,umask=000'
 alias umountt='sudo umount ~/T'
 alias umountsd='sudo umount ~/sd'
