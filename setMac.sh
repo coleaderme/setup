@@ -5,5 +5,5 @@ then
     exit
 fi
 sudo ip link set $1 down
-sudo macchanger --mac $2
+sudo macchanger --mac=$2 $1
 sudo ip link set $1 up
