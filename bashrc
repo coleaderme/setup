@@ -66,7 +66,6 @@ alias ipd='sudo ip link set enp2s0 down'
 alias ipu='sudo ip link set enp2s0 up'
 alias ipa='sudo ./setIP.sh enp2s0 192.168.0.111 192.168.0.1'
 # Mount
-alias mtp='aft-mtp-mount ~/sp'
 alias mountt='sudo mount /dev/sda7 ~/T -o noatime,umask=000'
 alias umountt='sudo umount ~/T'
 alias umountsd='sudo umount ~/sd'
