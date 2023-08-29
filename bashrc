@@ -64,8 +64,18 @@ alias dwgg='sudo wg-quick down wgg'
 alias uwgg='sudo wg-quick up wgg'
 alias ipd='sudo ip link set enp2s0 down'
 alias ipu='sudo ip link set enp2s0 up'
+alias d6='sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1;sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1'
+# default ip
 alias ipa='sudo ./setIP.sh enp2s0 192.168.0.111 192.168.0.1'
+# for brigde mode
+# alias ipa='sudo ./setIP.sh enp2s0 192.168.1.11 192.168.1.1'
+alias mtu='sudo ip link set dev enp2s0 mtu'
+alias killdwm='kill -9 $(ps -a | rg dwm | choose 0)'
 # Mount
 alias mountt='sudo mount /dev/sda7 ~/T -o noatime,umask=000'
 alias umountt='sudo umount ~/T'
 alias umountsd='sudo umount ~/sd'
+# Extras
+alias ms="miniserve -u -F -l --hide-theme-selector -D -a=joe:passwd $(pwd)"
+alias rstemperature='xh -4 -p b -I --pretty=none "https://www.accuweather.com/COMPLETE_URL" | htmlq ".header-temp" --text'
+# export SSLKEYLOGFILE=~/.ssl-key.log
