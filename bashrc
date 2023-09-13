@@ -15,38 +15,44 @@ alias show_options='shopt'                  # Show_options: display bash options
 alias 7zx='7z x'
 alias rustcc="rustc -O -C prefer-dynamic"   # compact compiled size like C
 alias fz="fzf --algo=v1 -e | xsel -b"
-alias tfz='thunar "$(fzf --algo=v1 -e)"'
 alias ar='aria2c --http-auth-challenge=true --disable-ipv6=true --seed-time=0 --retry-wait=5 --summary-interval 5 --header="User-Agent: Mozilla/5.0" --file-allocation=falloc -c -j 4 -x 3 -s 3 -k 4M'
+alias rpcd='aria2c --enable-rpc --rpc-listen-all --disable-ipv6=true --seed-time=0 --retry-wait=5 --summary-interval 5 --file-allocation=falloc -c -j 4 -x 3 -s 3 -k 5M'
 alias cd..='cd ..'
 alias chx='chmod +x'
 alias cls='clear'
 alias dc='cd "$(dirname "$(fzf --algo=v1 -e)")"'
 alias fart='sd'
-alias ls='exa'
-alias la='exa -a'
-alias ll='exa -la'
+alias ls='eza'
+alias la='eza -a'
+alias ll='eza -la'
 alias mm='subl ~/.bashrc'
 alias mpc="mpv --profile=720p"
 alias mpv='mpv --no-audio-display'
-alias play='mpv --no-audio-display'
-alias myip='curl ifconfig.me && echo -e ""'
+alias pp='mpv --no-audio-display'
+alias play='mpv --no-audio-display --replaygain=album "$(fzf --no-sort -i -e --no-unicode --algo=v1)"'
+alias myip='curl icanhazip.com'
 alias off='sudo poweroff'
 alias pack='7z a -m0=copy'
 alias packx='7z a -m0=copy -p0000 -mhe'
 alias rg='rg -i'
 alias fd='fd -H'
+alias vi='vim'
 alias rat="bat -p"
 alias xsel='xsel -b'
+alias neofetch='fastfetch'
 alias so='source ~/.bashrc'
 alias wm='sudo nano /etc/X11/xinit/xinitrc'
 # YT
-alias yt="yt-dlp --restrict-filenames --cookies-from-browser chromium --downloader aria2c --external-downloader-args '-UMozilla/5.0 -c -j 4 -x 4 -s 4 -k 5M'"
+# alias yt="yt-dlp --restrict-filenames --cookies-from-browser chromium --downloader aria2c --external-downloader-args '-UMozilla/5.0 -c -j 4 -x 4 -s 4 -k 5M'"
+alias yt="yt-dlp --restrict-filenames --downloader aria2c --external-downloader-args '-UMozilla/5.0 -c -j 4 -x 4 -s 4 -k 5M'"
 alias ytx='yt-dlp -x --restrict-filenames'
 alias ytf='yt-dlp -F'
 alias ytd="yt-dlp --write-auto-subs --restrict-filenames --downloader aria2c --external-downloader-args '-UMozilla/5.0 -c -j 3 -x 3 -s 3 -k 5M'"
 alias ytt="yt-dlp -f 'bestvideo[height<=1080]+251' --restrict-filenames --downloader aria2c"
 alias ytl='yt-dlp --flat-playlist -i --print-to-file url yt_links.txt'
-alias yts='yt-dlp --write-auto-sub --skip-download'
+alias yts='yt-dlp -x --restrict-filenames --default-search "ytsearch" "$1"'
+alias ytsub='yt-dlp --write-auto-sub --skip-download'
+
 # Installs
 alias syy='sudo pacman -Syy'
 alias syu='sudo pacman -Syu'
@@ -65,17 +71,24 @@ alias uwgg='sudo wg-quick up wgg'
 alias ipd='sudo ip link set enp2s0 down'
 alias ipu='sudo ip link set enp2s0 up'
 alias d6='sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1;sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1'
-# default ip
-alias ipa='sudo ./setIP.sh enp2s0 192.168.0.111 192.168.0.1'
-# for brigde mode
-# alias ipa='sudo ./setIP.sh enp2s0 192.168.1.11 192.168.1.1'
+## default
+alias ipa='sudo ~/Desktop/Github/setup/setIP.sh enp2s0 192.168.0.111 192.168.0.1'
+
+# for sudo pppd call sainet [pppoe connect]
+# alias ipa='sudo ~/Desktop/Github/setup/setIP.sh enp2s0 192.168.1.35 192.168.1.1'
+
+## for brigde mode
+# alias ipa='sudo ~/Desktop/Github/setup/setIP.sh enp2s0 192.168.1.11 192.168.1.1'
+
 alias mtu='sudo ip link set dev enp2s0 mtu'
 alias killdwm='kill -9 $(ps -a | rg dwm | choose 0)'
 # Mount
 alias mountt='sudo mount /dev/sda7 ~/T -o noatime,umask=000'
 alias umountt='sudo umount ~/T'
 alias umountsd='sudo umount ~/sd'
-# Extras
-alias ms="miniserve -u -F -l --hide-theme-selector -D -a=joe:passwd $(pwd)"
-alias rstemperature='xh -4 -p b -I --pretty=none "https://www.accuweather.com/COMPLETE_URL" | htmlq ".header-temp" --text'
+# SECRET EXTRAS
+alias ms="miniserve -u -F -l --hide-theme-selector -D '$(pwd)'"
+alias replaygain='rsgain custom --skip-existing --tagmode=i --loudness=-14 --clip-mode=a --true-peak --opus-mode=d '
+# alias rstemperature='xh -4 -p b -I --pretty=none "https://www.accuweather.com/@@COMEPLETE_URL" | htmlq ".header-temp" --text'
 # export SSLKEYLOGFILE=~/.ssl-key.log
+source /home/dra/.config/broot/launcher/bash/br

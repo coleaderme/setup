@@ -299,8 +299,8 @@ include "/usr/share/nano/*.nanorc"
 ## such as ^O for Open, ^F for Find, ^H for Help, and ^Q for Quit,
 ## then uncomment these:
 #bind ^X cut main
-#bind ^C copy main
-#bind ^V paste all
+bind ^C copy main
+bind ^V paste all
 #bind ^Q exit all
 #bind ^S savefile main
 #bind ^W writeout main
