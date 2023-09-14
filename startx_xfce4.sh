@@ -5,6 +5,7 @@
 #
 sudo pacman -Syy
 sudo pacman -S xfce4
+
 #xinit entry
-sudo mv xinitrc_xfce4 /etc/X11/xinit/xinitrc
+sudo mv startx_xyz/xinitrc_xfce4 /etc/X11/xinit/xinitrc
 echo "You may reboot now."

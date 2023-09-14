@@ -8,12 +8,14 @@
 # > mkdir /boot/efi
 # > mount /dev/sdX1 /boot/efi
 # ==========================================================="
+# After doing steps above, you may run 'install_stage_two.sh'.
+#
 
-
+# user setup
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
-echo "[+_+] adding user 'dra' "
+echo "[+] Adding user 'dra' "
 useradd -m dra
-echo "[*_-] Enter passwd for USER"
+echo "[*] Enter passwd for 'dra'"
 passwd dra
 usermod -aG wheel,storage,power dra
 echo "Uncomment wheel allow group wheel something-line...wait 3 seconds"
@@ -26,7 +28,7 @@ locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
 echo arch > /etc/hostname
-mv hosts /etc/hosts
+mv etc/hosts /etc/hosts
 
 # grub setup
 pacman -S grub efibootmgr dosfstools mtools
