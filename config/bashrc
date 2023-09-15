@@ -86,7 +86,7 @@ alias mountt='sudo mount /dev/sda7 ~/T -o noatime,umask=000'
 alias umountt='sudo umount ~/T'
 alias umountsd='sudo umount ~/sd'
 # SECRET EXTRAS
-alias ms="miniserve -u -F -l --hide-theme-selector -D '$(pwd)'"
+alias ms="miniserve -u -F -l --hide-theme-selector -D ."
 alias replaygain='rsgain custom --skip-existing --tagmode=i --loudness=-14 --clip-mode=a --true-peak --opus-mode=d '
 # alias rstemperature='xh -4 -p b -I --pretty=none "https://www.accuweather.com/@@COMEPLETE_URL" | htmlq ".header-temp" --text'
 # export SSLKEYLOGFILE=~/.ssl-key.log
