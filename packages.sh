@@ -28,7 +28,7 @@ mv config/chromium-flags.conf ~/.config/
 mv config/code-flags.conf ~/.config/
 mv config/chrome-flags.conf ~/.config/
 mv config/autostart ~/.config/
-
+mv config/broot ~/.config/
 mkdir ~/Pictures
 mv scripts/scr.sh ~/Pictures/
 
