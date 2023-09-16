@@ -2,6 +2,7 @@
 sudo pacman -S feh
 # install dwm
 git clone https://github.com/coleaderme/dwm.git && cd dwm && sudo make install -j2
+sudo bash make_status_barM.sh
 cd ..
 # install st
 git clone https://github.com/LukeSmithxyz/st
