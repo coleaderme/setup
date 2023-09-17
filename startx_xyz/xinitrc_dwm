@@ -39,7 +39,7 @@ export XDG_SESSION_TYPE=x11
 export LANG=en_US.UTF-8
 export EDITOR=nano
 
-xset r rate 300 50 &
+xset r rate 180 42 &
 ~/.config/autostart/numlock.sh &
 ~/.config/autostart/clipmenud.sh &
 feh --bg-scale /usr/share/backgrounds/xfce/Supernatural-Wallpaper.png &
