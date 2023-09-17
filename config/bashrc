@@ -91,3 +91,5 @@ alias replaygain='rsgain custom --skip-existing --tagmode=i --loudness=-14 --cli
 # alias rstemperature='xh -4 -p b -I --pretty=none "https://www.accuweather.com/@@COMEPLETE_URL" | htmlq ".header-temp" --text'
 # export SSLKEYLOGFILE=~/.ssl-key.log
 source /home/dra/.config/broot/launcher/bash/br
+## fzf show hidden
+#export FZF_DEFAULT_COMMAND="find -L"
