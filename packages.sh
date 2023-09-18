@@ -11,7 +11,7 @@ echo "run as USER on first login"
 echo "========================================================"
 # Installs
 sudo pacman -Syy
-sudo pacman -S --needed xorg-server xorg-xinit ntfs-3g ttf-inconsolata ttf-arphic-ukai ttf-indic-otf ttf-linux-libertine noto-fonts-emoji alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot aria2 python yt-dlp python-brotli mpv dmenu clipmenu htop p7zip tealdeer ripgrep fd choose broot numlockx
+sudo pacman -S --needed xorg-server xorg-xinit ntfs-3g ttf-inconsolata ttf-arphic-ukai ttf-indic-otf ttf-linux-libertine noto-fonts-emoji alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot aria2 python yt-dlp python-brotli mpv dmenu clipmenu htop p7zip tealdeer ripgrep fd choose broot numlockx earlyoom
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -sic
 yay -S brave-bin
 # yay -S ungoogled-chromium-bin
