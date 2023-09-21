@@ -19,8 +19,12 @@ useradd -m dra
 echo "[*] Enter passwd for 'dra'"
 passwd dra
 usermod -aG wheel,storage,power dra
-echo "Uncomment wheel allow group wheel something-line...wait 3 seconds"
-sleep 3
+echo "Uncomment...wait 5 seconds to open."
+echo "========================="
+echo "%wheel ALL=(ALL:ALL) ALL"
+echo "========================="
+echo "this line ^^ somewhere at end of the file."
+sleep 5
 EDITOR=nano visudo
 
 # locale
@@ -41,6 +45,8 @@ systemctl enable dhcpcd.service
 
 # exit
 echo "======================================================="
+echo "Base installation is done!"
+echo "types these commands and eject USB"
 echo "> exit"
 echo "> umount -lR /mnt"
 echo "> reboot"

@@ -1,6 +1,9 @@
 # setup
+## Overview : 
+**NOT meant for others, though process if very simple, can be tailored for any other systems.**
 
-## Pre-requisites before using script:
+
+## Pre-requisites before using script : 
 
 **Manage your own disk partition**
 
@@ -12,14 +15,14 @@ i.e. mounting:
 
 (Swap is not recommended)       
 
-__note: /dev/sdXY **XY** can be different.__
-make changes according to your setup carefully.
+*note: /dev/sdXY **XY** can be different.*
+Make changes according to your setup carefully.
 
 ### How to manage disk partition:
 
-`cfdisk /dev/sdX` X is physical disk on which you desire to make partitions.
+`cfdisk /dev/sdX` X is disk(such as 512GB HDD/SSD) on which you've to create partitions.
 
-to verify partition `lsblk`.
+`lsblk` to verify.
 
 You should see similar to this ->
 
@@ -38,15 +41,26 @@ You should see similar to this ->
 - `mkdir /mnt/home`
 - `mount /dev/sda2 /mnt`
 - `mount /dev/sda3 /mnt/home`
+
 `lsblk` to verify.
 
 **Read each script before running it.**
   :)
 
 ## Slow download speed?:
-`pacman -S reflector rsync`
+`pacman -S --needed reflector rsync`
 
 `reflector --threads 5 --sort rate --country AU,GB --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`
+
+After doing all these you may now execute `install_stage_one.sh`
+
+`arch-chroot`
+**mount partition with ~100MB size**
+
+- `mkdir /boot/efi`
+- `mount /dev/sdX1 /boot/efi`
+
+You may now execute `install_stage_two.sh`
 
 ### google docs useful-stuff-found-mini-wiki:
 https://docs.google.com/document/d/1n4g8nYFDroHMy6fbYHAyRVx64HswYeQoAvtRxHw_EsM/edit
