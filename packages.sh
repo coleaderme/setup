@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 #
 # This file should be in HOME directory of USER.
 # to avoid permission hassle, re-clone this in '~/' as USER.
@@ -11,7 +11,12 @@ echo "run as USER on first login"
 echo "========================================================"
 # Installs
 sudo pacman -Syy
-sudo pacman -S --needed xorg-server xorg-xinit ntfs-3g ttf-inconsolata ttf-arphic-ukai ttf-indic-otf ttf-linux-libertine noto-fonts-emoji alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot aria2 python yt-dlp python-brotli mpv dmenu clipmenu htop p7zip tealdeer ripgrep fd choose broot numlockx earlyoom
+sudo pacman -S --needed xorg-server xorg-xinit ntfs-3g \
+ttf-inconsolata ttf-arphic-ukai ttf-indic-otf ttf-linux-libertine noto-fonts-emoji \
+alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
+aria2 python yt-dlp python-brotli mpv dmenu clipmenu htop p7zip \
+tealdeer ripgrep fd choose broot numlockx earlyoom
+
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -sic
 yay -S brave-bin
 # yay -S ungoogled-chromium-bin
@@ -31,6 +36,7 @@ mv config/autostart ~/.config/
 mv config/broot ~/.config/
 mkdir ~/Pictures
 mv scripts/scr.sh ~/Pictures/
+mv scripts ~/
 
 echo "echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor" >> ~/.bash_profile
 echo "startx" >> ~/.bash_profile

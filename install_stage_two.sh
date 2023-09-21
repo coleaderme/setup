@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 #
 # RUN in arch-chroot
 #
@@ -13,6 +13,7 @@
 
 # user setup
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+ln -sf /usr/bin/dash /usr/bin/sh
 echo "[+] Adding user 'dra' "
 useradd -m dra
 echo "[*] Enter passwd for 'dra'"

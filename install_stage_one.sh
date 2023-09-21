@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 #
 # [!] FOR INTEL CPU only!
 # for AMD CPU replace 'intel-ucode' with 'amd-ucode' in 'pacstrap' command
@@ -20,7 +20,7 @@ echo "set completion-ignore-case on" >> /etc/inputrc
 echo "set enable-keypad on" >> /etc/inputrc
 
 echo "[+] Downloading.. base packages"
-pacstrap -i /mnt base base-devel linux-lts linux-lts-headers linux-firmware intel-ucode git nano dhcpcd
+pacstrap -i /mnt base base-devel linux-lts linux-lts-headers linux-firmware intel-ucode git nano dhcpcd dash
 echo "[OK]"
 echo "[+] Generating fstab"
 genfstab -U /mnt >> /mnt/etc/fstab

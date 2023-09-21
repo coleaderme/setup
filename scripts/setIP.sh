@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 if [[ $1 == '' ]]
 then
     echo -e "USAGE:\n ./setIP.sh eth0 192.168.0.110 192.168.0.1\n\n(resets on reboot)"
