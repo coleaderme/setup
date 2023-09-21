@@ -3,17 +3,22 @@
 ## Pre-requisites before using script:
 
 **Manage your own disk partition**
+
 i.e. mounting:
+
     /dev/sdX1 --> /boot # 100 MB
     /dev/sdX2 --> / (root) # about 8-16 GB is sufficient for average install.
     /dev/sdX3 --> /home # rest or desired space goes for user(s).
+
 (Swap is not recommended)       
+
 __note: /dev/sdXY **XY** can be different.__
 make changes according to your setup carefully.
 
 ### How to manage disk partition:
 
-use `cfdisk /dev/sdX` # X is physical disk on which you desire to make partitions.
+`cfdisk /dev/sdX` X is physical disk on which you desire to make partitions.
+
 to verify partition `lsblk`.
 
 You should see similar to this ->
@@ -25,8 +30,8 @@ You should see similar to this ->
     └─sda3   8:3    0    64G  0 part 
 
 ### Formatting with EXT4 FileSytem :
-- `mkfs.ext4 /dev/sda2` # note: /dev/sdXY **XY** can be different.
-- `mkfs.ext4 /dev/sda3` # note: /dev/sdXY **XY** can be different.
+- `mkfs.ext4 /dev/sda2` note: /dev/sdXY **XY** can be different.
+- `mkfs.ext4 /dev/sda3` note: /dev/sdXY **XY** can be different.
 
 ### Mount :
 - `mkdir /mnt`
@@ -36,10 +41,11 @@ You should see similar to this ->
 `lsblk` to verify.
 
 **Read each script before running it.**
-:)
+  :)
 
 ## Slow download speed?:
 `pacman -S reflector rsync`
+
 `reflector --threads 5 --sort rate --country AU,GB --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`
 
 ### google docs useful-stuff-found-mini-wiki:
