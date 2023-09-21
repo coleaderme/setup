@@ -9,9 +9,6 @@
 echo "[+] Setting timezone"
 timedatectl set-timezone Asia/Kolkata
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-alias rank="rankmirrors -n 5 /etc/pacman.d/mirrorlist.bak >> /etc/pacman.d/mirrorlist"
-echo "[*] If download is slow, type: rank"
-echo ''
 echo "[+] Moving configs to /etc/"
 mv etc/nanorc /etc/
 mv etc/resolv.conf /etc/
