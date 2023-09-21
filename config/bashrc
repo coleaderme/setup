@@ -3,8 +3,6 @@
 #
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-# PS1='[\u@\h \W]\$ '
 PS1='\W \$ '
 #oh-my-bash
 alias less='less -FSRXc'                    # Preferred 'less' implementation
@@ -20,7 +18,7 @@ alias rpcd='aria2c --enable-rpc --rpc-listen-all --disable-ipv6=true --seed-time
 alias cd..='cd ..'
 alias chx='chmod +x'
 alias cls='clear'
-alias dc='cd "$(dirname "$(fzf --algo=v1 -e)")"'
+alias dc='f=$(fd -H | fzf --algo=v1 -i -e) && [ -z "$f" ] && exit || cd "$f" || cd "$(dirname "$f")"'
 alias fart='sd'
 alias ls='eza'
 alias la='eza a'
@@ -28,7 +26,6 @@ alias ll='eza la'
 alias mm='subl ~/.bashrc'
 alias mpc="mpv --profile=720p"
 alias mpv='mpv --no-audio-display'
-alias pp='mpv --no-audio-display'
 alias play='mpv --no-audio-display --replaygain=album "$(fzf --no-sort -i -e --no-unicode --algo=v1)"'
 alias myip='curl icanhazip.com'
 alias off='sudo poweroff'
@@ -37,8 +34,9 @@ alias packx='7z a -m0=copy -p0000 -mhe'
 alias rg='rg -i'
 alias fd='fd -H'
 alias rat="bat -p"
-alias xsel='xsel -b'
+# alias xsel='xsel -b'
 alias neofetch='fastfetch'
+alias countdown='termdown -e --text "DONE"'
 alias so='source ~/.bashrc'
 alias wm='sudo nano /etc/X11/xinit/xinitrc'
 # YT
@@ -69,6 +67,7 @@ alias dwgg='sudo wg-quick down wgg'
 alias uwgg='sudo wg-quick up wgg'
 alias ipd='sudo ip link set enp2s0 down'
 alias ipu='sudo ip link set enp2s0 up'
+alias mtu='sudo ip link set dev enp2s0 mtu'
 alias d6='sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1;sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1'
 ## default
 alias ipa='sudo ~/Desktop/Github/setup/setIP.sh enp2s0 192.168.0.111 192.168.0.1'
@@ -79,17 +78,15 @@ alias ipa='sudo ~/Desktop/Github/setup/setIP.sh enp2s0 192.168.0.111 192.168.0.1
 ## for brigde mode
 # alias ipa='sudo ~/Desktop/Github/setup/setIP.sh enp2s0 192.168.1.11 192.168.1.1'
 
-alias mtu='sudo ip link set dev enp2s0 mtu'
-alias killdwm='kill -9 $(ps -a | rg dwm | choose 0)'
+alias killdwm='killall dwm'
+# alias ka='killall at-spi-bus-launcher;killall gvfsd;killall chrome_crashpad_handler;killall gvfsd-metadata;killall pipewire'
+
 # Mount
 alias mountt='sudo mount /dev/sda7 ~/T -o noatime,umask=000'
 alias umountt='sudo umount ~/T'
 alias umountsd='sudo umount ~/sd'
 # SECRET EXTRAS
 alias ms="miniserve -u -F -l --hide-theme-selector -D ."
-alias replaygain='rsgain custom --skip-existing --tagmode=i --loudness=-14 --clip-mode=a --true-peak --opus-mode=d '
+alias replaygain='rsgain custom --skip-existing --tagmode=i --loudness=-12 --clip-mode=a --true-peak --opus-mode=d '
 # alias rstemperature='xh -4 -p b -I --pretty=none "https://www.accuweather.com/@@COMEPLETE_URL" | htmlq ".header-temp" --text'
 # export SSLKEYLOGFILE=~/.ssl-key.log
-source /home/dra/.config/broot/launcher/bash/br
-## fzf show hidden
-#export FZF_DEFAULT_COMMAND="find -L"
