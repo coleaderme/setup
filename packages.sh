@@ -34,6 +34,7 @@ mv config/code-flags.conf ~/.config/
 mv config/chrome-flags.conf ~/.config/
 mv config/autostart ~/.config/
 mv config/broot ~/.config/
+mv config/fd ~/.config/
 mkdir ~/Pictures
 mv scripts/scr.sh ~/Pictures/
 mv scripts ~/

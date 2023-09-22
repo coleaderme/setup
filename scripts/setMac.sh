@@ -1,5 +1,5 @@
 #!/usr/bin/sh
-if [[ $1 == '' ]]
+if [ -z $1 ]
 then
     echo -e "USAGE:\n ./setMac.sh eth0 XX:XX:XX:XX:XX\n\n(resets on reboot)"
     exit
