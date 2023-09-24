@@ -15,7 +15,7 @@ sudo pacman -S --needed xorg-server xorg-xinit ntfs-3g \
 ttf-inconsolata ttf-arphic-ukai ttf-indic-otf ttf-linux-libertine noto-fonts-emoji \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
 aria2 python yt-dlp python-brotli mpv dmenu clipmenu htop p7zip \
-tealdeer ripgrep fd choose broot numlockx earlyoom
+tealdeer ripgrep fd choose lf numlockx earlyoom
 
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -sic
 yay -S brave-bin
@@ -35,6 +35,7 @@ mv config/chrome-flags.conf ~/.config/
 mv config/autostart ~/.config/
 mv config/broot ~/.config/
 mv config/fd ~/.config/
+mv config/lf ~/.config/
 mkdir ~/Pictures
 mv scripts/scr.sh ~/Pictures/
 mv scripts ~/

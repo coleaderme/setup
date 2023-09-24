@@ -1,0 +1,53 @@
+## quick hotkeys ##
+# y: copy
+# d: cut
+# p: paste
+# w: cd into folder
+# c: copy fullpath name
+# space: make selection (toggles)
+# v: invert selection
+# u: unselect all
+# del: delete
+# C: reload config
+# alt+n: new folder with selection
+# alt+h: toggle hidden
+# o: open with cli app
+# O: open with gui app
+
+cmd copy_to_clipboard %{{
+    if type pbcopy > /dev/null 2>&1; then
+    printf '%s' "$f" | pbcopy
+    elif type xsel > /dev/null 2>&1; then
+    printf '%s' "$f" | xsel -ib
+    fi
+}}
+## Copy fullpath name to clipboard
+map c :copy_to_clipboard
+
+map <delete> :delete
+
+cmd open-with-gui &$@ $fx ## opens with a gui application outside lf client
+cmd open-with-cli $$@ $fx ## opens with a cli application inside lf client
+map O push :open-with-gui<space> ## input application
+map o push :open-with-cli<space> ## input application
+
+
+## new folder with selected (t) 
+map <a-n> newfold
+
+cmd newfold ${{
+    set -f
+    read newd
+    printf "Directory name: "
+    mkdir -- "$newd"
+    mv -- $fx "$newd"
+}}
+
+cmd edit-config ${{
+    $EDITOR ~/.config/lf/lfrc
+    lf -remote "send $id source ~/.config/lf/lfrc"
+}}
+
+map C edit-config
+
+map <a-h> :set hidden!
