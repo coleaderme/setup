@@ -2,8 +2,9 @@
 # y: copy
 # d: cut
 # p: paste
+# x: clear
 # w: cd into folder
-# c: copy fullpath name
+# alt-f: copy fullpath name
 # space: make selection (toggles)
 # v: invert selection
 # u: unselect all
@@ -22,7 +23,7 @@ cmd copy_to_clipboard %{{
     fi
 }}
 ## Copy fullpath name to clipboard
-map c :copy_to_clipboard
+map <a-f> :copy_to_clipboard
 
 map <delete> :delete
 
@@ -51,3 +52,5 @@ cmd edit-config ${{
 map C edit-config
 
 map <a-h> :set hidden!
+
+map x :clear
