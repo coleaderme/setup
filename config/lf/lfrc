@@ -2,7 +2,7 @@
 # y: copy
 # d: cut
 # p: paste
-# x: clear
+# c: clear
 # w: cd into folder
 # alt-f: copy fullpath name
 # space: make selection (toggles)
@@ -53,4 +53,4 @@ map C edit-config
 
 map <a-h> :set hidden!
 
-map x :clear
+map c :clear
