@@ -83,7 +83,6 @@ alias ipa='sudo ~/Desktop/Github/setup/setIP.sh enp2s0 192.168.0.111 192.168.0.1
 
 alias killdwm='killall dwm'
 # alias ka='killall at-spi-bus-launcher;killall gvfsd;killall chrome_crashpad_handler;killall gvfsd-metadata;killall pipewire'
-
 # Mount
 alias mountt='sudo mount /dev/sda7 ~/T -o noatime,umask=000'
 alias umountt='sudo umount ~/T'
@@ -93,3 +92,7 @@ alias ms="miniserve -u -F -l --hide-theme-selector -D ."
 alias replaygain='rsgain custom --skip-existing --tagmode=i --loudness=-12 --clip-mode=a --true-peak --opus-mode=d '
 # alias rstemperature='xh -4 -p b -I --pretty=none "https://www.accuweather.com/@@COMEPLETE_URL" | htmlq ".header-temp" --text'
 # export SSLKEYLOGFILE=~/.ssl-key.log
+export XDG_SESSION_TYPE=x11
+export VISUAL=subl
+export EDITOR=subl
+export LANG=en_US.UTF-8
