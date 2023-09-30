@@ -34,6 +34,7 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
 echo arch > /etc/hostname
 mv etc/hosts /etc/hosts
+mv etc/sysctl.conf /etc/sysctl.conf
 
 # grub setup
 pacman -S grub efibootmgr dosfstools mtools
