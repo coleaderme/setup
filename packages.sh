@@ -25,6 +25,7 @@ wget "https://github.com/eza-community/eza/releases/download/v0.11.1/eza_x86_64-
 echo "[+] moving confs to ~/.config"
 mv config/psd ~/.config/
 mv config/bashrc ~/.bashrc
+mv config/zshrc ~/.zshrc
 mv config/mpv ~/.config/
 mv config/htop ~/.config/
 mv config/angrysearch ~/.config/
