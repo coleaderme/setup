@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 sudo pacman -S feh
 # install dwm
 git clone https://github.com/coleaderme/dwm.git && cd dwm && sudo make install -j2

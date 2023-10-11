@@ -18,7 +18,7 @@ i.e. mounting:
 *note: /dev/sdXY **XY** can be different.*
 Make changes according to your setup carefully.
 
-### How to manage disk partition:
+#### How to manage disk partition:
 
 `cfdisk /dev/sdX` X is disk(such as 512GB HDD/SSD) on which you've to create partitions.
 
@@ -28,15 +28,15 @@ You should see similar to this ->
 
     NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
     sda      8:0    0 498.1G  0 disk
-    ├─sda1   8:1    0   100M  0 part
-    ├─sda2   8:2    0    16G  0 part 
-    └─sda3   8:3    0    64G  0 part 
+    ├─sda1   8:1    0   100M  0 part    # /boot
+    ├─sda2   8:2    0    16G  0 part    # /
+    └─sda3   8:3    0    64G  0 part    # /home
 
-### Formatting with EXT4 FileSytem :
+#### Formatting with EXT4 FileSytem :
 - `mkfs.ext4 /dev/sda2` note: /dev/sdXY **XY** can be different.
 - `mkfs.ext4 /dev/sda3` note: /dev/sdXY **XY** can be different.
 
-### Mount :
+#### Mount :
 - `mkdir /mnt`
 - `mkdir /mnt/home`
 - `mount /dev/sda2 /mnt`
@@ -47,12 +47,13 @@ You should see similar to this ->
 **Read each script before running it.**
   :)
 
-## Slow download speed?:
+## Fix slow download speeds:
 `pacman -S --needed reflector rsync`
 
-`reflector --threads 5 --sort rate --country AU,GB --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`
+`reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`
 
-After doing all these you may now execute `install_stage_one.sh`
+## Lets get started: 
+`install_stage_one.sh`
 
 `arch-chroot`
 **mount partition with ~100MB size**
@@ -60,7 +61,19 @@ After doing all these you may now execute `install_stage_one.sh`
 - `mkdir /boot/efi`
 - `mount /dev/sdX1 /boot/efi`
 
-You may now execute `install_stage_two.sh`
+**Post-chroot**: `install_stage_two.sh`
 
-### google docs useful-stuff-found-mini-wiki:
+Arch linux installed successfully.
+If all went well, you should be able to login with user and passwd (not shown).  
+Welcome to tty! (blank terminal)
+
+## On first time user login:  
+`packages.sh`: Installs basic programs and copy their configs.
+
+## Choose your desktop:
+`startx_dwm.sh`    [ultrafast, extreme lightweight, tiling]"
+`startx_i3-wm.sh`  [fast, lightweight, tiling]"
+`startx_xfce4.sh`  [normal, desktop, windows]"
+
+# google docs useful-stuff-mini-wiki:
 https://docs.google.com/document/d/1n4g8nYFDroHMy6fbYHAyRVx64HswYeQoAvtRxHw_EsM/edit
