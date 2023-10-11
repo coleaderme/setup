@@ -42,18 +42,17 @@ You should see similar to this ->
 - `mount /dev/sda2 /mnt`
 - `mount /dev/sda3 /mnt/home`
 
-`lsblk` to verify.
+`lsblk` to verify.  
 
-**Read each script before running it.**
+**Read each script before running it.**  
   :)
 
-## Fix slow download speeds:
-`pacman -S --needed reflector rsync`
-
-`reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`
+## Fix slow download speeds:  
+`pacman -S --needed reflector rsync`  
+`reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`  
 
 ## Lets get started: 
-`install_stage_one.sh`
+`install_stage_one.sh`  
 
 `arch-chroot`  
 Mount partition with ~100MB size:  
@@ -62,12 +61,12 @@ Mount partition with ~100MB size:
 
 **Post-chroot**: `install_stage_two.sh`
 
-Arch linux installed successfully.
+Arch linux installed successfully.  
 If all went well, you should be able to login with user and passwd (not shown).  
-Welcome to tty! (blank terminal)
+Welcome to tty! (blank terminal)  
 
 ## On first time user login:  
-`packages.sh`: Installs basic programs and copy their configs.
+`packages.sh`: Installs basic programs and copy their configs.  
 
 ## Choose your desktop:  
 `startx_dwm.sh`    [ultrafast, extreme lightweight, tiling]  
