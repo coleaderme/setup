@@ -6,7 +6,6 @@
 ## faster (now 7.7x), original (4x)
 ffmpeg -i "$1" -filter:v scale=$2:-1 -c:v prores_ks -profile:v 0 -vendor apl0 -q 4 -pix_fmt yuv422p10le "$1_$2.mov"
 ##############################################################
-## OG: 1280x720: 3.5MB, 20s (cropped version)
 ## pro res 422 proxy
 ## original
 # ffmpeg -i Chiropractors.mp4 -c:v prores_ks -profile:v 0 -vendor apl0 -bits_per_mb 8000 -pix_fmt yuv422p10le output.mov
