@@ -28,7 +28,7 @@ alias la='eza a'
 alias ll='eza la'
 alias mm='subl ~/.bashrc'
 alias mpc="mpv --profile=720p"
-alias mpv='mpv --no-audio-display'
+alias mpv='mpv --no-audio-display --volume=85 --replaygain-clip=yes --replaygain=album '
 alias play='m="$(fd -tf -e mp3 -e opus -e m4a -e flac -e wav -e mkv -e webm -e mp4 -e m4v -a | fzf --algo=v1 -i -e)"; [ -z $m ] || mpv --replaygain=album --no-audio-display "$m"'
 alias myip='curl icanhazip.com'
 alias off='sudo poweroff'
