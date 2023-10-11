@@ -56,8 +56,7 @@ You should see similar to this ->
 `install_stage_one.sh`
 
 `arch-chroot`  
-**mount partition with ~100MB size**
-
+Mount partition with ~100MB size:  
 - `mkdir /boot/efi`
 - `mount /dev/sdX1 /boot/efi`
 
@@ -70,7 +69,7 @@ Welcome to tty! (blank terminal)
 ## On first time user login:  
 `packages.sh`: Installs basic programs and copy their configs.
 
-## Choose your desktop:
+## Choose your desktop:  
 `startx_dwm.sh`    [ultrafast, extreme lightweight, tiling]  
 `startx_i3-wm.sh`  [fast, lightweight, tiling]  
 `startx_xfce4.sh`  [normal, desktop, windows]  
