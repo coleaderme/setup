@@ -57,8 +57,8 @@ You should see similar to this ->
 
 `arch-chroot`  
 Mount partition with ~100MB size:  
-- `mkdir /boot/efi`
-- `mount /dev/sdX1 /boot/efi`
+`mkdir /boot/efi`
+`mount /dev/sdX1 /boot/efi`
 
 **Post-chroot**: `install_stage_two.sh`
 
