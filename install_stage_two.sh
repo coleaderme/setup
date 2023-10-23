@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 #
-# RUN in arch-chroot
+# RUN in arch-chroot /mnt
 #
 # Before running this..
 # ==========================================================="
@@ -10,6 +10,17 @@
 # ==========================================================="
 # After doing steps above, you may run 'install_stage_two.sh'.
 #
+
+
+# mount /boot/efi
+echo "[Choose] /boot partition ~100MB"
+sleep 1
+echo "wait 3 seconds for prompt.."
+sleep 3
+d=$(lsblk -l | fzf | cut -c 1-4)
+echo "Selected: /dev/$d"
+mkdir /boot/efi
+mount /dev/$d /boot/efi
 
 # user setup
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
@@ -24,7 +35,7 @@ echo "========================="
 echo "%wheel ALL=(ALL:ALL) ALL"
 echo "========================="
 echo "this line ^^ somewhere at end of the file."
-sleep 5
+sleep 3
 EDITOR=nano visudo
 
 # locale
