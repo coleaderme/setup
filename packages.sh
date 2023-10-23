@@ -11,10 +11,10 @@ echo "run as USER on first login"
 echo "========================================================"
 # Installs
 sudo pacman -Syy
-sudo pacman -S --needed xorg-server xorg-xinit ntfs-3g \
+sudo pacman -S --needed xorg-server xorg-xinit xorg-xset ntfs-3g \
 ttf-inconsolata noto-fonts noto-fonts-emoji \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
-aria2 python yt-dlp python-brotli mpv dmenu clipmenu htop p7zip \
+aria2 mpv dmenu clipmenu htop p7zip \
 tealdeer ripgrep fd choose lf numlockx earlyoom thunar
 ## required for android devices: android-tools gvfs gvfs-mtp
 ## woeusb: windows usb
