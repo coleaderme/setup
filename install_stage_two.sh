@@ -1,16 +1,12 @@
 #!/usr/bin/sh
-#
+# sh install_stage_two.sh
+
 # RUN in arch-chroot /mnt
-#
-# Before running this..
 # ==========================================================="
 # * mount partition with ~100MB size *
 # > mkdir /boot/efi
 # > mount /dev/sdX1 /boot/efi
 # ==========================================================="
-# After doing steps above, you may run 'install_stage_two.sh'.
-#
-
 
 # mount /boot/efi
 echo "[Choose] /boot partition ~100MB"
@@ -30,13 +26,8 @@ useradd -m dra
 echo "[*] Enter passwd for 'dra'"
 passwd dra
 usermod -aG wheel,storage,power dra
-echo "Uncomment...wait 5 seconds to open."
-echo "========================="
-echo "%wheel ALL=(ALL:ALL) ALL"
-echo "========================="
-echo "this line ^^ somewhere at end of the file."
-sleep 3
-EDITOR=nano visudo
+sd -s '# %wheel ALL=(ALL:ALL) ALL' '%wheel ALL=(ALL:ALL) ALL' /etc/sudoers
+sd -s '# %wheel ALL=(ALL:ALL) NOPASSWD: ALL' '%wheel ALL=(ALL:ALL) NOPASSWD: ALL' /etc/sudoers
 
 # locale
 echo "en_US.UTF-8" >> /etc/locale.gen
