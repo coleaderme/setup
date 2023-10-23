@@ -21,7 +21,7 @@ sleep 1
 echo "wait 3 seconds for prompt.."
 sleep 3
 r=$(lsblk -l | fzf | cut -c 1-4)
-echo "Selected: /dev/$d"
+echo "Selected: /dev/$r"
 mount /dev/$r /mnt
 
 ## /home 
