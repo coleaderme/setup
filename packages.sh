@@ -3,7 +3,7 @@
 # This file should be in HOME directory of USER.
 # to avoid permission hassle, re-clone this in '~/' as USER.
 #
-# Common packages for all environments.
+# Common Programs.
 #
 
 echo "========================================================"
@@ -18,7 +18,7 @@ aria2 python yt-dlp python-brotli mpv dmenu clipmenu htop p7zip \
 tealdeer ripgrep fd choose lf numlockx earlyoom thunar
 ## required for android devices: android-tools gvfs gvfs-mtp
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -sic
-yay -S ungoogled-chromium-bin
+## yay -S ungoogled-chromium-bin
 wget "https://github.com/eza-community/eza/releases/download/v0.11.1/eza_x86_64-unknown-linux-gnu.tar.gz" && tar -xf eza* && sudo mv eza /usr/bin/
 # config files / dotfiles
 echo "[+] moving confs to ~/.config"
@@ -29,6 +29,7 @@ mv config/htop ~/.config/
 mv config/angrysearch ~/.config/
 mv config/sublime-text ~/.config/
 mv config/chromium-flags.conf ~/.config/
+mv config/thorium-flags.conf ~/.config/
 mv config/code-flags.conf ~/.config/
 mv config/chrome-flags.conf ~/.config/
 mv config/autostart ~/.config/
