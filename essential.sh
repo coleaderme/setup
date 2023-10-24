@@ -8,5 +8,5 @@ echo "+++Installing essential tools+++"
 echo "================================"
 pacman -Syy
 pacman -S --needed pacman-contrib reflector rsync sd fzf
-reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist
+reflector --threads 5 --sort rate --country AU,GB,IN --age 12 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist
 echo 1 >> already_ran_reflector.txt
