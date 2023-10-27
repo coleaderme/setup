@@ -15,7 +15,7 @@ sudo pacman -S --needed xorg-server xorg-xinit xorg-xset ntfs-3g \
 ttf-inconsolata noto-fonts noto-fonts-emoji \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
 aria2 mpv dmenu clipmenu htop p7zip \
-tealdeer ripgrep fd choose lf numlockx earlyoom thunar eza
+tealdeer ripgrep fd sd choose lf numlockx earlyoom thunar eza
 ## required for android devices: android-tools gvfs gvfs-mtp
 ## woeusb: windows usb
 ## usbimager: linux usb
