@@ -38,8 +38,9 @@ if not (mp.get_property("options/lavfi-complex", "") == "") then
     return
 end
 
+-- # Commented, crashes when cycles to off.
 local visualizer_name_list = {
-    "off",
+   -- "off",
     "showcqt",
     "avectorscope",
     "showspectrum",
