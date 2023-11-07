@@ -13,7 +13,7 @@ open(){
 case "$1" in
     *\.sh|*\.py|*\.c|*\.h|*\.rs|*\.js|*\.txt|*\.toml|*\.conf|*rc|*\.md) subl "$1" ;;
     *\.gif|*\.webm|*\.mkv|*\.mp4|*\.m4v) mpv --no-audio-display --volume=85 --replaygain-clip=yes --replaygain=album "$1" ;;
-    *\.flac|*\.m4a|*\.ogg|*\.opus|*\.mp3) audacious ;;
+    *\.flac|*\.m4a|*\.ogg|*\.opus|*\.mp3) audacious "$1" ;;
     *\.jpg|*\.png|*\.webp) viewnior "$1" ;;
     *) echo "Unknown filetype: '$1'" | dmenu -p "_>" -l 1 -fn InconsolataSemiCondensedBold ;;
 esac
