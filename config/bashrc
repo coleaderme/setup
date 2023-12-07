@@ -81,7 +81,8 @@ alias ipd='sudo ip link set enp2s0 down'
 alias ipu='sudo ip link set enp2s0 up'
 alias mtu='sudo ip link set dev enp2s0 mtu'
 alias rankmirrors='sudo reflector --threads 4 --sort rate --download-timeout 5 --country AU,UK --age 6 --fastest 10 --ipv4 --save /etc/pacman.d/mirrorlist'
-alias d6='sudo sysctl net.ipv6.conf.default.disable_ipv6=1;sudo sysctl net.ipv6.conf.all.disable_ipv6=1;sudo sysctl net.ipv4.tcp_fastopen=3;'
+## change mtu from 1500 to 1492 (tested with wireshark)
+alias d6='sudo sysctl net.ipv6.conf.default.disable_ipv6=1;sudo sysctl net.ipv6.conf.all.disable_ipv6=1;sudo sysctl net.ipv4.tcp_fastopen=3;sudo sysctl net.ipv4.tcp_mtu_probing=1'
 ## default
 alias ipa='sudo ~/Desktop/Github/setup/setIP.sh enp2s0 192.168.0.111 192.168.0.1'
 
