@@ -13,7 +13,7 @@ open(){
 case "$1" in
     *\.sh|*\.py|*\.c|*\.h|*\.rs|*\.js|*\.txt|*\.toml|*\.conf|*rc|*\.md) subl "$1" ;;
     *\.gif|*\.webm|*\.mkv|*\.mp4|*\.m4v) mpv --no-audio-display --volume=85 "$1" ;;
-    *\.flac|*\.m4a|*\.ogg|*\.opus|*\.wav|*\.mp3) audacious "$1" ;;
+    *\.flac|*\.m4a|*\.ogg|*\.opus|*\.wav|*\.mp3) audacious -e "$1" ;;
     *\.jpg|*\.png|*\.webp) viewnior "$1" ;;
     *) echo "Unknown filetype: '$1'" | dmenu -p "_>" -i -l 1 ;;
 esac
@@ -36,8 +36,9 @@ open_in_explorer(){
 
 rename(){
     fpath="$(dirname "$1")"
+    ext="$(echo "$1" | choose -f '\.' -1)"
     new_name="$(echo "$1" | dmenu -p "Rename as:" -i -l 1)"
-    mv "$1" "$fpath/$new_name"
+    mv "$1" "$fpath/$new_name.$ext"
 }
 
 delete(){
