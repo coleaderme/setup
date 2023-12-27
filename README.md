@@ -1,3 +1,6 @@
+# google docs useful-stuff-mini-wiki:
+https://docs.google.com/document/d/1n4g8nYFDroHMy6fbYHAyRVx64HswYeQoAvtRxHw_EsM/edit
+
 # setup
 ## Overview : 
 **NOT meant for others, though process if very simple, can be tailored for any other systems.**
@@ -73,5 +76,3 @@ Welcome to tty! (blank terminal)
 `startx_i3-wm.sh`  [fast, lightweight, tiling]  
 `startx_xfce4.sh`  [normal, desktop, windows]  
 
-# google docs useful-stuff-mini-wiki:
-https://docs.google.com/document/d/1n4g8nYFDroHMy6fbYHAyRVx64HswYeQoAvtRxHw_EsM/edit
