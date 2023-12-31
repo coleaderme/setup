@@ -128,3 +128,5 @@ export OPENSSL_CONF=/dev/null # for phantomjs
 #
 # ExecStart=-/sbin/agetty -a dra - $TERM
 #
+## mp3 conv:: ffmpeg -i input.m4a -acodec libmp3lame -b:a 320k out.mp3
+## add audio to video:: ffmpeg -i input.mp4 -i input.mp3 -c copy -map 0:v:0 -map 1:a:0 output.mp4
