@@ -3,8 +3,6 @@ https://docs.google.com/document/d/1n4g8nYFDroHMy6fbYHAyRVx64HswYeQoAvtRxHw_EsM/
 
 # setup
 ## Overview : 
-**NOT meant for others, though process if very simple, can be tailored for any other systems.**
-
 
 ## Pre-requisites before using script : 
 
@@ -13,8 +11,8 @@ https://docs.google.com/document/d/1n4g8nYFDroHMy6fbYHAyRVx64HswYeQoAvtRxHw_EsM/
 i.e. mounting:
 
     /dev/sdX1 --> /boot # 100 MB
-    /dev/sdX2 --> / (root) # about 8-16 GB is sufficient for average install.
-    /dev/sdX3 --> /home # rest or desired space goes for user(s).
+    /dev/sdX2 --> / (root) # about 8|16 GB is sufficient for minimal|average install.
+    /dev/sdX3 --> /home # rest or desired space goes to user(s).
 
 (Swap is not recommended)       
 
@@ -41,38 +39,45 @@ You should see similar to this ->
 
 #### Mount :
 - `mkdir /mnt`
-- `mkdir /mnt/home`
 - `mount /dev/sda2 /mnt`
-- `mount /dev/sda3 /mnt/home`
+- `mkdir /mnt/home`
+- `mount /dev/sda3 /mnt/home` 
 
 `lsblk` to verify.  
 
 **Read each script before running it.**  
-  :)  
+  *:)*  
 
 ## Fix slow download speeds:  
-`pacman -S --needed reflector rsync`  
-`reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`  
+- `pacman -S --needed reflector rsync`  
+- `reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`  
 
-## Lets get started: 
-`pre_chroot.sh`  
-
-`arch-chroot`  
+## Lets get started:  
+replace intel-ucode with amd-ucode for AMD CPU.  
+- `pacstrap -i /mnt base base-devel linux-lts linux-lts-headers linux-firmware intel-ucode git nano dhcpcd dash sd`  
+- `genfstab -U /mnt >> /mnt/etc/fstab`    
+  
+  
+`arch-chroot /mnt`  
 Mount partition with ~100MB size:  
 `mkdir /boot/efi`  
 `mount /dev/sdX1 /boot/efi`  
+   
+`git clone https://github.com/coleaderme/setup`  
 
-in **arch-chroot /mnt**: `base_install.sh`   
-
+in **arch-chroot /mnt**: `bash base_install.sh`   
+  
 Arch linux installed successfully.  
 If all went well, you should be able to login with user and passwd (not shown).  
 Welcome to tty! (blank terminal)  
 
 ## On first time user login:  
-`packages.sh`: Installs basic programs and copy their configs.  
+Copy /setup to ~/   
+- `sudo cp /setup ~/`   
+- `sudo chown -R $USER setup/`  
+- `sh packages.sh`: Installs basic programs and copy their configs.     
 
 ## Choose your desktop:  
-`startx_dwm.sh`    [ultrafast, extreme lightweight, tiling]  
-`startx_i3-wm.sh`  [fast, lightweight, tiling]  
-`startx_xfce4.sh`  [normal, desktop, windows]  
-
+1. dwm    [ultrafast, extreme lightweight, tiling]  
+2. i3-wm  [fast, lightweight, tiling]  
+3. xfce4  [normal, desktop, windows]  
