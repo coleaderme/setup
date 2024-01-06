@@ -48,22 +48,18 @@ You should see similar to this ->
 **Read each script before running it.**  
   *:)*  
 
-## Fix slow download speeds:  
-- `pacman -S --needed reflector rsync`  
-- `reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`  
-
 ## Lets get started:  
 replace intel-ucode with amd-ucode for AMD CPU.  
 - `pacstrap -i /mnt base base-devel linux-lts linux-lts-headers linux-firmware intel-ucode git nano dhcpcd dash sd`  
 - `genfstab -U /mnt >> /mnt/etc/fstab`    
   
   
-`arch-chroot /mnt`  
+- `arch-chroot /mnt`  
 Mount partition with ~100MB size:  
-`mkdir /boot/efi`  
-`mount /dev/sdX1 /boot/efi`  
+- `mkdir /boot/efi`  
+- `mount /dev/sdX1 /boot/efi`  
    
-`git clone https://github.com/coleaderme/setup`  
+- `git clone https://github.com/coleaderme/setup`  
 
 in **arch-chroot /mnt**: `bash base_install.sh`   
   
@@ -81,3 +77,9 @@ Copy /setup to ~/
 1. dwm    [ultrafast, extreme lightweight, tiling]  
 2. i3-wm  [fast, lightweight, tiling]  
 3. xfce4  [normal, desktop, windows]  
+
+
+## Troubleshooting: 
+#### Fix slow download speeds:  
+- `pacman -S --needed reflector rsync`  
+- `reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`  
