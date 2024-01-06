@@ -48,21 +48,21 @@ You should see similar to this ->
 `lsblk` to verify.  
 
 **Read each script before running it.**  
-  :)
+  :)  
 
 ## Fix slow download speeds:  
 `pacman -S --needed reflector rsync`  
 `reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`  
 
 ## Lets get started: 
-`install_stage_one.sh`  
+`pre_chroot.sh`  
 
 `arch-chroot`  
 Mount partition with ~100MB size:  
 `mkdir /boot/efi`  
 `mount /dev/sdX1 /boot/efi`  
 
-**Post-chroot**: `install_stage_two.sh`
+in **arch-chroot /mnt**: `base_install.sh`   
 
 Arch linux installed successfully.  
 If all went well, you should be able to login with user and passwd (not shown).  
