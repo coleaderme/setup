@@ -51,7 +51,14 @@ mv config/lf ~/.config/
 mkdir ~/Pictures
 mv scripts/scr.sh ~/Pictures/
 mv scripts ~/
-
+## Theme & icons
+mkdir ~/.themes
+mkdir ~/.icons
+tar -xf wallpaper/Os-Catalina-icons.tar.xz
+7z x wallpaper/Gn-OSX-XFCE-Edition.7z
+mv Gn-OSX-XFCE-Edition-1.2 ~/.themes/
+mv Os-Catalina-Night ~/.icons/
+mv Os-Catalina-icons ~/.icons/
 echo "echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor" >> ~/.bash_profile
 case "$w" in
     *dwm*) sh startx_dwm.sh ;;
