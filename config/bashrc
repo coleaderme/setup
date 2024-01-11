@@ -93,6 +93,12 @@ alias ipu='sudo ip link set enp2s0 up'
 alias rankmirrors='sudo reflector --threads 4 --sort rate --download-timeout 5 --country AU,UK --age 6 --fastest 10 --ipv4 --save /etc/pacman.d/mirrorlist'
 alias d6='sudo modprobe tcp_bbr;sudo sysctl net.core.default_qdisc=cake;sudo sysctl net.ipv4.tcp_congestion_control=bbr; sudo sysctl net.ipv6.conf.default.disable_ipv6=1;sudo sysctl net.ipv6.conf.all.disable_ipv6=1;sudo sysctl net.ipv4.tcp_fastopen=3;sudo sysctl net.ipv4.tcp_mtu_probing=1;sudo sysctl net.ipv4.tcp_timestamps=0'
 
+## yay mp3gain & https://github.com/dgilman/aacgain [binary release]
+alias mp3gain='mp3gain -r -k'
+alias aacgain='aacgain -r -k'
+alias mp3gain_undo='mp3gain -u'
+alias aacgain_undo='aacgain -u'
+
 ## [default]
 alias ipa='sudo ~/scripts/setIP.sh enp2s0 192.168.0.111 192.168.0.1;echo default IP'
 
@@ -113,10 +119,8 @@ alias psden='systemctl --user enable psd.service'
 alias psddis='systemctl --user disable psd.service'
 alias psdstop='systemctl --user stop psd.service'
 alias psdstart='systemctl --user start psd.service'
-# SECRET EXTRAS
 alias ms="miniserve -u -F -l --hide-theme-selector -D ."
 alias rstemperature='xh -4 -p b -I --pretty=none "https://www.accuweather.com/@@" | htmlq ".header-temp" --text'
-alias replaygain='rsgain custom --tagmode=i --loudness=-16 --clip-mode=a --true-peak --opus-mode=d'
 export SSLKEYLOGFILE=~/.ssl-key.log
 export XDG_SESSION_TYPE=x11
 export VISUAL=subl
