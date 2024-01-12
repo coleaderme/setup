@@ -68,6 +68,11 @@ alias ytsub='yt-dlp --write-auto-sub --skip-download'
 alias m4atomp3='for f in ./*.m4a; do ffmpeg -i "$f" -acodec libmp3lame -b:a 320k -loglevel error "${f%.*}".mp3; done'
 alias opustomp3='for f in ./*.opus; do ffmpeg -i "$f" -acodec libmp3lame -b:a 320k -loglevel error "${f%.*}".mp3; done'
 alias flactomp3='for f in ./*.flac; do ffmpeg -i "$f" -acodec libmp3lame -b:a 320k -loglevel error "${f%.*}".mp3; done'
+## yay mp3gain & https://github.com/dgilman/aacgain [binary release]
+alias mp3gain='for i in ./*.mp3; do mp3gain -r -k "$i";done'
+alias aacgain='for i in ./*.m4a; do aacgain -r -k "$i";done'
+alias mp3gain_undo='mp3gain -u'
+alias aacgain_undo='aacgain -u'
 # Installs
 alias syy='sudo pacman -Syy'
 alias syu='sudo pacman -Syu'
@@ -92,12 +97,6 @@ alias ipd='sudo ip link set enp2s0 down'
 alias ipu='sudo ip link set enp2s0 up'
 alias rankmirrors='sudo reflector --threads 4 --sort rate --download-timeout 5 --country AU,UK --age 6 --fastest 10 --ipv4 --save /etc/pacman.d/mirrorlist'
 alias d6='sudo modprobe tcp_bbr;sudo sysctl net.core.default_qdisc=cake;sudo sysctl net.ipv4.tcp_congestion_control=bbr; sudo sysctl net.ipv6.conf.default.disable_ipv6=1;sudo sysctl net.ipv6.conf.all.disable_ipv6=1;sudo sysctl net.ipv4.tcp_fastopen=3;sudo sysctl net.ipv4.tcp_mtu_probing=1;sudo sysctl net.ipv4.tcp_timestamps=0'
-
-## yay mp3gain & https://github.com/dgilman/aacgain [binary release]
-alias mp3gain='mp3gain -r -k'
-alias aacgain='aacgain -r -k'
-alias mp3gain_undo='mp3gain -u'
-alias aacgain_undo='aacgain -u'
 
 ## [default]
 alias ipa='sudo ~/scripts/setIP.sh enp2s0 192.168.0.111 192.168.0.1;echo default IP'
