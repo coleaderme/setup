@@ -28,9 +28,9 @@ alias installed='pkg list-installed'
 alias update='pkg update && pkg upgrade'
 
 # YT
-alias yt="yt-dlp -P ~/storage/downloads/ --restrict-filenames --downloader aria2c"
+alias yt="yt-dlp -P ~/storage/downloads/ --no-check-certificates --restrict-filenames --downloader aria2c"
 alias ytx='yt-dlp -P ~/storage/downloads/ -x --restrict-filenames'
-alias ytf='yt-dlp -F'
+alias ytf='yt-dlp --no-check-certificates -F'
 alias ytd="yt-dlp -P ~/storage/downloads/ --write-auto-subs --restrict-filenames --downloader aria2c"
 alias ytt="yt-dlp -P ~/storage/downloads/ -f 'bestvideo[height<=1080]+251' --restrict-filenames --downloader aria2c"
 alias ytl='yt-dlp -P ~/storage/downloads/ --flat-playlist -i --print-to-file url yt_links.txt'
