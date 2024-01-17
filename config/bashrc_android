@@ -21,6 +21,10 @@ alias ll='ls -la'
 alias so='mv ~/storage/downloads/bashrc_android ~/.bashrc; source ~/.bashrc'
 alias mm='nano ~/.bashrc'
 alias nn='f=$(fd -H | fzf --algo=v1 -i -e) && [ -z "$f" ] || nano "$f"'
+alias pks='pkg search'
+alias install='pkg install'
+alias update='pkg update && pkg upgrade'
+
 # YT
 alias yt="yt-dlp -P ~/storage/downloads/ --restrict-filenames --downloader aria2c"
 alias ytx='yt-dlp -P ~/storage/downloads/ -x --restrict-filenames'
