@@ -71,8 +71,11 @@ alias flactomp3='for f in ./*.flac; do ffmpeg -i "$f" -acodec libmp3lame -joint_
 ## yay mp3gain & https://github.com/dgilman/aacgain [binary release]
 alias mp3gainer='for i in ./*.mp3; do mp3gain -r -k "$i";done'
 alias aacgainer='for i in ./*.m4a; do aacgain -r -k "$i";done'
-alias mp3gain_undo='mp3gain -u'
-alias aacgain_undo='aacgain -u'
+## https://github.com/FrancisRussell/zoog/releases/download/v0.8.1/zoog-v0.8.1-x86_64-unknown-linux-musl.tar.bz2
+alias opusgainer='for i in ./*.opus; do opusgain -p rg -o track "$i";done'
+alias opusgain_undo='opusgain -p original'
+alias mp3gain_undo='for i in ./*.mp3; do mp3gain -u "$i"; done'
+alias aacgain_undo='for i in ./*.m4a; do aacgain -u "$i"; done'
 # Installs
 alias syy='sudo pacman -Syy'
 alias syu='sudo pacman -Syu'
