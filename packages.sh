@@ -48,6 +48,7 @@ mv config/autostart ~/.config/
 mv config/broot ~/.config/
 mv config/fd ~/.config/
 mv config/lf ~/.config/
+mv config/Thunar ~/.config/
 mkdir ~/Pictures
 mv scripts/scr.sh ~/Pictures/
 mv scripts ~/

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1685575127417833-1</unique-id>
+	<command>st</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon></icon>
+	<name>eXtract</name>
+	<submenu></submenu>
+	<unique-id>1687559562831659-1</unique-id>
+	<command>7z x %n</command>
+	<description></description>
+	<range></range>
+	<patterns>*.7z;*.zip;*.rar</patterns>
+	<other-files/>
+</action>
+</actions>
