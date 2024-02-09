@@ -1,10 +1,17 @@
 #!/usr/bin/sh
-t=$(echo "Audio\nVideo" | dmenu -b -i -l 10 -fn InconsolataSemiCondensedBold)
-[ -z $t ] && exit || [ $t = "Audio" ] && yt-dlp -x --restrict-filenames "$(xsel -o)" && exit ||  [ $t = "Video" ] && yt-dlp -f 'bestvideo[height<=1080]+251' --restrict-filenames --downloader aria2c "$(xsel -o)" && exit
+url=$(xsel -o)
 
-# [ -z $t ] && exit || [ $t = "Audio" ] && echo "DL: Audio" && exit ||  [ $t = "Video" ] && echo "DL: Video" && exit
-## much confused? let's break it down!
+herbe "Requested" "$url"
 
-## First [ ]: checks for empty $t, if yes then EXIT.
-## After first  ||, the [ ]: checks $t equal "Audio", if yes then DL:Audio, and then EXIT.
-## After second ||, the [ ]: checks $t equal "Video", if yes then DL:Video, and then EXIT.
+dl(){
+    herbe "Downloading Video: " "$url"
+    id=$(yt-dlp -F "$1" | dmenu -i -l 20 | choose 0)
+    [ -z $id ] && exit
+    yt-dlp -f "$id" --restrict-filenames --downloader aria2c "$url"
+    herbe "Completed"
+}
+
+case "$url" in
+    *http*) dl "$url" ;;
+    *) exit;;
+esac

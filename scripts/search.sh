@@ -11,7 +11,7 @@ action=$(echo "open\nopen_with\nopen_in_explorer\nrename\ndelete" | dmenu -p "_>
 
 open(){
 case "$1" in
-    *\.sh|*\.py|*\.c|*\.h|*\.rs|*\.js|*\.txt|*\.toml|*\.conf|*rc|*\.md) subl "$1" ;;
+    *\.sh|*\.py|*\.c|*\.h|*\.rs|*\.js|*\.txt|*\.toml|*\.conf|*rc|*\.dat|*\.md|*\.json) subl "$1" ;;
     *\.gif|*\.webm|*\.mkv|*\.mp4|*\.m4v) mpv --no-audio-display --volume=85 "$1" ;;
     *\.flac|*\.m4a|*\.ogg|*\.opus|*\.wav|*\.mp3) audacious -e "$1" ;;
     *\.jpg|*\.png|*\.webp) viewnior "$1" ;;
