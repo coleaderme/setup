@@ -13,7 +13,7 @@ bind 'TAB:menu-complete'
 bind '"\e[Z":menu-complete-backward'
 
 # aliases
-alias ac="aria2c -c --no-conf --console-log-level=warn --disable-ipv6=true --summary-interval=0 --download-result=hide --http-accept-gzip=true --disk-cache=32M -x8 -j8 -s8 --allow-overwrite=true --allow-piece-length-change=true --header 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.17 Safari/537.36' --check-certificate=true --show-console-readout=true --auto-file-renaming=false --file-allocation=none --uri-selector=inorder"
+alias ac="aria2c -c --no-conf --console-log-level=warn --disable-ipv6=true --summary-interval=0 --download-result=hide --http-accept-gzip=true --disk-cache=32M -x8 -j8 -s8 --allow-overwrite=true --allow-piece-length-change=true --header 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.17 Safari/537.36' --check-certificate=false --show-console-readout=true --auto-file-renaming=false --file-allocation=none --uri-selector=inorder"
 alias cd..='cd ..'
 alias cls='clear'
 alias ls='ls'
@@ -29,7 +29,7 @@ alias un='apt autoremove'
 alias xh_ses='xh -4 --verify=no --pretty=none --session=s'
 alias installed='pkg list-installed'
 alias update='pkg update && pkg upgrade'
-
+alias update_bashrc="aria2c -c --no-conf --disable-ipv6=true --check-certificate=false --header 'User-Agent: Mozilla/5.0' 'https://raw.githubusercontent.com/coleaderme/setup/main/config/bashrc_android' -o ~/.bashrc && source ~/.bashrc"
 # YT
 alias yt="yt-dlp -P ~/storage/downloads/ --no-check-certificates --restrict-filenames --downloader aria2c"
 alias ytx='yt-dlp -P ~/storage/downloads/ -x --restrict-filenames'
