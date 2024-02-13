@@ -29,7 +29,7 @@ alias un='apt autoremove'
 alias xh_ses='xh -4 --verify=no --pretty=none --session=s'
 alias installed='pkg list-installed'
 alias update='pkg update && pkg upgrade'
-alias update_bashrc="aria2c -c --no-conf --disable-ipv6=true --check-certificate=false --header 'User-Agent: Mozilla/5.0' 'https://raw.githubusercontent.com/coleaderme/setup/main/config/bashrc_android' -o ~/.bashrc && source ~/.bashrc"
+alias update_bashrc="aria2c --no-conf --disable-ipv6=true --header 'User-Agent: Mozilla/5.0' 'https://raw.githubusercontent.com/coleaderme/setup/main/config/bashrc_android' && mv bashrc_android ~/.bashrc && source ~/.bashrc"
 # YT
 alias yt="yt-dlp -P ~/storage/downloads/ --no-check-certificates --restrict-filenames --downloader aria2c"
 alias ytx='yt-dlp -P ~/storage/downloads/ -x --restrict-filenames'
