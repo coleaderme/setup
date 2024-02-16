@@ -10,9 +10,9 @@ https://docs.google.com/document/d/1n4g8nYFDroHMy6fbYHAyRVx64HswYeQoAvtRxHw_EsM/
 
 i.e. mounting:
 
-    /dev/sdX1 --> /boot # 100 MB
-    /dev/sdX2 --> / (root) # about 8|16 GB is sufficient for minimal|average install.
-    /dev/sdX3 --> /home # rest or desired space goes to user(s).
+    /dev/sdX1 --> /boot     # 100 MB
+    /dev/sdX2 --> / (root)  # about 8|16 GB is sufficient for minimal|average install.
+    /dev/sdX3 --> /home     # rest or desired space goes to user(s).
 
 (Swap is not recommended)       
 
@@ -48,30 +48,29 @@ You should see similar to this ->
 **Read each script before running it.**  
   *:)*  
 
-## Lets get started:  
-replace intel-ucode with amd-ucode for AMD CPU.  
+## Lets go!:  
+Replace `intel-ucode` with `amd-ucode` for AMD CPU.  
 - `pacstrap -i /mnt base base-devel linux-lts linux-lts-headers linux-firmware intel-ucode git nano dhcpcd dash sd`  
-- `genfstab -U /mnt >> /mnt/etc/fstab`    
+- `genfstab -U /mnt >> /mnt/etc/fstab`  
   
   
-- `arch-chroot /mnt`  
+- `arch-chroot /mnt`  goes into newly mounted / (root)  
 Mount partition with ~100MB size:  
 - `mkdir /boot/efi`  
 - `mount /dev/sdX1 /boot/efi`  
    
 - `git clone https://github.com/coleaderme/setup`  
-
-in **arch-chroot /mnt**: `bash base_install.sh`   
+- `bash base_install.sh` follow this script then reboot.  
   
 Arch linux installed successfully.  
 If all went well, you should be able to login with user and passwd (not shown).  
-Welcome to tty! (blank terminal)  
+Welcome to tty! (a blank terminal)  
 
-## On first time user login:  
-Copy /setup to ~/   
-- `sudo cp /setup ~/`   
+## On first login as user:  
+Copy /setup to ~/  
+- `sudo cp /setup ~/`  
 - `sudo chown -R $USER setup/`  
-- `sh packages.sh`: Installs basic programs and copy their configs.     
+- `sh packages.sh`: Installs basic programs and copy their configs.  
 
 ## Choose your desktop:  
 1. dwm    [ultrafast, extreme lightweight, tiling]  
