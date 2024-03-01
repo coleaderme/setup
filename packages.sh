@@ -26,6 +26,8 @@ ttf-inconsolata noto-fonts noto-fonts-emoji \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
 aria2 mpv dmenu clipmenu htop p7zip \
 ripgrep fd sd fzf choose lf numlockx earlyoom thunar eza
+## jq jless (for json)
+## fend (calc)
 ## required for android devices: android-tools gvfs gvfs-mtp
 ## woeusb: windows usb
 ## usbimager: linux usb
