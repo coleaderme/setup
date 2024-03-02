@@ -27,6 +27,8 @@ alias nn='f=$(fd -H | fzf --algo=v1 -i -e) && [ -z "$f" ] || nano "$f"'
 alias pks='pkg search'
 alias clean='pkg clean'
 alias install='pkg install'
+alias downloads='cd ~/storage/downloads'
+alias music='cd ~/storage/music'
 alias un='apt autoremove'
 alias xh_ses='xh -4 -S -I -F -pb --verify=no --pretty=none --session=s'
 alias installed='pkg list-installed'
@@ -36,10 +38,10 @@ alias hosts_edit='sudo nano /data/adb/modules/hosts/system/etc/hosts'
 alias update_bashrc="aria2c --no-conf --disable-ipv6=true --header 'User-Agent: Mozilla/5.0' 'https://raw.githubusercontent.com/coleaderme/setup/main/config/bashrc_android' && mv bashrc_android ~/.bashrc && source ~/.bashrc && echo Updated bashrc"
 # YT
 alias yt="yt-dlp -P ~/storage/downloads/ --no-check-certificates --restrict-filenames --downloader aria2c"
-alias ytx='yt-dlp -P ~/storage/downloads/ -x --restrict-filenames'
+alias ytx='yt-dlp -P ~/storage/downloads/ -x --no-check-certificates --restrict-filenames'
 alias ytf='yt-dlp --no-check-certificates -F'
-alias ytd="yt-dlp -P ~/storage/downloads/ --write-auto-subs --restrict-filenames --downloader aria2c"
-alias ytt="yt-dlp -P ~/storage/downloads/ -f 'bestvideo[height<=1080]+251' --restrict-filenames --downloader aria2c"
+alias ytd="yt-dlp -P ~/storage/downloads/ --write-auto-subs --no-check-certificates --restrict-filenames --downloader aria2c"
+alias ytt="yt-dlp -P ~/storage/downloads/ -f 'bestvideo[height<=1080]+251' --no-check-certificates --restrict-filenames --downloader aria2c"
 alias ytpl='yt-dlp -P ~/storage/downloads/ --flat-playlist -i --print-to-file url yt_links.txt'
 alias ytsubt='yt-dlp -P ~/storage/downloads/ --write-auto-sub --skip-download'
 # Python
