@@ -26,9 +26,10 @@ ttf-inconsolata noto-fonts noto-fonts-emoji \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
 aria2 mpv dmenu clipmenu htop p7zip \
 ripgrep fd sd fzf choose lf numlockx earlyoom thunar eza
-## jq jless (for json)
+## jq jless (for json), uv for python pip-alternative
 ## fend (calc)
-## required for android devices: android-tools gvfs gvfs-mtp
+## code-oss (vscode opensource build) with exts -> ruff + python + cody (free ver)
+## android-tools gvfs gvfs-mtp (android device support)
 ## woeusb: windows usb
 ## usbimager: linux usb
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -sic
