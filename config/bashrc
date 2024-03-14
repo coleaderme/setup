@@ -35,7 +35,7 @@ alias la='eza -a'
 alias ll='eza -la'
 alias mpc="mpv --profile=720p"
 alias mpv='mpv --no-audio-display --volume=85'
-alias play='m="$(fd -tf -e mp3 -e opus -e ogg -e m4a -e flac -e wav -e mkv -e webm -e mp4 -e m4v | fzf -i -e)" && [ -z $m ] && exit || mpv --replaygain=album --no-audio-display "$m"'
+alias play='m="$(fd -tf -e mp3 -e opus -e ogg -e m4a -e flac -e wav -e mkv -e webm -e mp4 -e m4v | fzf -i -e)"; [ -z "$m" ] || mpv --replaygain=album --no-audio-display "$m"'
 alias myip='curl icanhazip.com'
 alias ipscan='sudo arp-scan --interface=enp2s0 --localnet'
 alias off='sudo poweroff'
