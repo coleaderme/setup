@@ -28,6 +28,7 @@ aria2 mpv dmenu clipmenu htop p7zip \
 ripgrep fd sd fzf choose lf numlockx earlyoom thunar eza
 ## jq jless (for json), uv for python pip-alternative
 ## fend (calc)
+## herbe (minimal popup notification) [from github]
 ## code-oss (vscode opensource build) with exts -> ruff + python + cody (free ver)
 ## android-tools gvfs gvfs-mtp (android device support)
 ## woeusb: windows usb
