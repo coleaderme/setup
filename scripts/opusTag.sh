@@ -8,8 +8,7 @@ reading(){
         echo "OPEN: $i"
         T=$(ffprobe -hide_banner -loglevel 32 "$i" 2>&1 | rg -i "title" | cut -d ":" -f2 | sd -s '_' ' ')
         A=$(ffprobe -hide_banner -loglevel 32 "$i" 2>&1 | rg -i "artist" | cut -d ":" -f2 | sd -s '_' ' ')
-        echo $T - $A
-        read -p "STOP: " ans
+        echo "$T - $A"
     done
 }
 # reading

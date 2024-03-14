@@ -1,12 +1,14 @@
 #!/usr/bin/sh
-# .config/fd/ignore <= items to ignore.
+# ~/.config/fd/ignore <= items to ignore.
+# see -I flag to disable ignore [.git, .gitignore ...]
 #
 f="$(fd | dmenu -p "_>" -i -l 35)"
 killall fd
 killall dmenu
+
 [ -z "$f" ] && exit # exit if none selected.
 
-action=$(echo "open\nopen_with\nopen_in_explorer\nrename\ndelete" | dmenu -p "_>" -i -l 7)
+action=$(printf "open\nopen_with\nopen_in_explorer\nrename\ndelete" | dmenu -p "_>" -i -l 7)
 [ -z "$action" ] && exit # exit if none selected.
 
 open(){
@@ -20,7 +22,7 @@ esac
 }
 
 open_with(){
-app=$(echo "audacious\nmpv\nspek\nviewnior" | dmenu -p "_>" -i -l 7)
+app=$(printf "audacious\nmpv\nspek\nviewnior" | dmenu -p "_>" -i -l 7)
 [ -z "$app" ] && exit
 case "$app" in
     audacious) audacious "$1" ;;
