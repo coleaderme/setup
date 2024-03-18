@@ -4,9 +4,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 PS1='\W \$ '
+
 # if [[ -r /usr/share/bash-completion/bash_completion ]]; then
 #   . /usr/share/bash-completion/bash_completion
 # fi
+
 #oh-my-bash
 alias less='less -FSRXc'                    # Preferred 'less' implementation
 alias wget='wget -c'                        # Preferred 'wget' implementation (resume download)
@@ -17,11 +19,11 @@ bind 'TAB:menu-complete'
 bind '"\e[Z":menu-complete-backward'
 #Custom alias
 alias 7zx='7z x'
-alias rustcc="rustc -O -C prefer-dynamic"   # compact compiled size like C
+alias rustcc='rustc -O -C prefer-dynamic'   # compact compiled size like C
+alias gb='go build'
 alias fz='fd -H | fzf -i -e --algo=v1 | xsel -b'
-alias ar='aria2c -c --no-conf --http-auth-challenge=true --disable-ipv6=true --check-certificate=false  --seed-time=0 --retry-wait=5 --summary-interval 5 --header="User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" --file-allocation=falloc -j 4 -x 4 -s 4 -k 4M'
-alias ac="aria2c -c --no-conf --console-log-level=warn --disable-ipv6=true --summary-interval=0 --download-result=hide -x 8 -j 8 -s 8 --allow-overwrite=true --allow-piece-length-change=true --header 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.17 Safari/537.36' --check-certificate=false --show-console-readout=true --auto-file-renaming=false --file-allocation=none --uri-selector=inorder"
-alias rpcd='aria2c --enable-rpc --rpc-listen-all --disable-ipv6=true --retry-wait=5 --summary-interval 5 --disk-cache=64M --file-allocation=none -c -j 4 -x 4 -s 4 -k 4M'
+alias ac='aria2c -c --no-conf --console-log-level=warn --disable-ipv6=true --summary-interval=0 --download-result=hide -x 8 -j 8 -s 8 --allow-overwrite=true --allow-piece-length-change=true --header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.17 Safari/537.36" --check-certificate=false --show-console-readout=true --auto-file-renaming=false --file-allocation=none --uri-selector=inorder'
+alias rpcd='aria2c -c --no-conf --enable-rpc --rpc-listen-all --disable-ipv6=true --retry-wait=5 --summary-interval 5 --file-allocation=none -c -j 4 -x 4 -s 4'
 alias cd..='cd ..'
 alias chx='chmod +x'
 alias chwn='sudo chown -R $USER'
@@ -33,9 +35,10 @@ alias fart='sd'
 alias ls='eza'
 alias la='eza -a'
 alias ll='eza -la'
-alias mpc="mpv --profile=720p"
+alias mpc='mpv --profile=720p'
+alias audacious='audacious -e'
 alias mpv='mpv --no-audio-display --volume=85'
-alias play='m="$(fd -tf -e mp3 -e opus -e ogg -e m4a -e flac -e wav -e mkv -e webm -e mp4 -e m4v | fzf -i -e)"; [ -z "$m" ] || mpv --replaygain=album --no-audio-display "$m"'
+alias play='m="$(fd -tf -e mp3 -e opus -e ogg -e m4a -e flac -e wav -e mkv -e webm -e mp4 -e m4v | fzf -i -e)"; [ -z "$m" ] || mpv --no-audio-display --volume=85 "$m"'
 alias myip='curl icanhazip.com'
 alias ipscan='sudo arp-scan --interface=enp2s0 --localnet'
 alias off='sudo poweroff'
@@ -43,7 +46,7 @@ alias pack='7z a -m0=copy'
 alias packx='7z a -m0=copy -p0000 -mhe'
 alias rg='rg -i'
 alias head='sed 11q'
-alias rat="bat -p"
+alias rat='bat -p'
 alias vi='nvim'
 alias nani='nano'
 alias view='viewnior'
@@ -51,8 +54,8 @@ alias cod='/usr/bin/code'
 alias o='viewnior'
 alias gc='git clone'
 alias calc='fend'
-alias rn1='for i in *.*;do mv "$i" "$i"1;done'
-alias rn1b='for i in *.*1;do mv "$i" "$(echo "$i"|choose -c 0..-1)";done'
+alias rn1='for i in *.*;do mv "$i" "$i"1;done' # rename: add 1 to last
+alias rn1b='for i in *.*1;do mv "$i" "$(echo "$i"|choose -c 0..-1)";done' # rename: restores
 alias neofetch='fastfetch'
 alias countdown='termdown -e --text "DONE"'
 alias so='source ~/.bashrc'
@@ -62,14 +65,14 @@ alias wm='sudo nano /etc/X11/xinit/xinitrc'
 alias pm='sudo nano /etc/pacman.d/mirrorlist'
 alias ws='sudo wireshark'
 # YT
-alias yt="yt-dlp --restrict-filenames --downloader aria2c --cookies-from-browser CHROMIUM"
-alias ytx='yt-dlp -x --restrict-filenames'
-alias ytchapters='yt-dlp --restrict-filenames --split-chapters'
-alias ytf='yt-dlp -F --cookies-from-browser CHROMIUM'
-alias ytd="yt-dlp --write-auto-subs --restrict-filenames --downloader aria2c"
-alias ytt="yt-dlp -f 'bestvideo[height<=1080]+251' --restrict-filenames --downloader aria2c"
-alias ytpl='yt-dlp --flat-playlist -i --print-to-file url yt_links.txt'
-alias ytsubt='yt-dlp --write-auto-sub --skip-download'
+alias yt='yt-dlp -4 --restrict-filenames --downloader aria2c --cookies-from-browser CHROMIUM'
+alias ytx='yt-dlp -4 -x --restrict-filenames -o "%(title)s.%(ext)s"'
+alias ytchapters='yt-dlp -4 --restrict-filenames --split-chapters'
+alias ytf='yt-dlp -4 -F --cookies-from-browser CHROMIUM'
+alias ytd='yt-dlp -4 --write-auto-subs --restrict-filenames --downloader aria2c'
+alias ytt='yt-dlp -4 -f "bestvideo[height<=1080]+251" --restrict-filenames --downloader aria2c -o "%(title)s.%(ext)s"'
+alias ytl='yt-dlp -4 --flat-playlist -i --print-to-file url yt_links.txt'
+alias ytsub='yt-dlp -4 --write-auto-sub --skip-download'
 # Conversion / Transcoding cutoff 18kHz for portability. Keep original file!
 alias m4atomp3='for f in ./*.m4a; do echo "Converting.."; ffmpeg -i "$f" -acodec libmp3lame -joint_stereo 0 -q:a 2 -loglevel error "${f%.*}".mp3; done'
 alias opustomp3='for f in ./*.opus; do echo "Converting.."; ffmpeg -i "$f" -acodec libmp3lame -joint_stereo 0 -q:a 2 -loglevel error "${f%.*}".mp3; done'
@@ -85,15 +88,16 @@ alias aacgain_undo='for i in ./*.m4a; do aacgain -u "$i"; done'
 # Installs
 alias syy='sudo pacman -Syy'
 alias syu='sudo pacman -Syu'
-alias install='sudo pacman --needed -S'
 alias installed='sudo pacman -Qe'
 alias un='sudo pacman -Rns'
 alias clean='sudo pacman -Scc && sudo pacman -Sc && yay -Sc'
 alias py='python'
-alias pi='bin/python bin/pip --no-color --disable-pip-version-check install'
-alias pu='bin/python bin/pip --no-color --disable-pip-version-check uninstall'
-alias pip='pip --no-color --disable-pip-version-check'
+alias pi='uv pip install'
+alias pl='uv pip list'
+alias pu='uv pip uninstall'
+alias pip='uv pip' # create virutalenv => # uv venv test1
 alias sopy='source bin/activate'
+alias rf='ruff format'
 alias uw='sudo wg-quick up'
 alias dw='sudo wg-quick down'
 alias uwg='sudo wg-quick up wg'
@@ -120,15 +124,15 @@ alias ka='killall at-spi-bus-launcher;killall gvfsd;killall chrome_crashpad_hand
 alias mountt='sudo mount /dev/sda6 ~/T -o noatime,umask=000' ## NTFS drive
 alias umountt='sudo umount ~/T && echo "[Removed]: T"'
 alias umountsd='sudo umount ~/sd && echo "[Removed]: sd"'
-alias psdr='systemctl --user restart psd.service'
-alias psden='systemctl --user enable psd.service'
-alias psddis='systemctl --user disable psd.service'
+alias psdrestart='systemctl --user restart psd.service'
+alias psdenable='systemctl --user enable psd.service'
+alias psddisable='systemctl --user disable psd.service'
 alias psdstop='systemctl --user stop psd.service'
 alias psdstart='systemctl --user start psd.service'
-# Extras
+# SECRET EXTRAS
 alias ms="miniserve -u -W -r -D -F -l --hide-theme-selector ."
 alias gd="rclone mount VivoGdrive: /home/dra/vivoGdrive/ --attr-timeout 1h --dir-cache-time 12h --vfs-read-chunk-size 32M --buffer-size 128M --vfs-cache-mode full"
-alias rstemperature='xh -4 -pb -I --session=s --pretty=none --verify=no "https://www.accuweather.com/##" | htmlq -t ".header-temp"'
+alias rstemperature='xh -4 -pb -I -S --session=s --pretty=none --verify=no "https://www.accuweather.com/@@" | htmlq -t ".header-temp"'
 
 export SSLKEYLOGFILE=~/.ssl-key.log
 export XDG_SESSION_TYPE=x11
@@ -155,3 +159,4 @@ export LD_LIBRARY_PATH=/usr/local/lib
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
