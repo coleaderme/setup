@@ -16,7 +16,7 @@ echo "dwm.sh   >> [ultrafast, extreme lightweight, tiling]"
 echo "i3wm.sh  >> [fast, lightweight, tiling]"
 echo "xfce4.sh >> [normal, desktop, windows]"
 
-w=$(echo "1. dwm\n2. i3wm\n3. xfce" | fzf)
+w=$(printf "1. dwm\n2. i3wm\n3. xfce" | fzf)
 [ -z "$w" ] && echo "none selected" && exit 1
 
 # Installs
@@ -25,7 +25,9 @@ sudo pacman -S --needed xorg-server xorg-xinit xorg-xset ntfs-3g \
 ttf-inconsolata noto-fonts noto-fonts-emoji \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
 aria2 mpv dmenu clipmenu htop p7zip \
-ripgrep fd sd fzf choose lf numlockx earlyoom thunar eza
+ripgrep fd sd fzf choose lf numlockx \
+earlyoom thunar eza micro
+## micro: supports ctrl+d to duplicate line, ctrl+q quit, ctrl+c, ctrl+v auto complete()""''
 ## jq jless (for json), uv for python pip-alternative
 ## fend (calc)
 ## herbe (minimal popup notification) [from github]
