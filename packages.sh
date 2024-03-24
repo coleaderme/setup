@@ -36,34 +36,37 @@ ripgrep fd sd fzf choose lf numlockx earlyoom thunar eza
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -sic
 
 # config files / dotfiles
-echo "[+] moving confs to ~/.config"
+echo "[+] copying confs to ~/.config"
 mkdir ~/.config
-mv config/psd ~/.config/
-mv config/bashrc ~/.bashrc
-mv config/mpv ~/.config/
-mv config/htop ~/.config/
-mv config/angrysearch ~/.config/
-mv config/sublime-text ~/.config/
-mv config/chromium-flags.conf ~/.config/
-mv config/thorium-flags.conf ~/.config/
-mv config/code-flags.conf ~/.config/
-mv config/chrome-flags.conf ~/.config/
-mv config/autostart ~/.config/
-mv config/broot ~/.config/
-mv config/fd ~/.config/
-mv config/lf ~/.config/
-mv config/Thunar ~/.config/
+cp config/psd ~/.config/
+cp config/bashrc ~/.bashrc
+cp config/nanorc ~/.nanorc
+cp config/mpv ~/.config/
+cp config/htop ~/.config/
+cp config/angrysearch ~/.config/
+cp config/sublime-text ~/.config/
+cp config/chromium-flags.conf ~/.config/
+cp config/thorium-flags.conf ~/.config/
+cp config/code-flags.conf ~/.config/
+cp config/chrome-flags.conf ~/.config/
+cp config/autostart ~/.config/
+cp config/broot ~/.config/
+cp config/fd ~/.config/
+cp config/lf ~/.config/
+cp config/Thunar ~/.config/
 mkdir ~/Pictures
-mv scripts/scr.sh ~/Pictures/
-mv scripts ~/
+cp scripts/scr.sh ~/Pictures/
+cp scripts ~/
 ## Theme & icons
 mkdir ~/.themes
 mkdir ~/.icons
+## Mac theme
 tar -xf wallpaper/Os-Catalina-icons.tar.xz
 7z x wallpaper/Gn-OSX-XFCE-Edition.7z
-mv Gn-OSX-XFCE-Edition-1.2 ~/.themes/
-mv Os-Catalina-Night ~/.icons/
-mv Os-Catalina-icons ~/.icons/
+cp Gn-OSX-XFCE-Edition-1.2 ~/.themes/
+cp Os-Catalina-Night ~/.icons/
+cp Os-Catalina-icons ~/.icons/
+
 echo "echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor" >> ~/.bash_profile
 case "$w" in
     *dwm*) sh startx_dwm.sh ;;
