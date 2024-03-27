@@ -1,14 +1,12 @@
-#
 # ~/.bashrc
 #
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-PS1='\W \$ '
 
+PS1='\W \$ '
 # if [[ -r /usr/share/bash-completion/bash_completion ]]; then
 #   . /usr/share/bash-completion/bash_completion
 # fi
-
 #oh-my-bash
 alias less='less -FSRXc'                    # Preferred 'less' implementation
 alias wget='wget -c'                        # Preferred 'wget' implementation (resume download)
@@ -21,15 +19,15 @@ bind '"\e[Z":menu-complete-backward'
 alias 7zx='7z x'
 alias rustcc='rustc -O -C prefer-dynamic'   # compact compiled size like C
 alias gb='go build'
-alias fz='fd -H | fzf -i -e --algo=v1 | xsel -b'
+alias fz='fd -H | sk -e | xsel -b'
 alias ac='aria2c -c --no-conf --console-log-level=warn --disable-ipv6=true --summary-interval=0 --download-result=hide -x 8 -j 8 -s 8 --allow-overwrite=true --allow-piece-length-change=true --header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.17 Safari/537.36" --check-certificate=false --show-console-readout=true --auto-file-renaming=false --file-allocation=none --uri-selector=inorder'
-alias rpcd='aria2c -c --no-conf --enable-rpc --rpc-listen-all --disable-ipv6=true --retry-wait=5 --summary-interval 5 --file-allocation=none -c -j 4 -x 4 -s 4'
+alias rpcd='aria2c --enable-rpc --rpc-listen-all --disable-ipv6=true --retry-wait=5 --summary-interval 5 --disk-cache=64M --file-allocation=none -c -j 4 -x 4 -s 4 -k 4M'
 alias cd..='cd ..'
 alias chx='chmod +x'
 alias chwn='sudo chown -R $USER'
 alias cls='clear'
-alias dc='f=$(fd | fzf --algo=v1 -i -e) && [ -z "$f" ] || cd "$f" || cd "$(dirname "$f")"'
-alias nn='f=$(fd -H | fzf --algo=v1 -i -e) && [ -z "$f" ] || nano "$f"'
+alias dc='f=$(fd | sk -e) && [ -z "$f" ] || cd "$f" || cd "$(dirname "$f")"'
+alias nn='f=$(fd | sk -e) && [ -z "$f" ] || micro "$f"'
 alias e='subl'
 alias fart='sd'
 alias ls='eza'
@@ -38,7 +36,7 @@ alias ll='eza -la'
 alias mpc='mpv --profile=720p'
 alias audacious='audacious -e'
 alias mpv='mpv --no-audio-display --volume=85'
-alias play='m="$(fd -tf -e mp3 -e opus -e ogg -e m4a -e flac -e wav -e mkv -e webm -e mp4 -e m4v | fzf -i -e)"; [ -z "$m" ] || mpv --no-audio-display --volume=85 "$m"'
+alias play='m="$(fd -tf -e mp3 -e opus -e ogg -e m4a -e flac -e wav -e mkv -e webm -e mp4 -e m4v | sk -e)"; [ -z "$m" ] || mpv --replaygain=album --no-audio-display "$m"'
 alias myip='curl icanhazip.com'
 alias ipscan='sudo arp-scan --interface=enp2s0 --localnet'
 alias off='sudo poweroff'
@@ -49,13 +47,14 @@ alias head='sed 11q'
 alias rat='bat -p'
 alias vi='nvim'
 alias nani='nano'
+alias mc='micro'
 alias view='viewnior'
 alias cod='/usr/bin/code'
 alias o='viewnior'
 alias gc='git clone'
 alias calc='fend'
-alias rn1='for i in *.*;do mv "$i" "$i"1;done' # rename: add 1 to last
-alias rn1b='for i in *.*1;do mv "$i" "$(echo "$i"|choose -c 0..-1)";done' # rename: restores
+alias rn1='for i in *.*;do mv "$i" "$i"1;done'
+alias rn1b='for i in *.*1;do mv "$i" "$(echo "$i"|choose -c 0..-1)";done'
 alias neofetch='fastfetch'
 alias countdown='termdown -e --text "DONE"'
 alias so='source ~/.bashrc'
@@ -132,15 +131,16 @@ alias psdstart='systemctl --user start psd.service'
 # SECRET EXTRAS
 alias ms="miniserve -u -W -r -D -F -l --hide-theme-selector ."
 alias gd="rclone mount VivoGdrive: /home/dra/vivoGdrive/ --attr-timeout 1h --dir-cache-time 12h --vfs-read-chunk-size 32M --buffer-size 128M --vfs-cache-mode full"
-alias rstemperature='xh -4 -pb -I -S --session=s --pretty=none --verify=no "https://www.accuweather.com/@@" | htmlq -t ".header-temp"'
+alias rstemperature='xh -4 -pb -I --session=s --pretty=none --verify=no "https://www.accuweather.com/#" | htmlq -t ".header-temp"'
 
 export SSLKEYLOGFILE=~/.ssl-key.log
 export XDG_SESSION_TYPE=x11
 export VISUAL=subl
-export EDITOR=subl
+export EDITOR=micro
 export LANG=en_US.UTF-8
 export OPENSSL_CONF=/dev/null # for phantomjs
 export LD_LIBRARY_PATH=/usr/local/lib
+export SKIM_DEFAULT_COMMAND="fd --type f || git ls-tree -r --name-only HEAD || rg --files || find ."
 
 # sudo cp -rf /opt/google/chrome/WidevineCdm /usr/lib/chromium/ # copy *.so file
 # sudo ln -sf dash /bin/sh ## link dash to sh
@@ -160,3 +160,4 @@ export LD_LIBRARY_PATH=/usr/local/lib
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
+eval "$(starship init bash)"
