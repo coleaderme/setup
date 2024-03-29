@@ -19,14 +19,15 @@ echo "xfce4.sh >> [normal, desktop, windows]"
 w=$(printf "1. dwm\n2. i3wm\n3. xfce" | fzf)
 [ -z "$w" ] && echo "none selected" && exit 1
 
-# Installs
+# Installs (via pacman)
 sudo pacman -Syy
 sudo pacman -S --needed xorg-server xorg-xinit xorg-xset ntfs-3g \
 ttf-inconsolata noto-fonts noto-fonts-emoji \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
 aria2 mpv dmenu clipmenu htop p7zip \
-ripgrep fd sd fzf skim choose lf numlockx \
+ripgrep fd sd fzf skim choose numlockx \
 earlyoom thunar eza micro
+## joshuto-bin (via yay) user friendly! TUI file explorer.
 ## micro: supports ctrl+d to duplicate line, ctrl+q quit, ctrl+c, ctrl+v auto complete()""''
 ## jq jless (for json), uv for python pip-alternative
 ## fend (calc)
@@ -35,7 +36,10 @@ earlyoom thunar eza micro
 ## android-tools gvfs gvfs-mtp (android device support)
 ## woeusb: windows usb
 ## usbimager: linux usb
+
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -sic
+# Installs (via yay)
+yay -S joshuto-bin
 
 # config files / dotfiles
 echo "[+] copying confs to ~/.config"
