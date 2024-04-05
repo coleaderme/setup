@@ -58,7 +58,7 @@ cp config/chrome-flags.conf ~/.config/
 cp config/autostart ~/.config/
 cp config/broot ~/.config/
 cp config/fd ~/.config/
-cp config/lf ~/.config/
+cp config/joshuto ~/.config/
 cp config/Thunar ~/.config/
 mkdir ~/Pictures
 cp scripts/scr.sh ~/Pictures/
