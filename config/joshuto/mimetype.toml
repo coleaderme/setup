@@ -1,0 +1,60 @@
+[extension]
+
+# Photos:
+png.app_list = [	
+	{ command = "viewnior", fork = true, silent = true }
+]
+jpg.app_list = [
+	{ command = "viewnior", args = [ "-e" ], fork = true, silent = true }
+]
+
+# Music: -e append to queue in audacious.
+m4a.app_list = [
+	{ command = "audacious", args = [ "-e" ], fork = true, silent = true },
+] 
+opus.app_list = [
+	{ command = "audacious", args = [ "-e" ], fork = true, silent = true },
+]
+flac.app_list = [
+	{ command = "audacious", args = [ "-e" ], fork = true, silent = true },	
+]
+wav.app_list = [
+	{ command = "audacious", args = [ "-e" ], fork = true, silent = true },
+]
+ogg.app_list = [
+	{ command = "audacious", args = [ "-e" ], fork = true, silent = true },
+]
+
+# Videos:
+webm.app_list = [
+	{ command = "mpv", fork = true, silent = true },
+]
+mp4.app_list = [
+	{ command = "mpv", fork = true, silent = true },
+]
+mkv.app_list = [
+	{ command = "mpv", fork = true, silent = true },
+]
+m4v.app_list = [
+	{ command = "mpv", fork = true, silent = true },
+]
+
+# Text:
+toml.app_list = [
+	{ command = "micro"}
+]
+conf.app_list  = [
+	{ command = "micro"}
+]
+sh.app_list = [
+	{ command = "micro" },
+	{ command = "subl" }
+]
+py.app_list = [
+	{ command = "micro" },
+	{ command = "subl" }
+]
+rs.app_list	= [
+	{ command = "micro" },
+	{ command = "subl" }
+]

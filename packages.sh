@@ -44,34 +44,34 @@ yay -S joshuto-bin
 # config files / dotfiles
 echo "[+] copying confs to ~/.config"
 mkdir ~/.config
-cp config/psd ~/.config/
-cp config/bashrc ~/.bashrc
-cp config/nanorc ~/.nanorc
-cp config/mpv ~/.config/
-cp config/htop ~/.config/
-cp config/angrysearch ~/.config/
-cp config/sublime-text ~/.config/
-cp config/chromium-flags.conf ~/.config/
-cp config/thorium-flags.conf ~/.config/
-cp config/code-flags.conf ~/.config/
-cp config/chrome-flags.conf ~/.config/
-cp config/autostart ~/.config/
-cp config/broot ~/.config/
-cp config/fd ~/.config/
-cp config/joshuto ~/.config/
-cp config/Thunar ~/.config/
+cp -rf config/psd ~/.config/
+cp -rf config/bashrc ~/.bashrc
+cp -rf config/nanorc ~/.nanorc
+cp -rf config/mpv ~/.config/
+cp -rf config/htop ~/.config/
+cp -rf config/angrysearch ~/.config/
+cp -rf config/sublime-text ~/.config/
+cp -rf config/chromium-flags.conf ~/.config/
+cp -rf config/thorium-flags.conf ~/.config/
+cp -rf config/code-flags.conf ~/.config/
+cp -rf config/chrome-flags.conf ~/.config/
+cp -rf config/autostart ~/.config/
+cp -rf config/broot ~/.config/
+cp -rf config/fd ~/.config/
+cp -rf config/joshuto ~/.config/
+cp -rf config/Thunar ~/.config/
 mkdir ~/Pictures
 cp scripts/scr.sh ~/Pictures/
-cp scripts ~/
+cp -rf scripts ~/
 ## Theme & icons
 mkdir ~/.themes
 mkdir ~/.icons
 ## Mac theme
 tar -xf wallpaper/Os-Catalina-icons.tar.xz
 7z x wallpaper/Gn-OSX-XFCE-Edition.7z
-cp Gn-OSX-XFCE-Edition-1.2 ~/.themes/
-cp Os-Catalina-Night ~/.icons/
-cp Os-Catalina-icons ~/.icons/
+cp -rf Gn-OSX-XFCE-Edition-1.2 ~/.themes/
+cp -rf Os-Catalina-Night ~/.icons/
+cp -rf Os-Catalina-icons ~/.icons/
 
 echo "echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor" >> ~/.bash_profile
 case "$w" in
