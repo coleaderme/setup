@@ -5,7 +5,7 @@ png.app_list = [
 	{ command = "viewnior", fork = true, silent = true }
 ]
 jpg.app_list = [
-	{ command = "viewnior", args = [ "-e" ], fork = true, silent = true }
+	{ command = "viewnior", fork = true, silent = true }
 ]
 
 # Music: -e append to queue in audacious.
