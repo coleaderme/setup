@@ -18,16 +18,15 @@ bind '"\e[Z":menu-complete-backward'
 #Custom alias
 alias 7zx='7z x'
 alias rustcc='rustc -O -C prefer-dynamic'   # compact compiled size like C
-alias gb='go build'
-alias fz='fd -H | sk -e | xsel -b'
+alias fz='fd | sk -e --color=bw | xsel -b'
 alias ac='aria2c -c --no-conf --console-log-level=warn --disable-ipv6=true --summary-interval=0 --download-result=hide -x 8 -j 8 -s 8 --allow-overwrite=true --allow-piece-length-change=true --header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.17 Safari/537.36" --check-certificate=false --show-console-readout=true --auto-file-renaming=false --file-allocation=none --uri-selector=inorder'
 alias rpcd='aria2c --enable-rpc --rpc-listen-all --disable-ipv6=true --retry-wait=5 --summary-interval 5 --disk-cache=64M --file-allocation=none -c -j 4 -x 4 -s 4 -k 4M'
 alias cd..='cd ..'
 alias chx='chmod +x'
 alias chwn='sudo chown -R $USER'
 alias cls='clear'
-alias dc='f=$(fd | sk -e) && [ -z "$f" ] || cd "$f" || cd "$(dirname "$f")"'
-alias nn='f=$(fd | sk -e) && [ -z "$f" ] || micro "$f"'
+alias dc='f=$(fd | sk -e --color=bw) && [ -z "$f" ] || cd "$f" || cd "$(dirname "$f")"'
+alias nn='f=$(fd | sk -e --color=bw) && [ -z "$f" ] || micro "$f" || nano "$f"'
 alias e='subl'
 alias fart='sd'
 alias ls='eza'
@@ -36,7 +35,7 @@ alias ll='eza -la'
 alias mpc='mpv --profile=720p'
 alias audacious='audacious -e'
 alias mpv='mpv --no-audio-display --volume=85'
-alias play='m="$(fd -tf -e mp3 -e opus -e ogg -e m4a -e flac -e wav -e mkv -e webm -e mp4 -e m4v | sk -e)"; [ -z "$m" ] || mpv --replaygain=album --no-audio-display "$m"'
+alias play='m="$(fd -tf -e mp3 -e opus -e ogg -e m4a -e flac -e wav -e mkv -e webm -e mp4 -e m4v | sk -e --color=bw)"; [ -z "$m" ] || mpv --no-audio-display "$m"'
 alias myip='curl icanhazip.com'
 alias ipscan='sudo arp-scan --interface=enp2s0 --localnet'
 alias off='sudo poweroff'
@@ -45,29 +44,23 @@ alias packx='7z a -m0=copy -p0000 -mhe'
 alias rg='rg -i'
 alias head='sed 11q'
 alias rat='bat -p'
-alias vi='nvim'
-alias nani='nano'
-alias mc='micro'
+alias vi='micro'
 alias view='viewnior'
-alias cod='/usr/bin/code'
 alias o='viewnior'
+alias cod='/usr/bin/code'
 alias gc='git clone'
-alias fl='joshuto'
-alias rn1='for i in *.*;do mv "$i" "$i"1;done'
-alias rn1b='for i in *.*1;do mv "$i" "$(echo "$i"|choose -c 0..-1)";done'
+alias rn1='for i in *.*;do mv "$i" "$i"1;done' # append 1 to filename
+alias rn1b='for i in *.*1;do mv "$i" "$(echo "$i"|choose -c 0..-1)";done' # remove 1 from filename
 alias neofetch='fastfetch'
 alias countdown='termdown -e --text "DONE"'
 alias so='source ~/.bashrc'
-alias makedwm='cd ~/Desktop/Github/dwm/ && sudo make install'
-alias makest='cd ~/st/ && sudo make install'
-alias wm='sudo nano /etc/X11/xinit/xinitrc'
-alias pm='sudo nano /etc/pacman.d/mirrorlist'
-alias ws='sudo wireshark'
+alias wm='sudo micro /etc/X11/xinit/xinitrc || sudo nano /etc/X11/xinit/xinitrc'
+alias pm='sudo micro /etc/pacman.d/mirrorlist || sudo nano /etc/pacman.d/mirrorlist'
 # YT
-alias yt='yt-dlp -4 --restrict-filenames --downloader aria2c --cookies-from-browser CHROMIUM'
+alias yt='yt-dlp -4 --restrict-filenames --downloader aria2c'
 alias ytx='yt-dlp -4 -x --restrict-filenames -o "%(title)s.%(ext)s"'
 alias ytchapters='yt-dlp -4 --restrict-filenames --split-chapters'
-alias ytf='yt-dlp -4 -F --cookies-from-browser CHROMIUM'
+alias ytf='yt-dlp -4 -F'
 alias ytd='yt-dlp -4 --write-auto-subs --restrict-filenames --downloader aria2c'
 alias ytt='yt-dlp -4 -f "bestvideo[height<=1080]+251" --restrict-filenames --downloader aria2c -o "%(title)s.%(ext)s"'
 alias ytl='yt-dlp -4 --flat-playlist -i --print-to-file url yt_links.txt'
@@ -95,7 +88,7 @@ alias pi='uv pip install'
 alias pl='uv pip list'
 alias pu='uv pip uninstall'
 alias pip='uv pip' # create virutalenv => # uv venv test1
-alias sopy='source bin/activate'
+alias sopy='source /home/dra/warp/.venv/bin/activate'
 alias rf='ruff format'
 alias uw='sudo wg-quick up'
 alias dw='sudo wg-quick down'
@@ -133,7 +126,7 @@ alias ms="miniserve -u -W -r -D -F -l --hide-theme-selector ."
 alias gd="rclone mount VivoGdrive: /home/dra/vivoGdrive/ --attr-timeout 1h --dir-cache-time 12h --vfs-read-chunk-size 32M --buffer-size 128M --vfs-cache-mode full"
 alias rstemperature='xh -4 -pb -I --session=s --pretty=none --verify=no "https://www.accuweather.com/#" | htmlq -t ".header-temp"'
 
-export SSLKEYLOGFILE=~/.ssl-key.log
+# export SSLKEYLOGFILE=~/.ssl-key.log
 export XDG_SESSION_TYPE=x11
 export VISUAL=subl
 export EDITOR=micro
@@ -141,6 +134,11 @@ export LANG=en_US.UTF-8
 export OPENSSL_CONF=/dev/null # for phantomjs
 export LD_LIBRARY_PATH=/usr/local/lib
 export SKIM_DEFAULT_COMMAND="fd --type f || git ls-tree -r --name-only HEAD || rg --files || find ."
+export PATH=$HOME/.bun/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+# CTRL+R for command history
+# CTRL+T to list files and dirs
+eval "$(fzf --bash)"
 
 # sudo cp -rf /opt/google/chrome/WidevineCdm /usr/lib/chromium/ # copy *.so file
 # sudo ln -sf dash /bin/sh ## link dash to sh
@@ -156,8 +154,3 @@ export SKIM_DEFAULT_COMMAND="fd --type f || git ls-tree -r --name-only HEAD || r
 ## mp3 conv:: ffmpeg -i input.m4a -acodec libmp3lame -b:a 320k out.mp3
 ## add audio to video:: ffmpeg -i input.mp4 -i input.mp3 -c copy -map 0:v:0 -map 1:a:0 output.mp4
 ## trim video:: ffmpeg -i input.mp4 -ss 00:00:00 -t 00:03:16 -c:v copy -c:a copy short.mp4
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
-export PATH="$HOME/.cargo/bin:$PATH"
-eval "$(starship init bash)"
