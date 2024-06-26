@@ -22,11 +22,11 @@ w=$(printf "1. dwm\n2. i3wm\n3. xfce" | fzf)
 # Installs (via pacman)
 sudo pacman -Syy
 sudo pacman -S --needed xorg-server xorg-xinit xorg-xset ntfs-3g \
-ttf-inconsolata noto-fonts noto-fonts-emoji \
+ttf-inconsolata ttf-arphic-ukai noto-fonts ttf-noto-emoji-monochrome \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
 aria2 mpv dmenu clipmenu htop p7zip \
 ripgrep fd sd fzf skim choose numlockx \
-thunar eza micro
+systemd-oomd-defaults thunar eza micro
 ## joshuto-bin (via yay) user friendly! TUI file explorer.
 ## micro: supports ctrl+d to duplicate line, ctrl+q quit, ctrl+c, ctrl+v auto complete()""''
 ## jq jless (for json), uv for python-pip and venv alternative
