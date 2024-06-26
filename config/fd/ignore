@@ -1,8 +1,17 @@
-.git
-.local
-.icons
-.pki
-.cache
-.config
-.themes
-.ssh
+.git/
+.ruff_cache/
+.venv/
+.local/
+.config/*/
+.icons/
+.pki/
+.doru/
+.npm/
+.cache/
+.themes/
+.ssh/
+.mozilla/
+lib/
+bin/
+## -- whitelist --
+!.config/
