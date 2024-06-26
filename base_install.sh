@@ -35,10 +35,13 @@ locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
 echo arch > /etc/hostname
+## etc confs
 mv etc/hosts /etc/hosts
 mv etc/nanorc /etc/
 mv etc/resolv.conf /etc/
 mv etc/bash.bashrc /etc/
+mkdir /etc/systemd
+mv etc/oomd.conf /etc/systemd/
 echo "set completion-ignore-case on" >> /etc/inputrc
 echo "set enable-keypad on" >> /etc/inputrc
 
@@ -48,7 +51,9 @@ grub-install --target=x86_64-efi --bootloader-id=grub_efi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 
 ## misc.
-systemctl enable dhcpcd.service
+systemctl enable dhcpcd
+systemctl enable systemd-oomd
+systemctl start systemd-oomd
 
 ## exit
 echo "======================================================="

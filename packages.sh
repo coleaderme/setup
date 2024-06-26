@@ -26,16 +26,16 @@ ttf-inconsolata noto-fonts noto-fonts-emoji \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
 aria2 mpv dmenu clipmenu htop p7zip \
 ripgrep fd sd fzf skim choose numlockx \
-earlyoom thunar eza micro
+thunar eza micro
 ## joshuto-bin (via yay) user friendly! TUI file explorer.
 ## micro: supports ctrl+d to duplicate line, ctrl+q quit, ctrl+c, ctrl+v auto complete()""''
-## jq jless (for json), uv for python pip-alternative
+## jq jless (for json), uv for python-pip and venv alternative
 ## fend (calc)
 ## herbe (minimal popup notification) [from github]
 ## code-oss (vscode opensource build) with exts -> ruff + python + cody (free ver)
 ## android-tools gvfs gvfs-mtp (android device support)
-## woeusb: windows usb
-## usbimager: linux usb
+## woeusb: windows usb creator
+## usbimager: linux usb creator
 
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -sic
 # Installs (via yay)
