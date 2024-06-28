@@ -26,7 +26,7 @@ ttf-inconsolata ttf-arphic-ukai ttf-carlito noto-fonts ttf-noto-emoji-monochrome
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
 aria2 mpv dmenu clipmenu htop p7zip \
 ripgrep fd sd fzf skim choose numlockx \
-systemd-oomd-defaults thunar eza micro
+earlyoom thunar eza micro
 ## ttyper: Terminal-based typing test
 ## joshuto-bin (via yay) user friendly! TUI file explorer.
 ## micro: supports ctrl+d to duplicate line, ctrl+q quit, ctrl+c, ctrl+v auto complete()""''
