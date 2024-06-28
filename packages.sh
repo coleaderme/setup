@@ -22,7 +22,7 @@ w=$(printf "1. dwm\n2. i3wm\n3. xfce" | fzf)
 # Installs (via pacman)
 sudo pacman -Syy
 sudo pacman -S --needed xorg-server xorg-xinit xorg-xset ntfs-3g \
-ttf-inconsolata ttf-arphic-ukai noto-fonts ttf-noto-emoji-monochrome \
+ttf-inconsolata ttf-arphic-ukai ttf-carlito noto-fonts ttf-noto-emoji-monochrome \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
 aria2 mpv dmenu clipmenu htop p7zip \
 ripgrep fd sd fzf skim choose numlockx \
