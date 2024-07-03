@@ -5,6 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
+
 static char *font = "InconsolataSemiCondensedBold:pixelsize=16:antialias=true:autohint=true";
 // yay -S ttf-cascadia-code-nerd
 // static char *font = "CaskaydiaCoveNerdFontPropo-Regular:pixelsize=14:antialias=true:autohint=false";
@@ -96,48 +97,40 @@ char *termname = "st-256color";
 unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = {
-    /* 8 normal colors */
-    [0] = "#000000", /* black   */
-    [1] = "#ff5555", /* red     */
-    [2] = "#50fa7b", /* green   */
-    [3] = "#f1fa8c", /* yellow  */
-    [4] = "#bd93f9", /* blue    */
-    [5] = "#ff79c6", /* magenta */
-    [6] = "#8be9fd", /* cyan    */
-    [7] = "#bbbbbb", /* white   */
-                                  
-    /* 8 bright colors */
-    [8]  = "#ff79c6", /* black   */
-    [9]  = "#ff5555", /* red     */
-    [10] = "#50fa7b", /* green   */
-    [11] = "#f1fa8c", /* yellow  */
-    [12] = "#bd93f9", /* blue    */
-    [13] = "#ff79c6", /* magenta */
-    [14] = "#8be9fd", /* cyan    */
-    [15] = "#ffffff", /* white   */
-                                   
-    /* special colors */
-    [256] = "#32174d", /* background */
-    [257] = "#f8f8f2", /* foreground */
+static char *colorname[] = {
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+  /* 8 normal colors */
+  [0] = "#151515", /* black   */
+  [1] = "#AC4142", /* red     */
+  [2] = "#90A959", /* green   */
+  [3] = "#F4BF75", /* yellow  */
+  [4] = "#6A9FB5", /* blue    */
+  [5] = "#AA759F", /* magenta */
+  [6] = "#75B5AA", /* cyan    */
+  [7] = "#D0D0D0", /* white   */
+
+  /* 8 bright colors */
+  [8]  = "#505050",  /* black   */
+  [9]  = "#AC4142",  /* red     */
+  [10] = "#90A959", /* green   */
+  [11] = "#F4BF75", /* yellow  */
+  [12] = "#6A9FB5", /* blue    */
+  [13] = "#AA759F", /* magenta */
+  [14] = "#75B5AA", /* cyan    */
+  [15] = "#F5F5F5", /* white   */
+
+  /* special colors */
+  [256] = "#151515", /* background */
+  [257] = "#D0D0D0", /* foreground */
+  [258] = "#D0D0D0",     /* cursor */
 };
 
-
-/*
- * Default colors (colorname index)
- * foreground, background, cursor
- */
-unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
-unsigned int defaultcs = 257;
-static unsigned int defaultrcs = 257;
-
+/* Default colors (colorname index)
+ * foreground, background, cursor */
+ unsigned int defaultbg = 0;
+ unsigned int defaultfg = 257;
+ unsigned int defaultcs = 258;
+ unsigned int defaultrcs= 258;
 /*
  * Colors used, when the specific fg == defaultfg. So in reverse mode this
  * will reverse too. Another logic would only make the simple feature too
@@ -188,8 +181,8 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
-	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
-	{ XK_ANY_MOD,           Button3, selpaste,       {.i = 0},      1 },
+	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 }, /* right mouse button */
+	{ XK_ANY_MOD,           Button3, selpaste,       {.i = 0},      1 }, /* middle mouse button */
 	// { ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	// { XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
 	// { ShiftMask,            Button5, ttysend,        {.s = "\033[6;2~"} },
@@ -197,8 +190,8 @@ static MouseShortcut mshortcuts[] = {
 };
 
 /* Internal keyboard shortcuts. */
-#define MODKEY Mod1Mask
-#define TERMMOD (ControlMask|ShiftMask)
+#define MODKEY Mod1Mask /* Alt */
+#define TERMMOD (ControlMask|ShiftMask) /* Ctrl+Shift */
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
@@ -211,7 +204,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
+	{ TERMMOD,              XK_V,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ XK_NO_MOD,            XK_Page_Up,     kscrollup,      {.i = -1} },
