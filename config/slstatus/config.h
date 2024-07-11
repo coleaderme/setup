@@ -7,7 +7,7 @@ const unsigned int interval = 5000;
 static const char unknown_str[] = "n/a";
 
 /* maximum output string length */
-#define MAXLEN 64 // default: 2048
+#define MAXLEN 64 /* default: 2048 */
 
 /*
  * function            description                     argument (example)
@@ -66,5 +66,5 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format          argument */
 	// { run_command, "Vol: %s | ", "amixer get Master | tail -n 1 | cut -c 22-24" },
-	{ datetime, "%s",           "%a %b %d | %T" },
+	{ datetime, "%s",           "%a %d-%b-%y | %I:%M %p" }, /* Fri 12-Jul-24 | 01:09 AM */
 };
