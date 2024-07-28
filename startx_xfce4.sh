@@ -7,5 +7,5 @@ sudo pacman -Syy
 sudo pacman -S --needed xfce4
 
 #xinit entry
-sudo mv startx_xyz/xinitrc_xfce4 /etc/X11/xinit/xinitrc
+sudo cp startx_xyz/xinitrc_xfce4 /etc/X11/xinit/xinitrc
 echo "You may reboot now."

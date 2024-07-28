@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+# Script [1/3]
 # bash base_install.sh
 
 # ==========================================================="
@@ -27,29 +28,30 @@ usermod -aG wheel,storage,power "$new_user"
 sd -s '# %wheel ALL=(ALL:ALL) ALL' '%wheel ALL=(ALL:ALL) ALL' /etc/sudoers
 sd -s '# %wheel ALL=(ALL:ALL) NOPASSWD: ALL' '%wheel ALL=(ALL:ALL) NOPASSWD: ALL' /etc/sudoers
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
-ln -sf /usr/bin/dash /usr/bin/sh
+
 ## locale
 timedatectl set-timezone Asia/Kolkata
-echo "en_US.UTF-8" >> /etc/locale.gen
+sd -s '#en_US.UTF-8 UTF-8' 'en_US.UTF-8 UTF-8' /etc/locale.gen
 locale-gen
-echo LANG=en_US.UTF-8 > /etc/locale.conf
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
 export LANG=en_US.UTF-8
 echo arch > /etc/hostname
+echo "127.0.0.1 localhost" >> /etc/hosts
+echo "::1 localhost" >> /etc/hosts
+echo "127.0.1.1 arch.localdomain localhost" >> /etc/hosts
 ## etc confs
-mv etc/hosts /etc/hosts
 mv etc/nanorc /etc/
 mv etc/resolv.conf /etc/
 mv etc/bash.bashrc /etc/
 echo "set completion-ignore-case on" >> /etc/inputrc
 echo "set enable-keypad on" >> /etc/inputrc
 
-## grub setup
-pacman -S --needed grub efibootmgr dosfstools mtools
+## grub bootloader setup
+echo "[+] Setting up grub bootloader"
+pacman -S --needed --noconfirm grub efibootmgr dosfstools mtools
 grub-install --target=x86_64-efi --bootloader-id=grub_efi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
-
-## misc.
-systemctl enable dhcpcd
+echo "done."
 
 ## exit
 echo "======================================================="
