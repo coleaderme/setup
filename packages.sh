@@ -13,7 +13,7 @@ echo "========================================================"
 # Installs (via pacman)
 sudo pacman -Syy
 sudo pacman -S --needed --noconfirm xorg-server xorg-xinit xorg-xset ntfs-3g \
-ttf-inconsolata ttf-arphic-ukai ttf-carlito noto-fonts ttf-noto-emoji-monochrome \
+ttf-inconsolata ttf-arphic-ukai ttf-indic-otf ttf-carlito noto-fonts-emoji \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
 aria2 mpv dmenu clipmenu htop p7zip \
 ripgrep fd sd fzf skim choose numlockx \
