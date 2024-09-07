@@ -34,7 +34,7 @@ You should see similar to this ->
     └─sda3   8:3    0    64G  0 part    # /home
 
 #### Formatting with EXT4 FileSytem :
-note: **DO NOT** format this /boot/efi partition if Windows installed.   
+NOTE: **DO NOT** format this /boot/efi partition if Windows installed.   
 - `mkfs.fat -F 32 /dev/sda1`   
 
 just format these two:  

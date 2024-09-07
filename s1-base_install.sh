@@ -1,5 +1,4 @@
 #!/usr/bin/bash
-# Script [1/3]
 # bash base_install.sh
 
 # ==========================================================="
@@ -30,7 +29,6 @@ sd -s '# %wheel ALL=(ALL:ALL) NOPASSWD: ALL' '%wheel ALL=(ALL:ALL) NOPASSWD: ALL
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 
 ## locale
-timedatectl set-timezone Asia/Kolkata
 sd -s '#en_US.UTF-8 UTF-8' 'en_US.UTF-8 UTF-8' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
@@ -40,16 +38,16 @@ echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1 localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain localhost" >> /etc/hosts
 ## etc confs
-mv etc/nanorc /etc/
-mv etc/resolv.conf /etc/
-mv etc/bash.bashrc /etc/
+cp etc/nanorc /etc/
+cp etc/resolv.conf /etc/
+cp etc/bash.bashrc /etc/
 echo "set completion-ignore-case on" >> /etc/inputrc
 echo "set enable-keypad on" >> /etc/inputrc
 
 ## grub bootloader setup
 echo "[+] Setting up grub bootloader"
 pacman -S --needed --noconfirm grub efibootmgr dosfstools mtools
-grub-install --target=x86_64-efi --bootloader-id=grub_efi --recheck
+grub-install --target=x86_64-efi --bootloader-id=arch_btw --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 echo "done."
 

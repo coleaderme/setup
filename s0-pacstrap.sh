@@ -1,5 +1,4 @@
-#!/usr/bin/env sh
-# Script [0]
+#!/usr/bin/sh
 # sh pacstrap.sh
 #
 # Intel cpu: intel-ucode

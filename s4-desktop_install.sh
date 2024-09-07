@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-# Script [3/3]
 # sudo sh packages.sh [ROOT]
 #
 echo "[Choose your desktop]: "
