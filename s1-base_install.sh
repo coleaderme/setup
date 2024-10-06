@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-# bash base_install.sh
+# sudo bash base_install.sh [root]
 
 # ==========================================================="
 # * mount partition with ~100MB size *
@@ -12,12 +12,12 @@
 ## Ready to install?
 read -p "Ready to install? (Y/N): " confirm && [[ $confirm == [yY] ]] || exit 1
 read -p "Did you mount /boot/efi to ~100MB partition? (Y/N): " confirm && [[ $confirm == [yY] ]] || exit 1
-## Add new user
-read -p "Enter user: " new_user
-echo "$new_user"
 ## root passwd
 echo "[+] Enter passwd for root: "
 passwd
+## Add new user
+read -p "Enter user: " new_user
+echo "$new_user"
 ## user setup
 echo "[+] Adding new_user: "
 useradd -m "$new_user"
@@ -47,7 +47,7 @@ echo "set enable-keypad on" >> /etc/inputrc
 ## grub bootloader setup
 echo "[+] Setting up grub bootloader"
 pacman -S --needed --noconfirm grub efibootmgr dosfstools mtools
-grub-install --target=x86_64-efi --bootloader-id=arch_btw --recheck
+grub-install --target=x86_64-efi --bootloader-id=archbtw --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
 echo "done."
 
