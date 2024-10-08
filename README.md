@@ -93,3 +93,5 @@ Copy /setup to ~/
 
 - `fc-list`: show correct font names to be used dmenu/dwm config.  
 
+- btrfs mount options: `rw,noatime,compress=no,nodatacow,commit=120 0 0`
+
