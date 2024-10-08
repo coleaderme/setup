@@ -86,12 +86,12 @@ Copy /setup to ~/
 
 
 ## Troubleshooting: 
-#### Fix slow download speeds:  
+Fix slow download speeds:  
 - `pacman -S --needed reflector rsync`  
 
 - `reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`  
 
-- `fc-list`: show correct font names to be used dmenu/dwm config.  
+`fc-list`: show correct font names to be used dmenu/dwm config.  
 
-- btrfs mount options: `rw,noatime,compress=no,nodatacow,commit=120 0 0`
+btrfs mount options: `rw,noatime,compress=no,nodatacow,commit=120 0 0`
 
