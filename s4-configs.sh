@@ -11,6 +11,7 @@ mkdir ~/.config
 cp config/*.conf ~/.config/
 cp -rf config/psd ~/.config/
 cp -rf config/bashrc ~/.bashrc
+cp -rf config/Xresources ~/.Xresources
 cp -rf config/nanorc ~/.nanorc
 cp -rf config/mpv ~/.config/
 cp -rf config/htop ~/.config/
