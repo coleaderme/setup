@@ -85,7 +85,7 @@ Copy /setup to ~/
 3. xfce4  [normal, desktop, windows]  
 
 
-## Troubleshooting: 
+## Troubleshooting:  
 Fix slow download speeds:  
 - `pacman -S --needed reflector rsync`  
 
@@ -93,5 +93,22 @@ Fix slow download speeds:
 
 `fc-list`: show correct font names to be used dmenu/dwm config.  
 
-btrfs mount options: `rw,noatime,compress=no,nodatacow,commit=120 0 0`
-
+## Extras   
+### Alsa EQ setup:  
+Dependancies   
+install `caps` or download http://quitte.de/dsp/caps_0.9.26.tar.bz2  
+add this to ~/.bashrc `export LADSPA_PATH=/usr/lib/ladspa` (this fixes cap.so cant locate error)  
+```shell  
+$ tar xfj caps_0.9.26.tar.bz2
+$ cd caps-0.9.26
+$ ./configure.py
+$ make
+$ sudo make install
+```  
+installations   
+```shell
+$ git clone https://github.com/bassdr/alsaequal
+$ cd alsaequal
+$ make
+$ sudo make install
+```
