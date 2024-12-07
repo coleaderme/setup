@@ -5,8 +5,7 @@ main(){
     [ -z "$d" ] && exit # exit if empty
     mountpoint=$(printf "D\nE\nF\nG\n" | dmenu -p "mount point: " -i -l 4)
     [ -z "$mountpoint" ] && exit # exit if empty
-    mkdir ~/"$mountpoint"
-    sudo mount "/dev/$d" ~/"$mountpoint" -o noatime,umask=000
+    sudo mount --mkdir "/dev/$d" "$HOME/$mountpoint" -o noatime
     herbe "Mounted: $d to ~/$mountpoint"
     exit
 }
@@ -18,4 +17,4 @@ esac
 
 # exit if empty
 [ -z "$2" ] && printf "./mountsd sdXY myfolder\nmust be related to HOME" && exit
-sudo mount "/dev/$d" ~/"$2" -o rw,noatime,umask=000 # ~/ only expands when outside of qoutes.
+sudo mount "/dev/$d" "$HOME/$2" -o noatime # $HOME/ is better.

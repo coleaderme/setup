@@ -35,12 +35,12 @@ You should see similar to this ->
 
 #### Formatting with EXT4 FileSytem :
 NOTE: **DO NOT** format this /boot/efi partition if Windows installed.   
-- `mkfs.fat -F 32 /dev/sda1`   
-
-just format these two:  
-- `mkfs.ext4 /dev/sda2`   
-- `mkfs.ext4 /dev/sda3`   
-
+NOTE: **DO NOT** format this /boot/efi partition if Windows installed.   
+NOTE: **DO NOT** format this /boot/efi partition if Windows installed.   
+- `mkfs.fat -F 32 /dev/sda1             #/boot/efi`   
+just format these two if Windows installed :  
+- `mkfs.ext4 /dev/sda2                  #/`   
+- `mkfs.ext4 /dev/sda3                  #/home`   
 
 #### Mount :
 - `mount --mkdir /dev/sda1 /mnt/boot/efi`   
@@ -53,23 +53,17 @@ just format these two:
   *:)*  
 
 ## Lets go!:  
-Replace `intel-ucode` with `amd-ucode` for AMD CPU.  
+NOTE: Replace `intel-ucode` with `amd-ucode` for AMD CPU.  
 
-- `pacstrap -K /mnt base base-devel linux linux-headers linux-firmware intel-ucode git fzf nano sd`  
-
+- `pacstrap -K /mnt base base-devel linux linux-headers linux-firmware git fzf nano sd intel-ucode`  
 - `genfstab -U /mnt >> /mnt/etc/fstab`  
-    
 - `arch-chroot /mnt`  we are now in newly mount / (root)  
-   
 - `git clone https://github.com/coleaderme/setup`  
+- `bash s1-base_install.sh` follow this script.  
 
-- `bash base_install.sh` follow this script then reboot.  
-
-  
 Arch linux installed successfully.  
 If all went well, you should be able to login with user and passwd (not shown).  
 Welcome to tty! (a blank terminal)  
-
 
 ## On first login as user:  
 Copy /setup to ~/  
@@ -88,12 +82,12 @@ Copy /setup to ~/
 ## Troubleshooting:  
 Fix slow download speeds:  
 - `pacman -S --needed reflector rsync`  
-
 - `reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`  
 
 `fc-list`: show correct font names to be used dmenu/dwm config.  
 
 ## Extras   
+
 ### Alsa EQ setup:  
 Dependancies   
 install `caps` or download http://quitte.de/dsp/caps_0.9.26.tar.bz2  
