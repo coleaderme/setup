@@ -106,3 +106,18 @@ $ cd alsaequal
 $ make
 $ sudo make install
 ```
+
+### Mounting drives as USER:
+install: `sudo pacman -S gvfs gvfs-mtp thunar thunar-volman polkit`
+edit `sudo nano /etc/polkit-1/rules.d/10-udisks2.rules`
+```
+// Allow udisks2 to mount devices without authentication
+// for users in the "storage" group.
+polkit.addRule(function(action, subject) {
+    if ((action.id == "org.freedesktop.udisks2.filesystem-mount-system" ||
+         action.id == "org.freedesktop.udisks2.filesystem-mount") &&
+    subject.isInGroup("storage")) {
+        return polkit.Result.YES;
+    }
+});
+```

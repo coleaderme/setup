@@ -44,6 +44,8 @@ cp etc/resolv.conf /etc/
 cp etc/bash.bashrc /etc/
 echo "set completion-ignore-case on" >> /etc/inputrc
 echo "set enable-keypad on" >> /etc/inputrc
+mkdir -p "/etc/polkit-1/rules.d" && cp etc/10-udisks2.rules /etc/polkit-1/rules.d/
+
 
 ## grub bootloader setup
 echo "[+] Setting up grub bootloader"
