@@ -83,6 +83,7 @@ Copy /setup to ~/
 Fix slow download speeds:  
 - `pacman -S --needed reflector rsync`  
 - `reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`  
+- Install `dnscrypt-proxy` to bypass ISP's dns (reason for download timeouts)
 
 `fc-list`: show correct font names to be used dmenu/dwm config.  
 
