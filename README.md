@@ -1,6 +1,4 @@
 # setup
-## Overview : 
-
 ## Pre-requisites before using script : 
 
 **Manage your own disk partition**
