@@ -1,4 +1,9 @@
+# google docs useful-stuff-mini-wiki:
+https://docs.google.com/document/d/1n4g8nYFDroHMy6fbYHAyRVx64HswYeQoAvtRxHw_EsM/edit
+
 # setup
+## Overview : 
+
 ## Pre-requisites before using script : 
 
 **Manage your own disk partition**
@@ -78,11 +83,12 @@ Copy /setup to ~/
 Fix slow download speeds:  
 - `pacman -S --needed reflector rsync`  
 - `reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`  
-- Install `dnscrypt-proxy` to bypass ISP's dns (reason for download timeouts)
+- Install `dnscrypt-proxy` to bypass ISP's dns / fix download timeouts.
+    `systemctl disable dnscrypt-proxy.socket && systemctl enable dnscrypt-proxy.service`  
+
+## Extras
 
 `fc-list`: show correct font names to be used dmenu/dwm config.  
-
-## Extras   
 
 ### Alsa EQ setup:  
 Dependancies   
