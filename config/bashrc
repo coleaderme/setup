@@ -53,6 +53,7 @@ alias view='viewnior'
 alias o='viewnior'
 alias cod='/usr/bin/code'
 alias gc='git clone'
+alias qr='qrencode -t ansiutf8 "$(xsel -b)"'
 alias rn1='for i in *.*;do mv "$i" "$i"1;done' # append 1 to filename
 alias rn1b='for i in *.*1;do mv "$i" "$(echo "$i"|choose -c 0..-1)";done' # remove 1 from filename
 alias neofetch='fastfetch'
