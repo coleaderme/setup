@@ -5,9 +5,9 @@ sudo pacman -Syy
 sudo pacman -S --needed --noconfirm xorg-server xorg-xinit xorg-xset ntfs-3g \
 ttf-inconsolata ttf-arphic-ukai ttf-indic-otf ttf-carlito noto-fonts-emoji \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
-aria2 mpv dmenu polkit htop p7zip \
+aria2 mpv dmenu polkit htop 7zip \
 ripgrep fd xh sd fzf skim choose numlockx \
-earlyoom thunar eza micro nnn feh miniserve
+earlyoom thunar eza micro nnn feh miniserve dnscrypt-proxy
 ## ttyper: Terminal-based typing test
 ## joshuto-bin (via yay) user friendly! TUI file explorer.
 ## micro: nano++

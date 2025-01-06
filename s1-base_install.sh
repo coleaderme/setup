@@ -41,6 +41,7 @@ echo "127.0.1.1 arch.localdomain localhost" >> /etc/hosts
 cp etc/nanorc /etc/
 # cp etc/asound.conf /etc/ # copy if using alsa eq
 cp etc/resolv.conf /etc/
+cp etc/dnscrypt-proxy.toml /etc/dnscrypt-proxy/
 cp etc/bash.bashrc /etc/
 echo "set completion-ignore-case on" >> /etc/inputrc
 echo "set enable-keypad on" >> /etc/inputrc
