@@ -1,0 +1,47 @@
+[Added Associations]
+application/xml=sublime_text.desktop;
+audio/aac=audacious.desktop;
+audio/flac=audacious.desktop;
+audio/mp4=mpv.desktop;spek.desktop;audacious.desktop;
+audio/mpeg=audacious.desktop;spek.desktop;mpv.desktop;
+audio/ogg=audacious.desktop;
+audio/vnd.wave=mpv.desktop;spek.desktop;
+audio/x-m4a=audacious.desktop;
+audio/x-ms-wma=mpv.desktop;audacious.desktop;
+audio/x-wav=audacious.desktop;
+image/gif=feh.desktop;
+image/jpeg=viewnior.desktop;
+image/png=viewnior.desktop;
+text/plain=sublime_text.desktop;
+text/x-chdr=sublime_text.desktop;
+text/x-shellscript=sublime_text.desktop;
+text/x-python=sublime_text.desktop;
+video/mp4=mpv.desktop;
+video/webm=mpv.desktop;
+text/html=sublime_text.desktop;
+x-scheme-handler/tg=userapp-64Gram Desktop-5D3SZ2.desktop;
+x-scheme-handler/tonsite=userapp-64Gram Desktop-048SZ2.desktop;
+
+[Default Applications]
+image/jpeg=viewnior.desktop;
+image/png=viewnior.desktop;
+application/x-zerosize=sublime_text.desktop;
+application/xml=sublime_text.desktop;
+audio/aac=audacious.desktop;
+audio/flac=audacious.desktop;
+audio/mp4=audacious.desktop;mpv.desktop;spek.desktop;
+audio/mpeg=mpv.desktop;audacious.desktop;spek.desktop;
+audio/ogg=audacious.desktop;
+audio/vnd.wave=mpv.desktop;spek.desktop;
+audio/x-m4a=audacious.desktop;
+audio/x-ms-wma=audacious.desktop;
+audio/x-wav=audacious.desktop;
+image/gif=feh.desktop;
+text/html=google-chrome.desktop
+text/plain=sublime_text.desktop;
+text/x-Algol68=sublime_text.desktop;
+text/x-shellscript=sublime_text.desktop;
+text/x-python=sublime_text.desktop;
+video/mp4=mpv.desktop;
+video/webm=mpv.desktop;
+inode/directory=thunar.desktop;

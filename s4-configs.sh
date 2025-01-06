@@ -9,6 +9,7 @@ yay -S joshuto-bin
 echo "[+] copying confs to ~/.config"
 mkdir ~/.config
 cp config/*.conf ~/.config/
+cp config/mimeapps.list ~/.config
 cp -rf config/psd ~/.config/
 cp -rf config/bashrc ~/.bashrc
 cp -rf config/Xresources ~/.Xresources
