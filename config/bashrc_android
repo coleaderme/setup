@@ -1,7 +1,7 @@
 #
 # ~/.bashrc
-# quick time setup/update :: convert line below to qr code and scan with your phone.
-# mv ~/.bashrc ~/.bashrc.bak && curl https://raw.githubusercontent.com/coleaderme/setup/refs/heads/main/config/bashrc_android > ~/.bashrc && source ~/.bashrc
+# First time setup only! :: convert line below to qr code and scan with your phone.
+# curl https://raw.githubusercontent.com/coleaderme/setup/refs/heads/main/config/bashrc_android > ~/.bashrc && source ~/.bashrc
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
