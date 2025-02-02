@@ -1,6 +1,8 @@
 #
 # ~/.bashrc
-#
+# quick time setup/update ::
+# curl https://raw.githubusercontent.com/coleaderme/setup/refs/heads/main/config/bashrc_android >> ~/.bashrc && source ~/.bashrc
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 PS1='\W \$ '
