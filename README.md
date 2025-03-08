@@ -104,9 +104,9 @@ $ make
 $ sudo make install
 ```
 
-### Mounting drives as USER:
-install: `sudo pacman -S gvfs gvfs-mtp thunar thunar-volman polkit`
-edit `sudo nano /etc/polkit-1/rules.d/10-udisks2.rules`
+### Mounting drives as USER:  
+install: `sudo pacman -S gvfs gvfs-mtp thunar thunar-volman polkit`  
+edit `sudo nano /etc/polkit-1/rules.d/10-udisks2.rules`  
 ```
 // Allow udisks2 to mount devices without authentication
 // for users in the "storage" group.
@@ -119,9 +119,9 @@ polkit.addRule(function(action, subject) {
 });
 ```
 
-### Auto Mount NTFS drives:
-get blkid -> `sudo blkid`
-edit `/etc/fstab`
+### Auto Mount NTFS drives:  
+get blkid -> `sudo blkid`  
+edit `/etc/fstab`  
 ```
 UUID=UUID_GOES_HERE       /home/user/data    ntfs     default,auto,nofail,noatime,windows_names,uid=1000,gid=1000,umask=022 0 0
 ```
