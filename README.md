@@ -120,7 +120,7 @@ polkit.addRule(function(action, subject) {
 ```
 
 ### Auto Mount NTFS drives:  
-get blkid -> `sudo blkid`  
+get UUID -> `sudo blkid`  
 edit `/etc/fstab`  
 ```
 UUID=UUID_GOES_HERE       /home/user/data    ntfs     default,auto,nofail,noatime,windows_names,uid=1000,gid=1000,umask=022 0 0
