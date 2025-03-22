@@ -1,7 +1,5 @@
 #
 # ~/.bashrc
-# First time setup only! :: convert line below to qr code and scan with your phone.
-# curl https://raw.githubusercontent.com/coleaderme/setup/refs/heads/main/config/bashrc_android > ~/.bashrc && source ~/.bashrc
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -37,7 +35,7 @@ alias xh_ses='xh -4 -S -I -F -pb --verify=no --pretty=none --session=s'
 alias installed='pkg list-installed'
 alias update='pkg update && pkg upgrade'
 alias fz='fd -H | fzf -i -e --algo=v1'
-alias update_bashrc_git="aria2c --no-conf --disable-ipv6=true --header 'User-Agent: Mozilla/5.0' 'https://raw.githubusercontent.com/coleaderme/setup/main/config/bashrc_android' && mv bashrc_android ~/.bashrc && source ~/.bashrc && echo Updated bashrc"
+alias bashup="cp ~/.bashrc ~/.bashrc.bak && curl 'https://raw.githubusercontent.com/coleaderme/setup/main/config/bashrc_android' > ~/.bashrc && source ~/.bashrc && echo Updated bashrc"
 # YT
 alias yt="yt-dlp -P ~/storage/downloads/ --no-check-certificates --restrict-filenames --downloader aria2c"
 alias ytx='yt-dlp -P ~/storage/downloads/ -x --no-check-certificates --restrict-filenames'
