@@ -86,7 +86,7 @@ Fix slow download speeds:
 `fc-list`: show correct font names to be used dmenu/dwm config.  
 
 ### bashrc android termux   
-contains this command:  
+qr image below contains this command:  
 `curl https://raw.githubusercontent.com/coleaderme/setup/refs/heads/main/config/bashrc_android > ~/.bashrc && source ~/.bashrc`   
 
 ![bashrc android](misc/bashrc_android.png)  
