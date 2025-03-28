@@ -97,6 +97,29 @@ Copy /setup to ~/
 
 bootloader fixed!  
 
+### Fix Windows bootloader:  
+- `Shift` + `F10` to open command prompt.  
+
+- `diskpart`  
+
+- `list disk`  
+
+- `sel disk #` <= bootloader disk  
+
+- `list vol`  
+
+- `sel vol #` <= bootloader partition  
+
+- `assign letter=v`  
+
+- CAUTION! `format V: /fs:fat32` <= Do NOT format if this contains other bootloaders (eg. dual booting linux), you can skip this command.  
+
+- `exit` <= exit diskpart 
+
+- `bcdboot c:\Windows /s v: /f UEFI`  
+
+windows bootloader fixed!  
+
 ## Extras
 
 `fc-list`: show correct font names to be used dmenu/dwm config.  
