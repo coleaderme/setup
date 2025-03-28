@@ -91,7 +91,7 @@ Copy /setup to ~/
 
 - `arch-chroot /mnt`  
 
-- `grub-install --target=x86_64-efi --bootloader-id=archbtw --recheck`  
+- `grub-install --target=x86_64-efi --bootloader-id=archfix --recheck`  
 
 - `grub-mkconfig -o /boot/grub/grub.cfg`  
 
