@@ -84,12 +84,17 @@ Copy /setup to ~/
 
 ### Fix archlinux bootloader:  
 *adjust XY for your partition*  
+
 > `mount --mkdir -o noatime /dev/sdXY /mnt           #root`  
+
 > `mount --mkdir -o noatime /dev/sdXY /mnt/boot/efi  #boot`  
 
 > `arch-chroot /mnt`  
+
 > `grub-install --target=x86_64-efi --bootloader-id=archbtw --recheck`  
+
 > `grub-mkconfig -o /boot/grub/grub.cfg`  
+
 bootloader fixed!  
 
 ## Extras
