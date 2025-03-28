@@ -98,6 +98,8 @@ Copy /setup to ~/
 bootloader fixed!  
 
 ### Fix Windows bootloader:  
+Create a bootable USB, during installation process at disk partion screen.  
+
 - `Shift` + `F10` to open command prompt.  
 
 - `diskpart`  
