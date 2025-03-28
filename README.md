@@ -69,17 +69,28 @@ Copy /setup to ~/
 ## Choose your desktop:  
 - `sh desktop_install.sh`: Installs desktop.  
 
-1. dwm    [ultrafast, extreme lightweight, tiling]  
-2. i3-wm  [fast, lightweight, tiling]  
-3. xfce4  [normal, desktop, windows]  
+1. dwm    [extreme lightweight tiling]  
+2. i3-wm  [lightweight tiling]  
+3. xfce4  [normal desktop]  
 
 
 ## Troubleshooting:  
-Fix slow download speeds:  
+
+### Fix slow download speeds:  
 - `pacman -S --needed reflector rsync`  
 - `reflector --threads 5 --sort rate --country AU,GB,IN --age 6 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist`  
 - Install `dnscrypt-proxy` to bypass ISP's dns / fix download timeouts.
     `systemctl disable dnscrypt-proxy.socket && systemctl enable dnscrypt-proxy.service`  
+
+### Fix archlinux bootloader:  
+*adjust XY for your partition*  
+> `mount --mkdir -o noatime /dev/sdXY /mnt           #root`  
+> `mount --mkdir -o noatime /dev/sdXY /mnt/boot/efi  #boot`  
+
+> `arch-chroot /mnt`  
+> `grub-install --target=x86_64-efi --bootloader-id=archbtw --recheck`  
+> `grub-mkconfig -o /boot/grub/grub.cfg`  
+bootloader fixed!  
 
 ## Extras
 
