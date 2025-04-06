@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 
-static char *font = "InconsolataSemiCondensedBold:pixelsize=16:antialias=true:autohint=true";
+static char *font = "UbuntuMono:pixelsize=18:antialias=true:autohint=true";
 // yay -S ttf-cascadia-code-nerd
 // static char *font = "CaskaydiaCoveNerdFontPropo-Regular:pixelsize=14:antialias=true:autohint=false";
 static int borderpx = 2;
@@ -97,40 +97,40 @@ char *termname = "st-256color";
 unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
-const char *colorname[] = {
+static const char *colorname[] = {
+    /* 8 normal colors */
+    [0] = "#1c1c1c", /* black   */
+    [1] = "#cc241d", /* red     */
+    [2] = "#98971a", /* green   */
+    [3] = "#d79921", /* yellow  */
+    [4] = "#458588", /* blue    */
+    [5] = "#b16286", /* magenta */
+    [6] = "#689d6a", /* cyan    */
+    [7] = "#a89984", /* white   */
+    /* 8 bright colors */
+    [8]  = "#928374", /* bright black */
+    [9]  = "#fb4934", /* bright red */
+    [10] = "#b8bb26", /* bright green */
+    [11] = "#fabd2f", /* bright yellow */
+    [12] = "#83a598", /* bright blue */
+    [13] = "#d3869b", /* bright magenta */
+    [14] = "#8ec07c", /* bright cyan */
+    [15] = "#ebdbb2", /* bright white */
 
-  /* 8 normal colors */
-  [0] = "#272822", /* black   */
-  [1] = "#FF6188", /* red     */
-  [2] = "#A9DC76", /* green   */
-  [3] = "#FC9867", /* yellow  */
-  [4] = "#78DCE8", /* blue    */
-  [5] = "#AB9DF2", /* magenta */
-  [6] = "#a1efe4", /* cyan    */
-  [7] = "#f8f8f2", /* white   */
-
-  /* 8 bright colors */
-  [8]  = "#75715e",  /* black   */
-  [9]  = "#f92672",  /* red     */
-  [10] = "#a6e22e", /* green   */
-  [11] = "#f4bf75", /* yellow  */
-  [12] = "#66d9ef", /* blue    */
-  [13] = "#ae81ff", /* magenta */
-  [14] = "#a1efe4", /* cyan    */
-  [15] = "#f9f8f5", /* white   */
-
-  /* special colors */
-  [256] = "#272822", /* background */
-  [257] = "#f8f8f2", /* foreground */
-  [258] = "#f92672",     /* cursor */
+    /* special colors */
+    [256] = "#282828", /* background (dark grey, similar to Suckless default) */
+    [257] = "#ebdbb2", /* foreground (light white text) */
+    [258] = "#458588", /* cursor color (blue highlight, matches theme) */
 };
+/*
+ * Default colors (colorname index)
+ * foreground, background, cursor
+ */
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+unsigned int defaultcs = 257;
+static unsigned int defaultrcs = 257;
 
-/* Default colors (colorname index)
- * foreground, background, cursor */
- unsigned int defaultbg = 0;
- unsigned int defaultfg = 257;
- unsigned int defaultcs = 258;
- unsigned int defaultrcs= 258;
 /*
  * Colors used, when the specific fg == defaultfg. So in reverse mode this
  * will reverse too. Another logic would only make the simple feature too
