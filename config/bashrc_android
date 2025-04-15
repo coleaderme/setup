@@ -30,7 +30,7 @@ alias install='pkg install'
 alias downloads='cd ~/storage/downloads'
 alias music='cd ~/storage/music'
 alias un='apt autoremove'
-alias ms="miniserve -q -u -W -r -D -F -l --hide-theme-selector ."
+alias ms="miniserve -i 0.0.0.0 -q -u -W -r -D -F -l --hide-theme-selector ."
 alias xh_ses='xh -4 -S -I -F -pb --verify=no --pretty=none --session=s'
 alias installed='pkg list-installed'
 alias update='pkg update && pkg upgrade'
