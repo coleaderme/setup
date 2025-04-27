@@ -15,6 +15,9 @@ alias show_options='shopt'                  # Show_options: display bash options
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 bind '"\e[Z":menu-complete-backward'
+# Switch git profiles; run in cloned repo dir
+alias gitwork='git config user.name "USERNAME"; git config user.email "EMAIL"'
+alias gitpersonal='git config user.name "USERNAME"; git config user.email "EMAIL"'
 #Custom alias
 alias 7zx='7z x'
 alias rustcc='rustc -O -C prefer-dynamic'   # compact compiled size like C
@@ -139,9 +142,6 @@ export OPENSSL_CONF=/dev/null # for phantomjs
 export LD_LIBRARY_PATH=/usr/local/lib
 export SKIM_DEFAULT_COMMAND="fd --type f || git ls-tree -r --name-only HEAD || rg --files || find ."
 export PATH=$HOME/.cargo/bin:$PATH
-# nodejs
-export NODE_INSTALL="$HOME/.cache/sublime-text/Package Storage/lsp_utils/node-runtime/20.18.0/node/bin"
-export PATH=$NODE_INSTALL:$PATH
 # NNN configs
 export NNN_PLUG="p:preview-tui"
 export NNN_FIFO="/tmp/nnn.fifo"
