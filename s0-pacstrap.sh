@@ -1,5 +1,4 @@
 #!/usr/bin/sh
-# sh pacstrap.sh
 #
 # Intel cpu: intel-ucode (optionals: xf86-video-intel vulkan-intel)
 # AMD   cpu: amd-ucode

@@ -10,5 +10,5 @@ pacman -Syy
 pacman -S --needed --noconfirm pacman-contrib reflector rsync sd fzf dnscrypt-proxy
 systemctl disable dnscrypt-proxy.socket
 systemctl enable dnscrypt-proxy.service
-reflector --threads 5 --sort rate --country AU,GB,IN --age 12 --download-timeout 60 --fastest 20 --protocol https --ipv4 --save /etc/pacman.d/mirrorlist
+reflector --threads 4 --sort rate --country IN --age 6 --download-timeout 5 --fastest 10 --ipv4 --save /etc/pacman.d/mirrorlist
 echo 1 >> already_ran_reflector.txt

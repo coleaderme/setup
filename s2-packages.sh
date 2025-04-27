@@ -3,12 +3,13 @@
 # 
 sudo pacman -Syy
 sudo pacman -S --needed --noconfirm xorg-server xorg-xinit xorg-xset ntfs-3g \
-ttf-inconsolata ttf-arphic-ukai ttf-indic-otf ttf-carlito ttf-ubuntu-font-family noto-fonts-emoji \
+ttf-inconsolata ttf-arphic-ukai ttf-indic-otf ttf-ubuntu-font-family noto-fonts-emoji \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
-aria2 mpv dmenu polkit htop 7zip \
+aria2 mpv polkit htop 7zip \
 ripgrep fd xh sd fzf skim choose numlockx \
 earlyoom thunar eza micro nnn feh miniserve dnscrypt-proxy
 ## ttyper: Terminal-based typing test
+## dmenu: build from source
 ## joshuto-bin (via yay) user friendly! TUI file explorer.
 ## micro: nano++
 ## jq jless (for json), uv (for python-pip and venv alternative)
