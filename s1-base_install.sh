@@ -39,6 +39,7 @@ echo "::1 localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain localhost" >> /etc/hosts
 ## etc confs
 cp etc/nanorc /etc/
+cp etc/makepkg.conf /etc/
 # cp etc/asound.conf /etc/ # copy if using alsa eq
 cp etc/resolv.conf /etc/
 cp etc/dnscrypt-proxy.toml /etc/dnscrypt-proxy/
