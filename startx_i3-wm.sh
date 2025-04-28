@@ -8,5 +8,5 @@ cp -rf config/i3 ~/.config/
 cp -rf config/i3status-rs ~/.config/
 
 # xinit entry
-cp startx_xyz/xinitrc_i3 /etc/X11/xinit/xinitrc
+cp /etc/X11/xinit/xinitrc /etc/X11/xinit/xinitrc.bak && cp startx_xyz/xinitrc_i3 /etc/X11/xinit/xinitrc
 echo "You may reboot now."
