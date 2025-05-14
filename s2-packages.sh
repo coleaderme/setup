@@ -10,6 +10,7 @@ ripgrep fd xh sd fzf skim choose numlockx \
 earlyoom thunar eza micro nnn feh miniserve dnscrypt-proxy
 ## ttyper: Terminal-based typing test
 ## dmenu: build from source
+## fclones: find duplicates
 ## joshuto-bin (via yay) user friendly! TUI file explorer.
 ## micro: nano++
 ## jq jless (for json), uv (for python-pip and venv alternative)
