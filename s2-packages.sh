@@ -3,7 +3,7 @@
 # 
 sudo pacman -Syy
 sudo pacman -S --needed --noconfirm xorg-server xorg-xinit xorg-xset ntfs-3g \
-ttf-inconsolata ttf-arphic-ukai ttf-indic-otf ttf-ubuntu-font-family noto-fonts-emoji \
+ttf-arphic-ukai ttf-indic-otf ttf-ubuntu-font-family noto-fonts-emoji \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
 aria2 mpv polkit htop 7zip \
 ripgrep fd xh sd fzf skim choose numlockx \
