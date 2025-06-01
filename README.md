@@ -163,6 +163,17 @@ polkit.addRule(function(action, subject) {
     }
 });
 ```
+### replace sudo doas:
+`sudo pacman -S opendoas`  
+edit: `/etc/doas.conf`  
+```
+permit setenv {PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin} :wheel
+```
+```sh
+doas chown -c root:root /etc/doas.conf
+doas chmod -c 0400 /etc/doas.conf
+ln -s $(which doas) /usr/bin/sudo
+```
 
 ### Auto Mount NTFS drives:  
 get UUID -> `sudo blkid`  
