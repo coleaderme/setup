@@ -24,13 +24,6 @@ useradd -m "$new_user"
 echo "[*] Enter passwd for new_user: "
 passwd "$new_user"
 usermod -aG wheel,storage,power "$new_user"
-
-## replace sudo with doas
-echo "permit setenv {PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin} :wheel" >> /etc/doas.conf
-doas chown -c root:root /etc/doas.conf
-doas chmod -c 0400 /etc/doas.conf
-ln -s $(which doas) /usr/bin/sudo
-
 sd -s '# %wheel ALL=(ALL:ALL) ALL' '%wheel ALL=(ALL:ALL) ALL' /etc/sudoers
 sd -s '# %wheel ALL=(ALL:ALL) NOPASSWD: ALL' '%wheel ALL=(ALL:ALL) NOPASSWD: ALL' /etc/sudoers
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
