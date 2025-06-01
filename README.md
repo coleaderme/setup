@@ -163,7 +163,7 @@ polkit.addRule(function(action, subject) {
     }
 });
 ```
-### replace sudo doas:
+### replace sudo with doas (on pre-installed system):  
 `sudo pacman -S opendoas`  
 edit: `/etc/doas.conf`  
 ```
