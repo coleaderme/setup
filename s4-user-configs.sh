@@ -11,6 +11,7 @@ mkdir ~/.config
 cp config/*.conf ~/.config/
 cp config/mimeapps.list ~/.config
 cp -rf config/psd ~/.config/
+cp -rf config/gtk-3.0 ~/.config/
 cp -rf config/bashrc ~/.bashrc
 cp -rf config/Xresources ~/.Xresources
 cp -rf config/nanorc ~/.nanorc
