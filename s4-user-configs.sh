@@ -16,6 +16,7 @@ cp -rf config/bashrc ~/.bashrc
 cp -rf config/Xresources ~/.Xresources
 cp -rf config/nanorc ~/.nanorc
 cp -rf config/mpv ~/.config/
+cp -rf config/micro ~/.config/
 cp -rf config/htop ~/.config/
 cp -rf config/sublime-text ~/.config/
 cp -rf config/autostart ~/.config/
