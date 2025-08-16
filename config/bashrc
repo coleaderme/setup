@@ -143,6 +143,7 @@ export OPENSSL_CONF=/dev/null # for phantomjs
 export LD_LIBRARY_PATH=/usr/local/lib
 export SKIM_DEFAULT_COMMAND="fd --type f || git ls-tree -r --name-only HEAD || rg --files || find ."
 export PATH=$HOME/.cargo/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
 # Android 14 Dev
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH=$ANDROID_HOME/cmdline-tools/bin:$PATH
@@ -150,6 +151,11 @@ export PATH=$ANDROID_HOME/cmdline-tools/bin:$PATH
 export NNN_PLUG="p:preview-tui"
 export NNN_FIFO="/tmp/nnn.fifo"
 export NNN_TERMINAL="st"
+# intel VAAPI
+export LIBVA_DRIVER_NAME=i965
+export MESA_LOADER_DRIVER_OVERRIDE=i965
+export MOZ_X11_EGL=1
+export LIBGL_ALWAYS_SOFTWARE=0
 # CTRL+R for command history
 # CTRL+T to list files and dirs
 eval "$(fzf --bash)"
