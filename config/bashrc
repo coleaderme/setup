@@ -151,11 +151,11 @@ export PATH=$ANDROID_HOME/cmdline-tools/bin:$PATH
 export NNN_PLUG="p:preview-tui"
 export NNN_FIFO="/tmp/nnn.fifo"
 export NNN_TERMINAL="st"
-# intel VAAPI
-export LIBVA_DRIVER_NAME=i965
-export MESA_LOADER_DRIVER_OVERRIDE=i965
-export MOZ_X11_EGL=1
-export LIBGL_ALWAYS_SOFTWARE=0
+# intel VAAPI // enable for Universal Android Debloater only
+# export LIBVA_DRIVER_NAME=i965
+# export MESA_LOADER_DRIVER_OVERRIDE=i965
+# export MOZ_X11_EGL=1
+# export LIBGL_ALWAYS_SOFTWARE=0
 # CTRL+R for command history
 # CTRL+T to list files and dirs
 eval "$(fzf --bash)"
