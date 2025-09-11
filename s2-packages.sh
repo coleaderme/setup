@@ -8,7 +8,8 @@ ttf-arphic-ukai ttf-indic-otf ttf-ubuntu-font-family noto-fonts-emoji \
 alsa-utils wireguard-tools openssh openresolv wgcf viewnior xsel scrot \
 aria2 mpv polkit htop 7zip \
 ripgrep fd xh fzf skim choose numlockx \
-earlyoom thunar eza micro nnn feh miniserve dnscrypt-proxy
+earlyoom thunar eza micro nnn feh miniserve \
+qrencode dust dnscrypt-proxy
 ## ttyper: Terminal-based typing test
 ## mtr: ping hops traceroute
 ## copyparty: filesharing
@@ -22,4 +23,5 @@ earlyoom thunar eza micro nnn feh miniserve dnscrypt-proxy
 ## android-tools gvfs gvfs-mtp (android device support)
 ## woeusb: create windows usb
 ## usbimager: create linux usb
-## glow: cli markdown (.md) viewer
+## gitui: tui for git
+## glow: tui markdown (.md) viewer
