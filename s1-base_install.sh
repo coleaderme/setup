@@ -1,6 +1,4 @@
 #!/usr/bin/sh
-# sudo bash base_install.sh [root]
-
 # ==========================================================="
 # * mount partition with ~100MB size *
 # > mkdir /boot/efi

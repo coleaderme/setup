@@ -1,7 +1,7 @@
 #!/usr/bin/sh
-# sh configs.sh [USER]
+# sh s4-user-configs.sh [USER]
 
-git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -sic
+git clone --depth 1 https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -sic
 # Installs (via yay)
 yay -S joshuto-bin
 
