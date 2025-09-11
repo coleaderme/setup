@@ -62,7 +62,7 @@ alias rn1='for i in *.*;do mv "$i" "$i"1;done' # append 1 to filename
 alias rn1b='for i in *.*1;do mv "$i" "$(echo "$i"|choose -c 0..-1)";done' # remove 1 from filename
 alias neofetch='fastfetch'
 alias countdown='termdown -e --text "DONE"'
-alias so='source ~/.bashrc'
+alias so='source $HOME/.bashrc'
 alias wm='sudo micro /etc/X11/xinit/xinitrc || sudo nano /etc/X11/xinit/xinitrc'
 alias pm='sudo micro /etc/pacman.d/mirrorlist || sudo nano /etc/pacman.d/mirrorlist'
 # YT
@@ -111,19 +111,19 @@ alias ipu='sudo ip link set eno1 up'
 alias rankmirrors='sudo reflector --threads 4 --sort rate --download-timeout 5 --country IN --age 6 --protocol http --fastest 10 --ipv4 --save /etc/pacman.d/mirrorlist'
 alias d6='sudo modprobe tcp_bbr;sudo sysctl net.core.default_qdisc=cake;sudo sysctl net.ipv4.tcp_congestion_control=bbr; sudo sysctl net.ipv6.conf.default.disable_ipv6=1;sudo sysctl net.ipv6.conf.all.disable_ipv6=1;sudo sysctl net.ipv4.tcp_fastopen=3;sudo sysctl net.ipv4.tcp_mtu_probing=1;sudo sysctl net.ipv4.tcp_timestamps=0'
 ## [default]
-alias ipa='sudo ~/scripts/setIP.sh eno1 192.168.0.111 192.168.0.1;echo default IP'
+alias ipa='sudo $HOME/scripts/setIP.sh eno1 192.168.0.111 192.168.0.1;echo default IP'
 ## [brigde mode]
-# alias ipa='sudo ~/scripts/setIP.sh eno1 192.168.1.21 192.168.1.1;echo "bridge mode"'
+# alias ipa='sudo $HOME/scripts/setIP.sh eno1 192.168.1.21 192.168.1.1;echo "bridge mode"'
 ## [pppoe connect]
-# alias ipa='sudo ~/scripts/setIP.sh eno1 192.168.1.35 192.168.1.1;echo pppoe mode'
+# alias ipa='sudo $HOME/scripts/setIP.sh eno1 192.168.1.35 192.168.1.1;echo pppoe mode'
 
 alias rr='xset r rate 240 40'
 alias killdwm='killall dwm && exit'
 alias ka='killall at-spi-bus-launcher;killall gvfsd;killall chrome_crashpad_handler;killall gvfsd-metadata;killall pipewire'
 # Mount
-alias mountt='sudo mount /dev/sda6 ~/T -o noatime,umask=000' ## NTFS drive
-alias umountt='sudo umount ~/T && echo "[Removed]: T"'
-alias umountsd='sudo umount ~/sd && echo "[Removed]: sd"'
+alias mountt='sudo mount /dev/sda6 $HOME/T -o noatime,umask=000' ## NTFS drive
+alias umountt='sudo umount $HOME/T && echo "[Removed]: T"'
+alias umountsd='sudo umount $HOME/sd && echo "[Removed]: sd"'
 alias dnsre="sudo systemctl restart --now dnscrypt-proxy.service"
 alias psdrestart='systemctl --user restart psd.service'
 alias psdenable='systemctl --user enable psd.service'
@@ -134,7 +134,7 @@ alias psdstart='systemctl --user start psd.service'
 alias gd='rclone mount VivoGdrive: $HOME/vivoGdrive/ --attr-timeout 1h --dir-cache-time 12h --vfs-read-chunk-size 32M --buffer-size 128M --vfs-cache-mode full'
 alias rstemperature='xh -4 -pb -I --session=s --pretty=none --verify=no "https://www.accuweather.com/#" | htmlq -t ".header-temp"'
 
-# export SSLKEYLOGFILE=~/.ssl-key.log
+# export SSLKEYLOGFILE=$HOME/.ssl-key.log
 export XDG_SESSION_TYPE=x11
 export VISUAL=subl
 export EDITOR=micro
