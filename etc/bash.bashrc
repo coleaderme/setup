@@ -14,7 +14,6 @@ fi
 alias path='echo -e ${PATH//:/\\n}'
 alias cd..='cd ..'
 alias cls='clear'
-alias myip='curl icanhazip.com'
 alias clean='pacman -Qtdq | pacman -Rns -'
 alias la='ls -a'
 alias ll='ls -la'
