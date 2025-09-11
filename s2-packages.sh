@@ -6,10 +6,11 @@ sudo pacman -S --needed --noconfirm xorg-server xorg-xinit xorg-xset ntfs-3g \
 ttf-arphic-ukai ttf-indic-otf ttf-ubuntu-font-family noto-fonts-emoji \
 alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
 aria2 mpv polkit htop 7zip \
-ripgrep fd xh sd fzf skim choose numlockx \
+ripgrep fd xh fzf skim choose numlockx \
 earlyoom thunar eza micro nnn feh miniserve dnscrypt-proxy
 ## ttyper: Terminal-based typing test
-## dmenu: build from source
+## mtr: ping hops traceroute
+## copyparty: filesharing
 ## fclones: find duplicates
 ## joshuto-bin (via yay) user friendly! TUI file explorer.
 ## micro: nano++
@@ -20,3 +21,4 @@ earlyoom thunar eza micro nnn feh miniserve dnscrypt-proxy
 ## android-tools gvfs gvfs-mtp (android device support)
 ## woeusb: create windows usb
 ## usbimager: create linux usb
+## glow: cli markdown (.md) viewer
