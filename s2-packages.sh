@@ -5,7 +5,7 @@
 pacman -Syy
 pacman -S --needed --noconfirm xorg-server xorg-xinit xorg-xset ntfs-3g \
 ttf-arphic-ukai ttf-indic-otf ttf-ubuntu-font-family noto-fonts-emoji \
-alsa-utils wireguard-tools openresolv wgcf viewnior xsel scrot \
+alsa-utils wireguard-tools openssh openresolv wgcf viewnior xsel scrot \
 aria2 mpv polkit htop 7zip \
 ripgrep fd xh fzf skim choose numlockx \
 earlyoom thunar eza micro nnn feh miniserve dnscrypt-proxy
