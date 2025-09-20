@@ -3,8 +3,11 @@
 #  quality as in 240p-----^
 [ -z "$1" ] && echo "[usage] ./proxy422.sh video.mp4 240" && exit
 
-## faster (now 7.7x), original (4x)
-ffmpeg -i "$1" -filter:v scale="$2":-1 -c:v prores_ks -profile:v 0 -vendor apl0 -q 4 -pix_fmt yuv422p10le "$1_$2.mov"
+## 7.7x faster, 1/4 of original resolution.
+## -q 6 to 15 halfs the final output size, increases blockiness,
+## no change in transcode speed & performance in editor.
+## tested on orginal 1280x720 footage at 1/4 res.
+ffmpeg -i "$1" -filter:v scale="$2":-1 -c:v prores_ks -profile:v 0 -vendor apl0 -q 15 -pix_fmt yuv422p10le "$1_$2.mov"
 ##############################################################
 ## OG: 1280x720: 3.5MB, 20s (cropped version)
 ## pro res 422 proxy
