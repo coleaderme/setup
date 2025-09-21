@@ -11,6 +11,7 @@ alias path='echo -e ${PATH//:/\\n}'
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 bind '"\e[Z":menu-complete-backward'
+PATH="$HOME/.local/bin:$PATH"
 
 # aliases
 alias ac="aria2c -c --no-conf --console-log-level=warn --disable-ipv6=true --summary-interval=0 --download-result=hide --http-accept-gzip=true --disk-cache=32M -x8 -j8 -s8 --allow-overwrite=true --allow-piece-length-change=true --header 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.17 Safari/537.36' --check-certificate=false --show-console-readout=true --auto-file-renaming=false --file-allocation=none --uri-selector=inorder"
