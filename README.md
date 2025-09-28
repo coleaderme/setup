@@ -100,7 +100,7 @@ bootloader fixed!
 ### Fix Windows bootloader:  
 Create a bootable USB, during installation process at disk partion screen.  
 Shift + F10 to open command prompt.  
-```bash
+```shell
 diskpart
 list disk
 sel  disk # <- bootloader disk ~100MB in size
@@ -110,14 +110,15 @@ assign letter=v
 ```
 
 **CAUTION!**  
-Do NOT format if this contains other bootloaders (eg. dual booting linux), you can skip this command.  
-`format v: /fs:fat32`  
-OR  
-`format fs=fat32` (after selecting volume)  
+Do NOT format if this contains other bootloaders (eg. dual booting linux), **you can skip this command**.  
+```shell
+format v: /fs:fat32
+OR
+format fs=fat32
+```
 
-- `exit` <- exit diskpart  
-- `bcdboot c:\Windows /s v: /f UEFI`  (depending on your Win OS drive letter)  
-
+`exit` <- exit diskpart  
+`bcdboot c:\Windows /s v: /f UEFI`  
 windows bootloader fixed!  
 
 ## Extras
