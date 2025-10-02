@@ -71,7 +71,8 @@ alias ytx='yt-dlp -4 -x --restrict-filenames -o "%(title)s.%(ext)s"'
 alias ytchapters='yt-dlp -4 --restrict-filenames --split-chapters'
 alias ytf='yt-dlp -4 -F'
 alias ytd='yt-dlp -4 --write-auto-subs --restrict-filenames --downloader aria2c'
-alias ytt='yt-dlp -4 -f "bestvideo[height<=1080]+251" --restrict-filenames --downloader aria2c -o "%(title)s.%(ext)s"'
+# upto 1080p, vp9 only, with sponsor segment removal
+alias ytt='yt-dlp -4 -f "bestvideo[height<=1080][vcodec=vp9]+251" --sponsorblock-remove all --restrict-filenames --downloader aria2c -o "%(title)s.%(ext)s"'
 alias ytl='yt-dlp -4 --flat-playlist -i --print-to-file url yt_links.txt'
 alias ytsub='yt-dlp -4 --write-auto-sub --skip-download'
 # Conversion / Transcoding cutoff 18kHz for portability. Keep original file!
