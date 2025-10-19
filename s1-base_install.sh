@@ -40,9 +40,10 @@ echo 'nameserver 127.0.0.1' > /etc/resolv.conf # if using localdns, else set 8.8
 ## etc confs
 cp etc/nanorc /etc/
 cp etc/makepkg.conf /etc/
-# cp etc/asound.conf /etc/ # copy if using alsa eq
+cp etc/fuse.conf /etc/
 cp etc/dnscrypt-proxy.toml /etc/dnscrypt-proxy/
 cp etc/bash.bashrc /etc/
+# cp etc/asound.conf /etc/ # copy if using alsa eq
 echo 'set completion-ignore-case on' >> /etc/inputrc
 echo 'set enable-keypad on' >> /etc/inputrc
 ## Allow udisks2 to mount devices without authentication

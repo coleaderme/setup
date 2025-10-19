@@ -9,7 +9,7 @@ alsa-utils wireguard-tools openssh openresolv wgcf viewnior xsel scrot \
 aria2 mpv cmus polkit htop 7zip \
 ripgrep fd xh fzf skim choose numlockx \
 earlyoom thunar eza micro nnn feh miniserve \
-qrencode dust dnscrypt-proxy
+qrencode dust dnscrypt-proxy rclone fuse3
 ## ttyper: Terminal-based typing test
 ## mtr: ping hops traceroute
 ## copyparty: filesharing
