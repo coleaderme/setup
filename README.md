@@ -168,5 +168,10 @@ polkit.addRule(function(action, subject) {
 get UUID -> `sudo blkid`  
 edit `/etc/fstab`  
 ```
-UUID=UUID_GOES_HERE       /home/user/data    ntfs     default,auto,nofail,noatime,windows_names,uid=1000,gid=1000,umask=022 0 0
+UUID=UUID_GOES_HERE      /home/user/data    ntfs    default,auto,nofail,noatime,noexec,windows_names,uid=1000,gid=1000,umask=022 0 0
+PARTUUID="PARTUUID_HERE" /home/user/data     ntfs3   rw,auto,nofail,async,nosuid,nodev,noatime,uid=0,gid=0,iocharset=utf8 0 0
+```
+### ReadOnly Ext4 Mount  
+```
+UUID=UUID_HERE  /home/user/data  ext4  ro,noload,noatime,nosuid,nodev,noexec 0 0
 ```
