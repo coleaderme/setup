@@ -35,6 +35,7 @@ alias music='cd ~/storage/music'
 alias un='apt autoremove'
 alias ms="miniserve -i 0.0.0.0 -q -u -W -r -D -F -l --hide-theme-selector ."
 alias share="copyparty --no-thumb --qr --theme 1 -p 8080"
+alias ss="downloads; share"
 alias xh_ses='xh -4 -S -I -F -pb --verify=no --pretty=none --session=s'
 alias replaygain='rsgain custom --skip-existing --tagmode=i --loudness=-12 --clip-mode=a --max-peak=-1 --true-peak --lowercase --opus-mode=t --preserve-mtimes'
 alias installed='pkg list-installed'
