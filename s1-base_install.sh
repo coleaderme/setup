@@ -55,6 +55,7 @@ echo '[+] Setting up grub bootloader'
 pacman -S --needed --noconfirm grub efibootmgr dosfstools mtools
 grub-install --target=x86_64-efi --bootloader-id=archbtw --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
+systemctl enable dhcpcd
 echo 'done.'
 
 ## exit
@@ -67,4 +68,5 @@ echo '> reboot'
 echo '======================================================='
 echo '[*] To get permissions for setup files, after reboot, copy /setup to ~/setup;'
 echo '[>] sudo chown -R $USER setup/' # single qoutes, so it doesnt expand $
+echo '[>] sudo systemctl enable dhcpcd' # if doesnt work, do manually. 
 echo '======================================================='
