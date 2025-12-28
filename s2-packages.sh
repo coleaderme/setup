@@ -7,7 +7,7 @@ pacman -S --needed --noconfirm xorg-server xorg-xinit xorg-xset ntfs-3g \
 ttf-arphic-ukai ttf-indic-otf ttf-ubuntu-font-family ttc-iosevka-ss04 noto-fonts-emoji \
 alsa-utils wireguard-tools openssh openresolv wgcf viewnior xsel scrot \
 aria2 mpv cmus polkit htop 7zip \
-ripgrep fd xh fzf skim choose numlockx \
+ripgrep fd xh fzf skim choose clipmenu numlockx \
 earlyoom thunar eza micro nnn feh miniserve \
 android-tools qrencode dust dnscrypt-proxy rclone fuse3
 ## ttyper: Terminal-based typing test
