@@ -8,7 +8,9 @@ git clone --depth 1 https://github.com/coleaderme/st && cd st && make clean inst
 ## dmenu
 git clone --depth 1 https://github.com/coleaderme/dmenu && cd dmenu && make clean install && cd ..
 ## slstatus
-git clone --depth 1 https://github.com/coleaderme/slstatus && cd slstatus && make clean install && cd ..
+git clone --depth 1 https://git.suckless.org/slstatus && cp config/slstatus/config.h slstatus/ && cd slstatus
+sed -i 's/PREFIX = \/usr\/local/PREFIX = $(HOME)\/.local/' config.mk #
+make clean install && cd ..
 ## wallpaper
 cp wallpaper/Supernatural-Wallpaper.png ~/Pictures/Supernatural-Wallpaper.png
 ## xinit
