@@ -46,6 +46,7 @@ alias mpv='mpv --no-audio-display --volume=85'
 alias play='m="$(fd -tf -e mp3 -e opus -e ogg -e m4a -e flac -e wav -e mkv -e webm -e mp4 -e m4v | sk -e --color=bw)"; [ -z "$m" ] || mpv --no-audio-display "$m"'
 alias myip='curl icanhazip.com'
 alias ipscan='sudo arp-scan --interface=enp2s0 --localnet'
+alias share="copyparty -q --no-thumb --qr --qr-pin 1 --theme 1 -p 8080"
 alias off='sudo poweroff'
 alias pack='7z a -m0=copy'
 alias packx='7z a -m0=copy -p0000 -mhe'
